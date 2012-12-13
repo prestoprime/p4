@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://www.prestoprime.eu/xsd/rightsmodel"
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified" 
+           targetNamespace="http://www.prestoprime.eu/xsd/rightsmodel">
+           
+	<xs:element name="RightsModel">
+	    <xs:annotation>
+			<xs:documentation>RightsModel for PrestoPRIME Mets in SIP/AIP/DIP</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="aipId" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="rightsId" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="owlFile" type="xs:base64Binary"  minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+</xs:schema>
+

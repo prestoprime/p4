@@ -1,0 +1,26 @@
+# How-to generate JAXB classes from xsd:
+
+cd src/conf/xsd
+mkdir -p jaxb-classes
+xjc -nv -extension -d jaxb-classes -b bindings.xjb *.xsd
+
+# JAXB Annotation for custom namespaces in the marshalled objects
+(to be put on package-info.java for high level model packages, e.g. mets)
+(WARNING: use JAXB 2.2.4+, previous version do not support such annotations) 
+
+
+@javax.xml.bind.annotation.XmlSchema(namespace = eu.prestoprime.model.P4NamespaceContext.METS, 
+    xmlns = {@javax.xml.bind.annotation.XmlNs(prefix = "dc", namespaceURI=eu.prestoprime.model.P4NamespaceContext.DC), 
+		     @javax.xml.bind.annotation.XmlNs(prefix = "mets", namespaceURI=eu.prestoprime.model.P4NamespaceContext.METS), 
+             @javax.xml.bind.annotation.XmlNs(prefix = "dnx", namespaceURI=eu.prestoprime.model.P4NamespaceContext.DNX),
+             @javax.xml.bind.annotation.XmlNs(prefix = "premis", namespaceURI=eu.prestoprime.model.P4NamespaceContext.PREMIS),
+             @javax.xml.bind.annotation.XmlNs(prefix = "acl", namespaceURI=eu.prestoprime.model.P4NamespaceContext.ACL),
+             @javax.xml.bind.annotation.XmlNs(prefix = "xlink", namespaceURI=eu.prestoprime.model.P4NamespaceContext.XLINK)}, 
+             elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package eu.prestoprime.model.xjc.mets;
+
+
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.openarchives.org/OAI/2.0/", xmlns = {@javax.xml.bind.annotation.XmlNs(prefix = "dc", namespaceURI="http://p
+url.org/dc/elements/1.1/"), @javax.xml.bind.annotation.XmlNs(prefix = "", namespaceURI="http://www.openarchives.org/OAI/2.0/")}, elementFormDefault = javax.xml.bind.ann
+otation.XmlNsForm.QUALIFIED)
+package eu.prestoprime.model.xjc.oaipmh;

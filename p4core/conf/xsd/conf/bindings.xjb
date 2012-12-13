@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:globalBindings>
+    	<xjc:serializable uid="1" />
+  	</jaxb:globalBindings>
+  	
+  	<!-- Datatypes Schema Bindings -->
+	<jaxb:bindings schemaLocation="datatypes.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.datatypes"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<!-- Search Schema Bindings -->
+	<jaxb:bindings schemaLocation="search.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.search"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<!-- Terms Schema Bindings -->
+	<jaxb:bindings schemaLocation="terms.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.terms"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<!-- Tools Schema Bindings -->
+	<jaxb:bindings schemaLocation="tools.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.tools"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+  					
+	<!-- Users Schema Bindings -->
+	<jaxb:bindings schemaLocation="users.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.users"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+			
+	<!-- Workflow Descriptor Schema Bindings -->
+	<jaxb:bindings schemaLocation="workflows.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.workflow"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+						
+</jaxb:bindings>

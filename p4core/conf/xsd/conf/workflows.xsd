@@ -1,0 +1,181 @@
+<!--
+   workflows.xml
+   Author: Francesco Rosso (rosso@eurix.it)
+   Contributors: Francesco Gallo (gallo@eurix.it)
+ 
+   Copyright (C) 2012 EURIX Srl, Torino, Italy
+  
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+ 
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+ 
+   You should have received a copy of the GNU General Public License
+   along with this program; If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/wf"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+           xmlns="http://www.prestoprime.eu/model/2012/wf"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+<xs:element name="wfDescriptor">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="services" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="service" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="id" type="xs:string" use="required" />
+								<xs:attribute name="class" type="xs:string" use="required" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="workflows" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="workflow" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence maxOccurs="1">
+									<xs:element name="description" maxOccurs="1">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="xs:string" />
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="sParam" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="xs:string">
+													<xs:attribute name="key" type="xs:string" />
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="dParamString" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="key" type="xs:string" />
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="dParamFile" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="key" type="xs:string" />
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="task" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="service" type="xs:string" use="required" />
+											<xs:attribute name="step" type="xs:int" use="required" />
+											<xs:attribute name="critical" type="xs:boolean" use="required" />
+											<xs:attribute name="attempts" type="xs:int" default="1" />
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="id" type="xs:string" use="required" />
+								<xs:attribute name="type" type="wfType" use="required" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:simpleType name="wfType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ingest" />
+		<xs:enumeration value="update" />
+		<xs:enumeration value="access" />
+		<xs:enumeration value="action" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="wfStatus">
+	<xs:complexType>
+		<xs:sequence maxOccurs="1">
+			<xs:element name="params" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="1">
+						<xs:element name="sParam" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="key" type="xs:string" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="dParamString" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="key" type="xs:string" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="dParamFile" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="key" type="xs:string" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="timeTable" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="taskReport" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="service" type="xs:string" />
+								<xs:attribute name="step" type="xs:int" />
+								<xs:attribute name="startup" type="xs:dateTime" />
+								<xs:attribute name="duration" type="xs:long" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="result" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string" />
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" />
+		<xs:attribute name="status" type="statusType" />
+		<xs:attribute name="workflow" type="xs:string" />
+		<xs:attribute name="totalSteps" type="xs:int" />
+		<xs:attribute name="lastCompletedStep" type="xs:int" />
+		<xs:attribute name="startup" type="xs:dateTime" />
+		<xs:attribute name="duration" type="xs:long" />
+	</xs:complexType>
+</xs:element>
+
+<xs:simpleType name="statusType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="waiting"/>
+        <xs:enumeration value="running"/>
+        <xs:enumeration value="completed"/>
+        <xs:enumeration value="failed"/>
+    </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

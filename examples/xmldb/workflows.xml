@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wfDescriptor xmlns="http://www.prestoprime.eu/model/2012/wf">
+	<services>
+	</services>
+	<workflows>
+		<!-- INGESTION WORKFLOWS -->
+		<workflow id="ingest_local_twocopies" type="ingest">
+			<description>
+				Execute the whole ingestion workflow locally and make two copies of AV material on P4 storage resources.
+			</description>
+			<sParam key="rights_only">false</sParam>
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="LQformats">video/webm</sParam>
+			<sParam key="second.local.copy.folder">/opt/p4vault</sParam>
+			<sParam key="dracma.indexing.url">http://dracma1/dracma</sParam>
+			<dParamFile key="sipFile" />
+			<task service="validate_sip" step="1" critical="true" attempts="1" />
+			<task service="verify_sip" step="2" critical="true" attempts="1" />
+			<task service="ffprobe" step="3" critical="true" attempts="1" />
+			<task service="mxf_techmd_extract" step="4" critical="true" attempts="1" />
+			<task service="configure_storage" step="4" critical="true" attempts="1" />
+			<task service="transcode2webm" step="5" critical="true" attempts="1" />
+			<!-- <task service="transcode2ogv" step="5" critical="false" attempts="1"/> -->
+			<task service="master_file_second_copy" step="5" critical="true" attempts="1" />
+			<task service="master_file_first_copy" step="6" critical="true" attempts="1" />
+			<task service="d10_fixity_checker" step="7" critical="true" attempts="1" />
+			<task service="frames_extraction" step="7" critical="true" attempts="1" />
+			<task service="rights_management" step="7" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="8" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="9" critical="false" attempts="1" />
+			<!-- <task service="dracma_indexing" step="9" critical="false" attempts="1" /> -->
+		</workflow>
+		<workflow id="ingest_irods_twocopies" type="ingest">
+			<description>
+				Execute the whole ingestion workflow locally, make a copy of AV material on P4 storage resources
+				and a second copy on iRODS (automatic asynchronous replication rules are provided).
+			</description>
+			<sParam key="rights_only">false</sParam>
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="LQformats">video/webm</sParam>
+			<sParam key="irods.host">irods</sParam>
+			<sParam key="irods.port">1247</sParam>
+			<sParam key="irods.username">rods</sParam>
+			<sParam key="irods.password">rods</sParam>
+			<sParam key="irods.home.dir">/pprimeZone/home/rods</sParam>
+			<sParam key="irods.zone">pprimeZone</sParam>
+			<sParam key="irods.default.resource">democache1</sParam>
+			<sParam key="dracma.indexing.url">http://dracma1/dracma</sParam>
+			<task service="validate_sip" step="1" critical="true" attempts="1" />
+			<task service="verify_sip" step="2" critical="true" attempts="1" />
+			<task service="ffprobe" step="3" critical="true" attempts="1" />
+			<task service="mxf_techmd_extract" step="4" critical="true" attempts="1" />
+			<task service="configure_storage" step="4" critical="true" attempts="1" />
+			<task service="transcode2webm" step="5" critical="true" attempts="1" />
+			<!-- <task service="transcode2ogv" step="5" critical="false" attempts="1"/> -->
+			<task service="master_file_first_copy" step="5" critical="true" attempts="1" />
+			<task service="d10_fixity_checker" step="6" critical="true" attempts="1" />
+			<task service="frames_extraction" step="6" critical="true" attempts="1" />
+			<task service="rights_management" step="6" critical="true" attempts="1" />
+			<task service="irods_put" step="7" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="8" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="9" critical="false" attempts="1" />
+			<!-- <task service="dracma_indexing" step="9" critical="false" attempts="1" /> -->
+		</workflow>
+		<workflow id="ingest_mserve_twocopies" type="ingest">
+			<description>
+				Execute the ingestion workflow running resource consuming tasks on MServe, make two copies of AV material on P4 storage resources.
+			</description>
+			<sParam key="rights_only">false</sParam>
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="LQformats">video/webm</sParam>
+			<sParam key="mserve.url">http://mserve</sParam>
+			<sParam key="second.local.copy.folder">/opt/p4vault</sParam>
+			<sParam key="dracma.indexing.url">http://dracma1/dracma</sParam>
+			<task service="validate_sip" step="1" critical="true" attempts="1" />
+			<task service="verify_sip" step="2" critical="true" attempts="1" />
+			<task service="mserve_file_upload" step="3" critical="true" attempts="1" />
+			<task service="configure_storage" step="3" critical="true" attempts="1" />
+			<task service="mserve_ffprobe" step="4" critical="true" attempts="1" />
+			<task service="mserve_mxf_techmd_extract" step="5" critical="true" attempts="1" />
+			<task service="mserve_transcode2webm" step="5" critical="true" attempts="1" />
+			<!-- <task service="mserve_transcode2ogv" step="5" critical="false" attempts="1"/> -->
+			<task service="mserve_d10_fixity_checker" step="6" critical="true" attempts="1" />
+			<task service="master_file_first_copy" step="6" critical="true" attempts="1" />
+			<task service="master_file_second_copy" step="6" critical="true" attempts="1" />
+			<task service="frames_extraction" step="6" critical="true" attempts="1" />
+			<task service="rights_management" step="6" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="7" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="8" critical="false" attempts="1" />
+			<!-- <task service="dracma_indexing" step="8" critical="false" attempts="1" /> -->
+		</workflow>
+		<workflow id="ingest_local_lto_twocopies" type="ingest">
+			<description>
+				Execute the whole ingestion workflow locally, make two copies of AV material on LTO storage resources.
+			</description>
+			<sParam key="rights_only">false</sParam>
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="LQformats">video/webm</sParam>
+			<sParam key="ltfs.url">http://ltfsa/ltfsarchiver</sParam>
+			<sParam key="ltfs.poolA">poolA</sParam>
+			<sParam key="ltfs.poolB">poolB</sParam>
+			<sParam key="dracma.indexing.url">http://dracma1/dracma</sParam>
+			<task service="validate_sip" step="1" critical="true" attempts="1" />
+			<task service="verify_sip" step="2" critical="true" attempts="1" />
+			<task service="ffprobe" step="3" critical="true" attempts="1" />
+			<task service="mxf_techmd_extract" step="4" critical="true" attempts="1" />
+			<task service="configure_storage" step="4" critical="true" attempts="1" />
+			<task service="ltfs_first_copy" step="4" critical="true" attempts="1" />
+			<task service="ltfs_second_copy" step="4" critical="true" attempts="1" />
+			<task service="transcode2webm" step="5" critical="true" attempts="1" />
+			<!-- <task service="transcode2ogv" step="5" critical="false" attempts="1"/> -->
+			<task service="master_file_first_copy" step="5" critical="true" attempts="1" />
+			<task service="d10_fixity_checker" step="6" critical="true" attempts="1" />
+			<task service="frames_extraction" step="6" critical="true" attempts="1" />
+			<task service="rights_management" step="6" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="7" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="8" critical="true" attempts="1" />
+			<!-- <task service="dracma_indexing" step="8" critical="false" attempts="1" /> -->
+		</workflow>
+		<workflow id="ingest_rights" type="ingest">
+			<description>
+				Execute only ingestion workflow tasks related to rights, no AV material processed.
+			</description>
+			<sParam key="rights_only">true</sParam>
+			<task service="validate_sip" step="1" critical="true" attempts="1" />
+			<task service="verify_sip" step="2" critical="true" attempts="1" />
+			<task service="configure_storage" step="2" critical="true" attempts="1" />
+			<task service="rights_management" step="3" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="4" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="5" critical="true" attempts="1" />
+		</workflow>
+
+		<!-- UPDATE WORKFLOWS -->
+		<workflow id="fprint_upload" type="update">
+			<sParam key="host">fingerprint.prestoprime.eu</sParam>
+			<sParam key="port">21</sParam>
+			<sParam key="username">pprime</sParam>
+			<sParam key="password">pprime</sParam>
+			<sParam key="workdir">/fingerprint_folder</sParam>
+			<task service="fprint_upload" step="1" critical="true" attempts="2" />
+		</workflow>
+		<workflow id="fprint_update" type="update">
+			<task service="fprint_update" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="qa_update_auto" type="update">
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="baseUNC">\\p4.prestoprime.eu\p4store</sParam>
+			<sParam key="host">http://cuda:8081/qa</sParam>
+			<task service="qa_upload" step="1" critical="true" attempts="1" />
+			<task service="qa_execute" step="2" critical="true" attempts="2" />
+			<task service="qa_update_auto" step="3" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="qa_update_auto_direct" type="update">
+			<task service="qa_update_auto" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="qa_update_manual" type="update">
+			<task service="qa_update_manual" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="rights_update" type="update">
+			<task service="configure_rights_storage" step="1" critical="true" attempts="1" />
+			<task service="rights_update" step="2" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="usermd_upload" type="update">
+			<sParam key="host">eculture.cs.vu.nl:8080/video-metadata</sParam>
+			<dParamString key="dipID" />
+			<task service="usermd_upload" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="usermd_update" type="update">
+			<task service="usermd_update" step="1" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="2" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="avmaterial_update" type="update">
+			<sParam key="second.local.copy.folder">/opt/p4vault</sParam>
+			<sParam key="dracma.indexing.url">dracma1</sParam>
+			<dParamFile key="sipFile" />
+			<task service="avmaterial_update" step="1" critical="true" attempts="1" />
+			<task service="ffprobe" step="2" critical="true" attempts="1" />
+			<task service="mxf_techmd_extract" step="3" critical="true" attempts="1" />
+			<task service="configure_storage" step="3" critical="true" attempts="1" />
+			<task service="transcode2webm" step="4" critical="true" attempts="1" />
+			<!-- <task service="transcode2ogv" step="5" critical="false" attempts="1"/> -->
+			<task service="master_file_first_copy" step="4" critical="true" attempts="1" />
+			<task service="d10_fixity_checker" step="4" critical="true" attempts="1" />
+			<task service="frames_extraction" step="5" critical="true" attempts="1" />
+			<task service="consolidate_aip" step="6" critical="true" attempts="1" />
+			<task service="metadata_indexing" step="7" critical="false" attempts="1" />
+			<!-- <task service="dracma_indexing" step="7" critical="false" attempts="1" /> -->
+		</workflow>
+
+		<!-- ACCESS WORKFLOWS -->
+		<workflow id="query_rights" type="access">
+			<task service="query_rights_by_owl" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="ltfs_restore" type="access">
+			<sParam key="ltfs.url">http://ltfsa/ltfsarchiver</sParam>
+			<sParam key="dest.path">/mnt/pprime/consumers</sParam>
+			<task service="ltfs_restore" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="make_consumer_copy" type="access">
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="ltfs.url">http://ltfsa/ltfsarchiver</sParam>
+			<sParam key="dest.path.volume">/mnt/pprime</sParam>
+			<sParam key="dest.path.folder">consumers</sParam>
+			<sParam key="irods.host">irods</sParam>
+			<sParam key="irods.port">1247</sParam>
+			<sParam key="irods.username">rods</sParam>
+			<sParam key="irods.password">rods</sParam>
+			<sParam key="irods.home.dir">/pprimeZone/home/rods</sParam>
+			<sParam key="irods.zone">pprimeZone</sParam>
+			<sParam key="irods.default.resource">democache1</sParam>
+			<task service="irods_make_consumer_copy" step="1" critical="true" attempts="1" />
+			<task service="ltfs_make_consumer_copy" step="2" critical="true" attempts="1" />
+			<task service="make_consumer_copy" step="3" critical="true" attempts="1" />
+			<task service="check_consumer_copy" step="4" critical="true" attempts="1" />
+		</workflow>
+
+		<!-- ACTION WORKFLOWS -->
+		<workflow id="create_user" type="action">
+			<sParam key="ting.server">http://ting/ting</sParam>
+			<sParam key="ting.sla.template">captp://*zuv5thny7msxyrbnzdzlfdtibj6vzulm@mserve:53681,127.0.0.1:53681/4nbap4t5wjdmqviekiwbxwqxyhguwaj7</sParam>
+			<sParam key="ting.resource.manager">captp://*zuv5thny7msxyrbnzdzlfdtibj6vzulm@mserve:53681,127.0.0.1:53681/cl7242jwmowkkvx3petr6jde7u2jkubc</sParam>
+			<task service="create_user_id" step="1" critical="true" attempts="1" />
+			<task service="create_mserve_service" step="2" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="irods_get" type="action">
+			<sParam key="irods.host">irods</sParam>
+			<sParam key="irods.port">1247</sParam>
+			<sParam key="irods.username">rods</sParam>
+			<sParam key="irods.password">rods</sParam>
+			<sParam key="irods.home.dir">/pprimeZone/home/rods</sParam>
+			<sParam key="irods.zone">pprimeZone</sParam>
+			<sParam key="irods.default.resource">democache1</sParam>
+			<task service="irods_get" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="rebuild_index" type="action">
+			<task service="rebuild_search_index" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="rebuild_rights_index" type="action">
+			<task service="rebuild_rights_index" step="1" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="uncompressed_format_migration" type="action">
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<task service="configure_storage" step="1" critical="true" attempts="1" />
+			<task service="uncompressed_format_migration" step="2" critical="true" attempts="1" />
+		</workflow>
+		<workflow id="fixity_checks" type="action">
+			<sParam key="MQformats">application/mxf,video/mp4</sParam>
+			<sParam key="irods.host">irods</sParam>
+			<sParam key="irods.port">1247</sParam>
+			<sParam key="irods.username">rods</sParam>
+			<sParam key="irods.password">rods</sParam>
+			<sParam key="irods.home.dir">/pprimeZone/home/rods</sParam>
+			<sParam key="irods.zone">pprimeZone</sParam>
+			<sParam key="irods.default.resource">democache1</sParam>
+			<task service="fixity_checks" step="1" critical="true" attempts="1" />
+			<task service="fixity_restore" step="2" critical="true" attempts="1" />
+			<task service="irods_fixity_restore" step="3" critical="true" attempts="1" />
+		</workflow>
+	</workflows>
+</wfDescriptor>

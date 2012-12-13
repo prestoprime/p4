@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:globalBindings>
+    	<xjc:serializable uid="1" />
+  	</jaxb:globalBindings>
+  	
+  	<!-- METS Schema Bindings-->
+	<jaxb:bindings schemaLocation="mets-v1.9-patched.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.mets"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+  	
+  	<!-- Dublin Core Schema Bindings-->
+	<jaxb:bindings schemaLocation="simpledc20021212.xsd" node="/xs:schema">
+	<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.dc"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<!-- DNX Schema Bindings-->
+	<jaxb:bindings schemaLocation="dnx_simple.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.dnx"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<!-- ACL Schema Bindings-->
+	<jaxb:bindings schemaLocation="acl.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.acl"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<!-- PREMIS Event Schema Bindings-->
+	<jaxb:bindings schemaLocation="premis-event-v1-1.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.premis"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+					
+</jaxb:bindings>

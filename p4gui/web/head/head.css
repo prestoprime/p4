@@ -1,0 +1,61 @@
+/* PAGE TITLE */
+#pagetitle {
+	position: fixed;
+	top: 7px;
+	left: 10px;
+	float: left;
+	width: 400px;
+	height: 25px;
+}
+
+/* MENU */
+.menu {
+	float: right;
+	margin-left: 10px;
+	text-align: right;
+	height: 20px;
+}
+.menu img {
+	height: 25px;
+}
+.menu_container {
+    position: fixed;
+    top: 33px;
+    right: 15px;
+    border: 5px solid #FF6600;
+    border-top: none;
+    background-color: white;
+    visibility: hidden;
+    z-index: 100;
+    max-height: 500px;
+	overflow: auto;
+}
+.menu:HOVER .menu_container {
+	visibility: visible;
+}
+
+/* EXTRA */
+#dracma_container_buttons {
+	padding-top: 0px;
+	height: 50px;
+}
+.dracma_thumb {
+	margin: 2px;
+	width: 80px;
+	height: auto;
+}
+.dracma_container_button {
+	width: 25px;
+}
+#dracma_submit_button {
+	margin: 0px 2px 0px 2px; 
+	cursor: pointer;
+	height: 30px;
+	width: auto;
+}
+#dracma_add_button {
+	position: fixed;
+	top: 340px;
+	right: 10px;
+	width: 50px;
+}

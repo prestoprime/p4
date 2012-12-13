@@ -1,0 +1,29 @@
+# collection.xconf
+
+DB Trigger for AIP versioning, put in /db/system/config/db  
+
+
+# BACKUP
+
+Add scheduler jobs in WEB-INF/conf.xml for incremental and full backup
+
+       <!-- perform an incremental backup every hour -->
+       <job type="system" name="check1" 
+            class="org.exist.storage.ConsistencyCheckTask"
+            cron-trigger="0 29 * * * ?">
+            <parameter name="output" value="export"/>
+            <parameter name="backup" value="yes"/>
+            <parameter name="incremental" value="yes"/>
+            <parameter name="incremental-check" value="no"/>
+            <parameter name="max" value="2"/>
+        </job>
+
+       <!-- perform a full backup every twelve hours -->
+        <job type="system" name="check2" 
+            class="org.exist.storage.ConsistencyCheckTask"
+            cron-trigger="0 0 0/12 * * ?">
+            <parameter name="output" value="export"/>
+            <parameter name="backup" value="yes"/>
+            <parameter name="incremental" value="no"/>
+        </job>    
+ 

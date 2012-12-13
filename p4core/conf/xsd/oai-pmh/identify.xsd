@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/oaipmhidentify"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+           xmlns="http://www.prestoprime.eu/model/2012/oaipmhidentify"
+	   xmlns:ep="http://www.openarchives.org/OAI/1.1/eprints"
+ 	   xmlns:fr="http://www.openarchives.org/OAI/2.0/friends/"
+	   xmlns:oai-id="http://www.openarchives.org/OAI/2.0/oai-identifier"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+           
+	  <xs:import namespace="http://www.openarchives.org/OAI/1.1/eprints" schemaLocation="eprints-patched.xsd"/>
+	  <xs:import namespace="http://www.openarchives.org/OAI/2.0/friends/" schemaLocation="friends-patched.xsd"/>
+	  <xs:import namespace="http://www.openarchives.org/OAI/2.0/oai-identifier" schemaLocation="identifier-patched.xsd"/>
+		
+	  <xs:element name="Identify">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifyId" type="xs:string" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="repositoryName" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="baseURL" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="protocolVersion" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="adminEmail" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="earliestDatestamp" type="xs:string"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="deletedRecord" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="granularity" type="xs:string"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="compression" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="description" minOccurs="0" maxOccurs="unbounded" >
+					<xs:complexType>
+						<xs:choice>
+							 <xs:element ref="ep:eprints"/>
+							 <xs:element ref="fr:friends"/>
+							 <xs:element ref="oai-id:oai-identifier"/>
+						</xs:choice>
+					</xs:complexType>
+ 				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

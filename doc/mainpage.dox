@@ -1,0 +1,25 @@
+/**
+\mainpage P4 - PrestoPRIME Preservation Platform
+
+<div class="contents">
+	<div class="textblock">
+		<p>
+			This is the documentation of the PrestoPRIME Preservation Platform (P4).
+		</p>
+		<p>
+			The source code is available in the <a href="http://prestoprime.eurixgroup.com/p4">project svn repository</a>.
+		</p>
+ 		<p>
+			<a href="http://www.prestoprime.eu">PrestoPRIME</a> is a EU project funded under FP7.
+		</p>
+		<p>
+			<a href="http://www.eurix.it">EURIX</a> is responsible for the design and development of PrestoPRIME Preservation Platform.
+		</p>
+		<dl class="author">
+			<dt><b>Author:</b></dt>
+			<dd>Francesco Gallo <a href="mailto:gallo@eurix.it">gallo@eurix.it</a>.</dd>
+		</dl>
+	</div>
+</div>
+
+*/

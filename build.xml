@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="p4" basedir="." default="build.all" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:doxygen="antlib:org.doxygen.tools">
+
+	<property file="build.properties" />
+	<ivy:settings file="ivysettings.xml" />
+
+	<path id="lib.path.id">
+		<fileset dir="${lib.dir}" />
+	</path>
+
+	<target name="increase.revision">
+		<propertyfile file="build.properties">
+			<entry key="build.revision.number" type="int" operation="+" value="1" />
+		</propertyfile>
+	</target>
+
+	<target name="increase.minor">
+		<propertyfile file="build.properties">
+			<entry key="build.minor.number" type="int" operation="+" value="1" />
+			<entry key="build.revision.number" type="int" value="0" />
+		</propertyfile>
+	</target>
+
+	<target name="increase.major">
+		<propertyfile file="build.properties">
+			<entry key="build.major.number" type="int" operation="+" value="1" />
+			<entry key="build.minor.number" type="int" value="0" />
+			<entry key="build.revision.number" type="int" value="0" />
+		</propertyfile>
+	</target>
+
+	<target name="clean">
+		<delete dir="${lib.dir}" includes="**/*" />
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<target name="init" depends="clean,ivy.resolve">
+		<mkdir dir="${build.dir}" />
+		<delete dir="${build.dir}" includes="**/*" />
+		<mkdir dir="${dist.dir}" />
+		<delete dir="${dist.dir}" includes="**/*" />
+
+		<property name="build.number" value="${build.major.number}.${build.minor.number}.${build.revision.number}" />
+		<echo>Revision ${build.number}...</echo>
+	</target>
+
+	<!--
+	project.dir
+	project.name
+	-->
+	<target name="build.jar">
+		<delete dir="${build.dir}" includes="**/*" />
+		<javac srcdir="${project.dir}/src" destdir="${build.dir}" debug="${debug.level}" includeantruntime="false">
+			<classpath refid="lib.path.id" />
+		</javac>
+		<jar jarfile="${dist.dir}/${project.name}-${build.number}.jar">
+			<fileset dir="${build.dir}" />
+			<fileset dir="${project.dir}/conf">
+				<include name="**/*" />
+			</fileset>
+		</jar>
+		<copy file="${dist.dir}/${project.name}-${build.number}.jar" todir="${lib.dir}" />
+		<echo>Built ${project.name} revision ${build.number}...</echo>
+	</target>
+
+	<!--
+	project.dir
+	project.name
+	-->
+	<target name="build.war">
+		<delete dir="${build.dir}" includes="**/*" />
+		<javac srcdir="${project.dir}/src" destdir="${build.dir}" debug="${debug.level}" includeantruntime="false">
+			<classpath refid="lib.path.id" />
+		</javac>
+		<war destfile="${dist.dir}/${project.name}.war" webxml="${project.dir}/web/WEB-INF/web.xml" manifest="${project.dir}/web/META-INF/MANIFEST.MF">
+			<lib dir="${lib.dir}" />
+			<classes dir="${build.dir}" />
+			<classes dir="${project.dir}/conf" />
+			<fileset dir="${project.dir}/web" />
+		</war>
+		<echo>Built ${project.name} revision ${build.number}...</echo>
+	</target>
+
+	<!--
+	PrestoPRIME tasks
+	-->
+	<target name="build.p4core" depends="init">
+		<antcall target="build.jar">
+			<param name="project.dir" value="p4core" />
+			<param name="project.name" value="p4core" />
+		</antcall>
+	</target>
+
+	<!-- 
+		REQUIRES ADDITIONAL JAR in $ANT_HOME/lib
+		DOWNLOAD IT AT http://sourceforge.net/projects/ant-contrib/files/
+	-->
+	<taskdef name="for" classname="net.sf.antcontrib.logic.ForTask" />
+	<target name="build.plugins" depends="init,build.p4core">
+		<for list="${plugin.list}" param="plugin.name">
+			<sequential>
+				<antcall target="build.jar">
+					<param name="project.dir" value="plugins/@{plugin.name}" />
+					<param name="project.name" value="@{plugin.name}" />
+				</antcall>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="build.p4ws" depends="init,build.p4core,build.plugins">
+		<antcall target="build.war">
+			<param name="project.dir" value="p4ws" />
+			<param name="project.name" value="p4ws" />
+		</antcall>
+	</target>
+
+	<target name="build.p4gui" depends="init,build.p4core">
+		<antcall target="build.war">
+			<param name="project.dir" value="p4gui" />
+			<param name="project.name" value="p4gui" />
+		</antcall>
+	</target>
+
+	<target name="build.all" depends="build.p4gui,build.p4ws">
+		<delete dir="${lib.dir}" includes="**/*" />
+		<delete dir="${build.dir}" />
+		<echo>Built-all revision ${build.number}...</echo>
+	</target>
+
+	<!-- 
+	REQUIRES ADDITIONAL JAR in $ANT_HOME/lib
+	DOWNLOAD IT AT http://www.jcraft.com/jsch/
+	 -->
+	<target name="publish" depends="build.all">
+		<sshexec host="${repo.host}" username="${repo.username}" password="${repo.password}" command="mkdir -p ivyrepo" trust="true" />
+		<scp file="${dist.dir}/${ant.project.name}-${build.number}.jar" todir="${repo.username}:${repo.password}@${repo.host}:ivyrepo" failonerror="true" trust="true" />
+	</target>
+
+	<!-- 
+	REQUIRES ADDITIONAL JAR in $ANT_HOME/lib
+	DOWNLOAD IT AT http://ant.apache.org/ivy/download.cgi
+	 -->
+	<target name="ivy.cleancache">
+		<ivy:cleancache />
+	</target>
+
+	<target name="ivy.resolve">
+		<mkdir dir="${lib.dir}" />
+		<delete dir="${lib.dir}" includes="**/*" />
+		<ivy:retrieve pattern="${lib.dir}/[artifact]-[revision].[ext]" conf="default" />
+	</target>
+
+	<!-- 
+	REQUIRES ADDITIONAL JAR in $ANT_HOME/lib
+	DOWNLOAD IT AT http://sourceforge.net/projects/ant-doxygen/files/ant-doxygen/
+	 -->
+	<target name="build.doxy" depends="init">
+		<copy file="${basedir}/doc/doxygen.conf" todir="${build.dir}" />
+		<property name="doxygen.conf" value="${build.dir}/doxygen.conf" />
+		<echo file="${doxygen.conf}" append="true">PROJECT_NUMBER = ${build.number}${line.separator}</echo>
+		<doxygen:doxygen doxygenPath="/usr/bin/doxygen" configFilename="${doxygen.conf}" />
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- 
+	REQUIRES TOMCAT SERVLET CONTAINER
+	DOWNLOAD IT AT http://tomcat.apache.org
+	 -->
+	<target name="undeploy">
+		<exec executable="bash" os="GNU/Linux">
+			<arg value="${tomcat.home}/bin/shutdown.sh" />
+		</exec>
+		<delete dir="${tomcat.home}/webapps/p4gui" />
+		<delete dir="${tomcat.home}/webapps/p4ws" />
+	</target>
+	
+	<target name="deploy" depends="undeploy,build.all">
+		<delete dir="${tomcat.home}/webapps/p4ws" />
+		<delete dir="${tomcat.home}/webapps/p4gui" />
+		<copy file="${dist.dir}/p4ws.war" todir="${tomcat.home}/webapps" />
+		<copy file="${dist.dir}/p4gui.war" todir="${tomcat.home}/webapps" />
+		<exec executable="bash" os="GNU/Linux">
+			<arg value="${tomcat.home}/bin/startup.sh" />
+		</exec>
+		<exec executable="tail" os="GNU/Linux">
+			<arg value="-f" />
+			<arg value="${tomcat.home}/logs/catalina.out" />
+		</exec>
+	</target>
+</project>

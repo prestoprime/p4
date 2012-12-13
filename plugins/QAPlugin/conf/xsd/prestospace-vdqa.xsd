@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PrestoSpace/vdQA Defect and Quality Annotation
+      version 1.7, Oct. 2011, Werner Bailer, JOANNEUM RESEARCH, Graz, Austria
+	  http://www.joanneum.at/en/digital
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mpeg7="urn:mpeg:mpeg7:schema:2004" xmlns:psdq="http://www.prestospace.org/res/defect_quality" targetNamespace="http://www.prestospace.org/res/defect_quality" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<annotation>
+		<documentation>PrestoSpace/vdQA audiovisusal defect and quality description.</documentation>
+	</annotation>
+	<!-- ########################################################### -->
+	<!-- ########################################################### -->
+	<!-- include the original MPEG-7 v2 schema                       -->
+	<!-- ########################################################### -->
+	<import namespace="urn:mpeg:mpeg7:schema:2004" schemaLocation="./mpeg7-avdp.xsd"/>
+	<!-- ########################################################### -->
+	<!--  Definition of VisualSignalQuality DS                       -->
+	<!-- ########################################################### -->
+	<!-- Definition of VisualSignalQuality DS -->
+	<complexType name="VisualSignalQualityType">
+		<complexContent>
+			<extension base="mpeg7:VisualDSType">
+				<sequence>
+					<choice maxOccurs="unbounded">
+						<element name="Impairment" type="psdq:VisualImpairmentType"/>
+					</choice>
+					<element name="Operator" type="mpeg7:PersonType" minOccurs="0"/>
+					<element name="UsedTool" type="mpeg7:CreationToolType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of VisualImpairment DS                       -->
+	<!-- ########################################################### -->
+	<!-- Definition of VisualImpairment DS -->
+	<complexType name="VisualImpairmentType">
+		<complexContent>
+			<extension base="mpeg7:VisualDType">
+				<sequence>
+					<element name="Class" type="mpeg7:ControlledTermUseType"/>
+					<element name="Strength"  type="mpeg7:zeroToOneType" minOccurs="0" />
+					<element name="StrengthSamples" type="psdq:ImpairmentSampleListType" minOccurs="0"/>
+					<element name="Relevance" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<simpleContent>
+								<extension base="mpeg7:zeroToOneType">
+									<attribute name="appProfile" type="anyURI" use="optional"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element name="Origin" type="mpeg7:ControlledTermUseType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="Confidence" type="mpeg7:zeroToOneType" minOccurs="0" />
+					<element name="DetectionProcess" type="psdq:DetectionProcessType" minOccurs="0" />
+					<choice minOccurs="0">
+						<element name="ColorSpace" type="mpeg7:ColorSpaceType"/>
+						<element name="ColorSpaceRef" type="mpeg7:ReferenceType"/>
+					</choice>
+					<element name="Status" minOccurs="0">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="undefined"/>
+								<enumeration value="checked"/>
+								<enumeration value="needs restoration"/>
+								<enumeration value="restored"/>
+								<enumeration value="deleted"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="Comment" type="mpeg7:TextAnnotationType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- Definition of DetectionProcess -->
+	<simpleType name="DetectionProcessType">
+		<restriction base="string">
+			<enumeration value="manual"/>
+			<enumeration value="automatic"/>
+		</restriction>
+	</simpleType>
+	<!-- ########################################################### -->
+	<!--  Definition of ImpairmentSampleList D                       -->
+	<!-- ########################################################### -->
+	<!-- Definition of ImpairmentSampleList D  -->
+	<complexType name="ImpairmentSampleListType">
+		<sequence>
+			<element name="Samples">
+				<simpleType>
+					<restriction>
+						<simpleType>
+							<list itemType="mpeg7:zeroToOneType"/>
+						</simpleType>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+		<attribute name="interval" type="mpeg7:mediaDurationType" use="required"/>
+		<attribute name="extractionRange" type="mpeg7:mediaDurationType" use="optional"/>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of detailed visual imapairment descriptors                       -->
+	<!-- ########################################################### -->
+	<!-- ########################################################### -->
+	<!--  Definition of DropoutDefect                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of DropoutDefect -->
+	<complexType name="DropoutDefectType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="AffectedArea" minOccurs="0">
+						<complexType>
+							<sequence>
+								<choice maxOccurs="unbounded">
+									<element name="Lines">
+										<complexType>
+											<attribute name="from" type="mpeg7:unsigned16"/>
+											<attribute name="to" type="mpeg7:unsigned16"/>
+										</complexType>
+									</element>
+									<element name="Region" type="mpeg7:RegionLocatorType"/>
+								</choice>
+								<element name="Field" type="psdq:FieldType" minOccurs="0"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="AffectedChannels" type="psdq:ChannelListType" minOccurs="0"/>
+					<element name="ReplacedByDropoutCompensation" minOccurs="0">
+						<complexType>
+							<attribute name="replacedWithLine" type="integer"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- Definition of ChannelList -->
+	<complexType name="ChannelListType">
+		<sequence>
+			<element name="Channel" maxOccurs="unbounded">
+				<complexType>
+					<simpleContent>
+						<extension base="string">
+							<attribute name="number" type="mpeg7:unsigned8" use="optional"/>
+						</extension>
+					</simpleContent>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- Definition of Field-->
+	<simpleType name="FieldType">
+		<restriction base="string">
+			<enumeration value="upper"/>
+			<enumeration value="lower"/>
+			<enumeration value="both"/>
+		</restriction>
+	</simpleType>
+	<!-- ########################################################### -->
+	<!--  Definition of FullFrameDamage                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of FullFrameDamage -->
+	<complexType name="FullFrameDamageType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="FreezeFrame" type="boolean" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>	
+	<!-- ########################################################### -->
+	<!--  Definition of FrameLoss                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of FrameLoss -->
+	<complexType name="FrameLossType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of BlackFrameDefect                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of BlackFrameDefect -->
+	<complexType name="BlackFrameDefectType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="BlackArea" type="mpeg7:zeroToOneType" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>		
+	<!-- ########################################################### -->
+	<!--  Definition of LineScratchDefect                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of LineScratchDefect -->
+	<complexType name="LineScratchDefectType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="ScratchProperties">
+						<complexType>
+							<attribute name="horizontalPosition" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="width" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="negative" type="boolean" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of DustLevel                  -->
+	<!-- ########################################################### -->
+	<!-- Definition of DustLevel -->
+	<complexType name="DustLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="NumberOfSpots" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:unsigned32"/>
+						</complexType>
+					</element>
+					<element name="Area" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType"/>
+						</complexType>
+					</element>
+					<element name="Size" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="minimum" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+					<element name="AverageIntensity" minOccurs="0">
+						<complexType>
+							<attribute name="brightSpots" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="darkSpots" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of Noise/GrainLevel                 -->
+	<!-- ########################################################### -->
+	<!-- Definition of NoiseGrainLevel -->
+	<complexType name="NoiseGrainLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="MeanPSNR" type="float" minOccurs="0"/>
+					<element name="MeanPSNRSamples" type="psdq:ImpairmentSampleListType" minOccurs="0"/>
+					<element name="DominantFrequency" minOccurs="0">
+						<complexType>
+							<simpleContent>
+								<extension base="mpeg7:zeroToOneType">
+									<attribute name="maxFrequency" type="mpeg7:unsigned32"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element name="BrightnessDependency" minOccurs="0">
+						<complexType>
+							<sequence maxOccurs="unbounded">
+								<element name="GrainIntensity">
+									<complexType>
+										<simpleContent>
+											<extension base="mpeg7:zeroToOneType">
+												<attribute name="brightness" type="mpeg7:zeroToOneType" use="required"/>
+											</extension>
+										</simpleContent>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="Texel" type="mpeg7:ImageLocatorType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of Dropout Level                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of DropoutDefect -->
+	<complexType name="DropoutLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="FractionOfFrames" type="mpeg7:zeroToOneType" minOccurs="0"/>
+					<element name="Area" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+					<element name="SubsequentFrames" minOccurs="0">
+						<complexType>
+							<attribute name="maximum" type="nonNegativeInteger" use="required" />
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of FlickerLevel                -->
+	<!-- ########################################################### -->
+	<!-- Definition of FlickerLevel -->
+	<complexType name="FlickerLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="AverageIntensity" type="mpeg7:zeroToOneType" minOccurs="0"/>
+					<element name="AverageIntensitySamples" type="psdq:ImpairmentSampleListType" minOccurs="0"/>
+					<element name="FrequencyDistribution" minOccurs="0">
+						<complexType>
+							<sequence maxOccurs="unbounded">
+								<element name="FlickerIntensity">
+									<complexType>
+										<simpleContent>
+											<extension base="mpeg7:zeroToOneType">
+												<attribute name="frequency" type="float" use="required"/>
+											</extension>
+										</simpleContent>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="Locality" type="mpeg7:zeroToOneType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of LineScratchLevel                -->
+	<!-- ########################################################### -->
+	<!-- Definition of LineScratchLevel -->
+	<complexType name="LineScratchLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="NumberOfScratches" type="mpeg7:unsigned16"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of ImageInstability                -->
+	<!-- ########################################################### -->
+	<!-- Definition of ImageInstability -->
+	<complexType name="ImageInstabilityType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="HorizontalDisplacement" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+					<element name="VerticalDisplacement" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of BlurLevel                -->
+	<!-- ########################################################### -->
+	<!-- Definition of BlurLevel -->
+	<complexType name="BlurLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="EdgeLoss">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+					<element name="Area" type="mpeg7:zeroToOneType" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of BlockingLevel                -->
+	<!-- ########################################################### -->
+	<!-- Definition of BlockingLevel -->
+	<complexType name="BlockingLevelType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="BlockEdgeIntensity">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of ChannelMisalignment                -->
+	<!-- ########################################################### -->
+	<!-- Definition of ChannelMisalignment -->
+	<complexType name="ChannelMisalignmentType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="HorizontalDisplacement" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+					<element name="VerticalDisplacement" minOccurs="0">
+						<complexType>
+							<attribute name="average" type="mpeg7:zeroToOneType" use="optional"/>
+							<attribute name="maximum" type="mpeg7:zeroToOneType" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of ColorRangeDefect                -->
+	<!-- ########################################################### -->
+	<!-- Definition of ColorRangeDefect -->
+	<complexType name="ColorRangeDefectType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="Channel" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="UsedRange" type="mpeg7:zeroToOneType" minOccurs="0"/>
+								<element name="SaturatedArea">
+									<complexType>
+										<attribute name="high" type="mpeg7:zeroToOneType" use="optional"/>
+										<attribute name="low" type="mpeg7:zeroToOneType" use="optional"/>
+									</complexType>
+								</element>
+							</sequence>
+							<attribute name="component" type="string"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of Upconversion                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of Upconversion -->
+	<complexType name="UpconversionType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="ChracteristicResolution">
+						<complexType>
+							<attribute name="width" type="nonNegativeInteger" />
+							<attribute name="height" type="nonNegativeInteger" />
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>	
+	<!-- ########################################################### -->
+	<!--  Definition of Video Breakup Defect                      -->
+	<!-- ########################################################### -->
+	<!-- Definition of Video Breakup Defect  -->
+	<complexType name="VideoBreakupDefectType">
+		<complexContent>
+			<extension base="psdq:VisualImpairmentType">
+				<sequence>
+					<element name="Area" type="mpeg7:zeroToOneType" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>		
+	<!-- ########################################################### -->
+	<!--  Audio Defects and Quality Measures                      -->
+	<!-- ########################################################### -->
+	<!-- ########################################################### -->
+	<!--  Definition of PitchShiftDefect                     -->
+	<!-- ########################################################### -->
+	<!-- Definition of PitchShiftDefect -->
+	<complexType name="PitchShiftDefectType">
+		<complexContent>
+			<extension base="mpeg7:ErrorEventType">
+				<sequence>
+					<element name="RelativeDetune" type="float"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ########################################################### -->
+	<!--  Definition of Wow/Flutter                     -->
+	<!-- ########################################################### -->
+	<!-- Definition of Wow/Flutter -->
+	<complexType name="WowFlutterDefectType">
+		<complexContent>
+			<extension base="mpeg7:ErrorEventType">
+				<sequence>
+					<element name="RelativeDetune">
+						<complexType>
+							<attribute name="mean" type="float" use="optional"/>
+							<attribute name="maximum" type="float" use="optional"/>
+							<attribute name="variation" type="float" use="optional"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

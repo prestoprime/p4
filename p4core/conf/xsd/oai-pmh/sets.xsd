@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/oaipmhset"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+           xmlns="http://www.prestoprime.eu/model/2012/oaipmhset"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <xs:element name="sets">
+		<xs:complexType>
+				<xs:sequence>
+					<xs:element name="set" type="set" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	
+		<xs:complexType name="set">
+			<xs:sequence>
+				<xs:element name="setspec" type="xs:string" minOccurs="1" />
+				<xs:element name="setname" type="xs:string" minOccurs="1" />
+				<xs:element name="setdescription" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+</xs:schema>

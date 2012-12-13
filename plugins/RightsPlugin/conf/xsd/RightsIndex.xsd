@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.crit.rai.it/prestoprime/rights/rightsindex"
+    xmlns="http://www.crit.rai.it/prestoprime/rights/rightsindex"
+    xmlns:ri="http://www.crit.rai.it/prestoprime/rights/rightsindex"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="20110729">
+    
+  <xsd:annotation>
+    <xsd:documentation>
+    This XML Schema was created by RAI-Radiotelevisione Italiana as the output of
+work done within the European Union funded project PrestoPRIME
+(project-number=IST-FP7-231161; www.prestoprime.eu) and is published
+under Creative Commons Attribution-ShareAlike 3.0 Unported license.
+    </xsd:documentation>   
+  </xsd:annotation>
+
+  <xsd:element name="RightsIndex">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ri:RightsInstance" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="created" type="xsd:dateTime"/>
+      <xsd:attribute name="modified" type="xsd:dateTime"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="RightsInstance">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Record" minOccurs="1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="RelatedIdentifier" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="AVname" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="Pname" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="Pdetails" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+            </xsd:sequence>
+           </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:ID"/>
+      <xsd:attribute name="created" type="xsd:dateTime"/>
+      <xsd:attribute name="modified" type="xsd:dateTime"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+</xsd:schema>

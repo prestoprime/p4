@@ -1,0 +1,2458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:ebu:metadata-cs:ISO3166CountryCodeCS_2008">
+   
+<!-- ##################################################################### 
+       ISO 3166 - COUNTRY  CODE                                                              
+       Definition: 
+       ##################################################################### -->
+
+      <!-- This reference data has been developed by EBU as an effort to propose an encoded representation of the corresponding ISO reference data.  
+      The conditions of use of these codes are ruled by the ISO (http://www.iso.org)-->
+
+   
+   <Alias>EBUIso3166CountryCode</Alias>
+
+   
+   <Term termID="AD">
+      <Name xml:lang="en">ANDORRA</Name>
+      <Name xml:lang="fr">ANDORRE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AE">
+      <Name xml:lang="en">UNITED ARAB EMIRATES</Name>
+      <Name xml:lang="fr">EMIRATS ARABES UNIS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AF">
+      <Name xml:lang="en">AFGHANISTAN</Name>
+      <Name xml:lang="fr">AFGHANISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AG">
+      <Name xml:lang="en">ANTIGUA AND BARBUDA</Name>
+      <Name xml:lang="fr">ANTIGUA-ET-BARBUDA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AI">
+      <Name xml:lang="en">ANGUILLA</Name>
+      <Name xml:lang="fr">ANGUILLA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AL">
+      <Name xml:lang="en">ALBANIA</Name>
+      <Name xml:lang="fr">ALBANIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AM">
+      <Name xml:lang="en">ARMENIA</Name>
+      <Name xml:lang="fr">ARMENIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AN">
+      <Name xml:lang="en">NETHERLANDS ANTILLES</Name>
+      <Name xml:lang="fr">ANTILLES NEERLANDAISES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AO">
+      <Name xml:lang="en">ANGOLA</Name>
+      <Name xml:lang="fr">ANGOLA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AQ">
+      <Name xml:lang="en">ANTARCTICA</Name>
+      <Name xml:lang="fr">ANTARCTIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AR">
+      <Name xml:lang="en">ARGENTINA</Name>
+      <Name xml:lang="fr">ARGENTINE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AS">
+      <Name xml:lang="en">AMERICAN SAMOA</Name>
+      <Name xml:lang="fr">SAMOA AMERICAINES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AT">
+      <Name xml:lang="en">AUSTRIA</Name>
+      <Name xml:lang="fr">AUTRICHE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AU">
+      <Name xml:lang="en">AUSTRALIA</Name>
+      <Name xml:lang="fr">AUSTRALIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AW">
+      <Name xml:lang="en">ARUBA</Name>
+      <Name xml:lang="fr">ARUBA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AX">
+      <Name xml:lang="en">ALAND ISLANDS</Name>
+      <Name xml:lang="fr">ALAND, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="AZ">
+      <Name xml:lang="en">AZERBAIJAN</Name>
+      <Name xml:lang="fr">AZERBAIDJAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BA">
+      <Name xml:lang="en">BOSNIA AND HERZEGOVINA</Name>
+      <Name xml:lang="fr">BOSNIE-HERZEGOVINE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BB">
+      <Name xml:lang="en">BARBADOS</Name>
+      <Name xml:lang="fr">BARBADE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BD">
+      <Name xml:lang="en">BANGLADESH</Name>
+      <Name xml:lang="fr">BANGLADESH</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BE">
+      <Name xml:lang="en">BELGIUM</Name>
+      <Name xml:lang="fr">BELGIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BF">
+      <Name xml:lang="en">BURKINA FASO</Name>
+      <Name xml:lang="fr">BURKINA FASO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BG">
+      <Name xml:lang="en">BULGARIA</Name>
+      <Name xml:lang="fr">BULGARIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BH">
+      <Name xml:lang="en">BAHRAIN</Name>
+      <Name xml:lang="fr">BAHREIN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BI">
+      <Name xml:lang="en">BURUNDI</Name>
+      <Name xml:lang="fr">BURUNDI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BJ">
+      <Name xml:lang="en">BENIN</Name>
+      <Name xml:lang="fr">BENIN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BM">
+      <Name xml:lang="en">BERMUDA</Name>
+      <Name xml:lang="fr">BERMUDES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BN">
+      <Name xml:lang="en">BRUNEI DARUSSALAM</Name>
+      <Name xml:lang="fr">BRUNEI DARUSSALAM</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BO">
+      <Name xml:lang="en">BOLIVIA</Name>
+      <Name xml:lang="fr">BOLIVIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BR">
+      <Name xml:lang="en">BRAZIL</Name>
+      <Name xml:lang="fr">BRESIL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BS">
+      <Name xml:lang="en">BAHAMAS</Name>
+      <Name xml:lang="fr">BAHAMAS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BT">
+      <Name xml:lang="en">BHUTAN</Name>
+      <Name xml:lang="fr">BHOUTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BV">
+      <Name xml:lang="en">BOUVET ISLAND</Name>
+      <Name xml:lang="fr">BOUVET, ILE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BW">
+      <Name xml:lang="en">BOTSWANA</Name>
+      <Name xml:lang="fr">BOTSWANA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BY">
+      <Name xml:lang="en">BELARUS</Name>
+      <Name xml:lang="fr">BELARUS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="BZ">
+      <Name xml:lang="en">BELIZE</Name>
+      <Name xml:lang="fr">BELIZE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CA">
+      <Name xml:lang="en">CANADA</Name>
+      <Name xml:lang="fr">CANADA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CC">
+      <Name xml:lang="en">COCOS (KEELING) ISLANDS</Name>
+      <Name xml:lang="fr">COCOS (KEELING), ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CD">
+      <Name xml:lang="en">CONGO,THE DEMOCRATIC REPUBLIC OF THE</Name>
+      <Name xml:lang="fr">CONGO, LA REPUBLIQUE DEMOCRATIQUE DU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CF">
+      <Name xml:lang="en">CENTRAL AFRICAN REPUBLIC</Name>
+      <Name xml:lang="fr">CENTRAFRICAINE, REPUBLIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CG">
+      <Name xml:lang="en">CONGO</Name>
+      <Name xml:lang="fr">CONGO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CH">
+      <Name xml:lang="en">SWITZERLAND</Name>
+      <Name xml:lang="fr">SUISSE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CI">
+      <Name xml:lang="en">COTE D'IVOIRE</Name>
+      <Name xml:lang="fr">COTE D'IVOIRE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CK">
+      <Name xml:lang="en">COOK ISLANDS</Name>
+      <Name xml:lang="fr">COOK, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CL">
+      <Name xml:lang="en">CHILE</Name>
+      <Name xml:lang="fr">CHILI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CM">
+      <Name xml:lang="en">CAMEROON</Name>
+      <Name xml:lang="fr">CAMEROUN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CN">
+      <Name xml:lang="en">CHINA</Name>
+      <Name xml:lang="fr">CHINE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CO">
+      <Name xml:lang="en">COLOMBIA</Name>
+      <Name xml:lang="fr">COLOMBIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CR">
+      <Name xml:lang="en">COSTARICA</Name>
+      <Name xml:lang="fr">COSTARICA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CU">
+      <Name xml:lang="en">CUBA</Name>
+      <Name xml:lang="fr">CUBA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CV">
+      <Name xml:lang="en">CAPEVERDE</Name>
+      <Name xml:lang="fr">CAP-VERT</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CX">
+      <Name xml:lang="en">CHRISTMAS ISLAND</Name>
+      <Name xml:lang="fr">CHRISTMAS, ILE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CY">
+      <Name xml:lang="en">CYPRUS</Name>
+      <Name xml:lang="fr">CHYPRE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="CZ">
+      <Name xml:lang="en">CZECH REPUBLIC</Name>
+      <Name xml:lang="fr">TCHEQUE, REPUBLIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DE">
+      <Name xml:lang="en">GERMANY</Name>
+      <Name xml:lang="fr">ALLEMAGNE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DJ">
+      <Name xml:lang="en">DJIBOUTI</Name>
+      <Name xml:lang="fr">DJIBOUTI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DK">
+      <Name xml:lang="en">DENMARK</Name>
+      <Name xml:lang="fr">DANEMARK</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DM">
+      <Name xml:lang="en">DOMINICA</Name>
+      <Name xml:lang="fr">DOMINIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DO">
+      <Name xml:lang="en">DOMINICAN REPUBLIC</Name>
+      <Name xml:lang="fr">DOMINICAINE, REPUBLIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="DZ">
+      <Name xml:lang="en">ALGERIA</Name>
+      <Name xml:lang="fr">ALGERIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="EC">
+      <Name xml:lang="en">ECUADOR</Name>
+      <Name xml:lang="fr">EQUATEUR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="EE">
+      <Name xml:lang="en">ESTONIA</Name>
+      <Name xml:lang="fr">ESTONIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="EG">
+      <Name xml:lang="en">EGYPT</Name>
+      <Name xml:lang="fr">EGYPTE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="EH">
+      <Name xml:lang="en">WESTERN SAHARA</Name>
+      <Name xml:lang="fr">SAHARA OCCIDENTAL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ER">
+      <Name xml:lang="en">ERITREA</Name>
+      <Name xml:lang="fr">ERYTHREE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ES">
+      <Name xml:lang="en">SPAIN</Name>
+      <Name xml:lang="fr">ESPAGNE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ET">
+      <Name xml:lang="en">ETHIOPIA</Name>
+      <Name xml:lang="fr">ETHIOPIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FI">
+      <Name xml:lang="en">FINLAND</Name>
+      <Name xml:lang="fr">FINLANDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FJ">
+      <Name xml:lang="en">FIJI</Name>
+      <Name xml:lang="fr">FIDJI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FK">
+      <Name xml:lang="en">FALKLAND ISLANDS (MALVINAS)</Name>
+      <Name xml:lang="fr">FALKLAND, ILES (MALVINAS)</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FM">
+      <Name xml:lang="en">MICRONESIA, FEDERATED STATES OF</Name>
+      <Name xml:lang="fr">MICRONESIE, ETATS FEDERES DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FO">
+      <Name xml:lang="en">FAROE ISLANDS</Name>
+      <Name xml:lang="fr">FEROE, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="FR">
+      <Name xml:lang="en">FRANCE</Name>
+      <Name xml:lang="fr">FRANCE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GA">
+      <Name xml:lang="en">GABON</Name>
+      <Name xml:lang="fr">GABON</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GB">
+      <Name xml:lang="en">UNITED KINGDOM</Name>
+      <Name xml:lang="fr">ROYAUME-UNI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GD">
+      <Name xml:lang="en">GRENADA</Name>
+      <Name xml:lang="fr">GRENADE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GE">
+      <Name xml:lang="en">GEORGIA</Name>
+      <Name xml:lang="fr">GEORGIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GF">
+      <Name xml:lang="en">FRENCH GUIANA</Name>
+      <Name xml:lang="fr">GUYANE FRAN�AISE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GG">
+      <Name xml:lang="en">GUERNSEY</Name>
+      <Name xml:lang="fr">GUERNESEY</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GH">
+      <Name xml:lang="en">GHANA</Name>
+      <Name xml:lang="fr">GHANA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GI">
+      <Name xml:lang="en">GIBRALTAR</Name>
+      <Name xml:lang="fr">GIBRALTAR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GL">
+      <Name xml:lang="en">GREENLAND</Name>
+      <Name xml:lang="fr">GROENLAND</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GM">
+      <Name xml:lang="en">GAMBIA</Name>
+      <Name xml:lang="fr">GAMBIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GN">
+      <Name xml:lang="en">GUINEA</Name>
+      <Name xml:lang="fr">GUINEE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GP">
+      <Name xml:lang="en">GUADELOUPE</Name>
+      <Name xml:lang="fr">GUADELOUPE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GQ">
+      <Name xml:lang="en">EQUATORIAL GUINEA</Name>
+      <Name xml:lang="fr">GUINEE EQUATORIALE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GR">
+      <Name xml:lang="en">GREECE</Name>
+      <Name xml:lang="fr">GRECE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GS">
+      <Name xml:lang="en">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</Name>
+      <Name xml:lang="fr">GEORGIE DU SUD ET LES ILES SANDWICH DU SUD</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GT">
+      <Name xml:lang="en">GUATEMALA</Name>
+      <Name xml:lang="fr">GUATEMALA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GU">
+      <Name xml:lang="en">GUAM</Name>
+      <Name xml:lang="fr">GUAM</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GW">
+      <Name xml:lang="en">GUINEA-BISSAU</Name>
+      <Name xml:lang="fr">GUINEE-BISSAU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="GY">
+      <Name xml:lang="en">GUYANA</Name>
+      <Name xml:lang="fr">GUYANA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HK">
+      <Name xml:lang="en">HONGKONG</Name>
+      <Name xml:lang="fr">HONG-KONG</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HM">
+      <Name xml:lang="en">HEARD ISLAND AND MCDONALD ISLANDS</Name>
+      <Name xml:lang="fr">HEARD,ILE ET MCDONALD, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HN">
+      <Name xml:lang="en">HONDURAS</Name>
+      <Name xml:lang="fr">HONDURAS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HR">
+      <Name xml:lang="en">CROATIA</Name>
+      <Name xml:lang="fr">CROATIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HT">
+      <Name xml:lang="en">HAITI</Name>
+      <Name xml:lang="fr">HAITI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="HU">
+      <Name xml:lang="en">HUNGARY</Name>
+      <Name xml:lang="fr">HONGRIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ID">
+      <Name xml:lang="en">INDONESIA</Name>
+      <Name xml:lang="fr">INDONESIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IE">
+      <Name xml:lang="en">IRELAND</Name>
+      <Name xml:lang="fr">IRLANDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IL">
+      <Name xml:lang="en">ISRAEL</Name>
+      <Name xml:lang="fr">ISRAEL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IM">
+      <Name xml:lang="en">ISLEOFMAN</Name>
+      <Name xml:lang="fr">ILEDEMAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IN">
+      <Name xml:lang="en">INDIA</Name>
+      <Name xml:lang="fr">INDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IO">
+      <Name xml:lang="en">BRITISH INDIAN OCEAN TERRITORY</Name>
+      <Name xml:lang="fr">OCEAN INDIEN,TERRITOIRE BRITANNIQUE DE L'</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IQ">
+      <Name xml:lang="en">IRAQ</Name>
+      <Name xml:lang="fr">IRAQ</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IR">
+      <Name xml:lang="en">IRAN, ISLAMIC REPUBLIC OF</Name>
+      <Name xml:lang="fr">IRAN, REPUBLIQUE ISLAMIQUE D'</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IS">
+      <Name xml:lang="en">ICELAND</Name>
+      <Name xml:lang="fr">ISLANDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="IT">
+      <Name xml:lang="en">ITALY</Name>
+      <Name xml:lang="fr">ITALIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="JE">
+      <Name xml:lang="en">JERSEY</Name>
+      <Name xml:lang="fr">JERSEY</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="JM">
+      <Name xml:lang="en">JAMAICA</Name>
+      <Name xml:lang="fr">JAMAIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="JO">
+      <Name xml:lang="en">JORDAN</Name>
+      <Name xml:lang="fr">JORDANIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="JP">
+      <Name xml:lang="en">JAPAN</Name>
+      <Name xml:lang="fr">JAPON</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KE">
+      <Name xml:lang="en">KENYA</Name>
+      <Name xml:lang="fr">KENYA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KG">
+      <Name xml:lang="en">KYRGYZSTAN</Name>
+      <Name xml:lang="fr">KIRGHIZISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KH">
+      <Name xml:lang="en">CAMBODIA</Name>
+      <Name xml:lang="fr">CAMBODGE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KI">
+      <Name xml:lang="en">KIRIBATI</Name>
+      <Name xml:lang="fr">KIRIBATI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KM">
+      <Name xml:lang="en">COMOROS</Name>
+      <Name xml:lang="fr">COMORES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KN">
+      <Name xml:lang="en">SAINT KITTS AND NEVIS</Name>
+      <Name xml:lang="fr">SAINT-KITTS-ET-NEVIS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KP">
+      <Name xml:lang="en">KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</Name>
+      <Name xml:lang="fr">COREE, REPUBLIQUE POPULAIRE DEMOCRATIQUE DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KR">
+      <Name xml:lang="en">KOREA, REPUBLIC OF</Name>
+      <Name xml:lang="fr">COREE, REPUBLIQUE DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KW">
+      <Name xml:lang="en">KUWAIT</Name>
+      <Name xml:lang="fr">KOWEIT</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KY">
+      <Name xml:lang="en">CAYMAN ISLANDS</Name>
+      <Name xml:lang="fr">CAIMANES, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="KZ">
+      <Name xml:lang="en">KAZAKHSTAN</Name>
+      <Name xml:lang="fr">KAZAKHSTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LA">
+      <Name xml:lang="en">LAO PEOPLE'S DEMOCRATIC REPUBLIC</Name>
+      <Name xml:lang="fr">LAO, REPUBLIQUE DEMOCRATIQUE POPULAIRE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LB">
+      <Name xml:lang="en">LEBANON</Name>
+      <Name xml:lang="fr">LIBAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LC">
+      <Name xml:lang="en">SAINT LUCIA</Name>
+      <Name xml:lang="fr">SAINTE-LUCIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LI">
+      <Name xml:lang="en">LIECHTENSTEIN</Name>
+      <Name xml:lang="fr">LIECHTENSTEIN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LK">
+      <Name xml:lang="en">SRI LANKA</Name>
+      <Name xml:lang="fr">SRI LANKA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LR">
+      <Name xml:lang="en">LIBERIA</Name>
+      <Name xml:lang="fr">LIBERIA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LS">
+      <Name xml:lang="en">LESOTHO</Name>
+      <Name xml:lang="fr">LESOTHO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LT">
+      <Name xml:lang="en">LITHUANIA</Name>
+      <Name xml:lang="fr">LITUANIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LU">
+      <Name xml:lang="en">LUXEMBOURG</Name>
+      <Name xml:lang="fr">LUXEMBOURG</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LV">
+      <Name xml:lang="en">LATVIA</Name>
+      <Name xml:lang="fr">LETTONIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="LY">
+      <Name xml:lang="en">LIBYAN ARABJAMAHIRIYA</Name>
+      <Name xml:lang="fr">LIBYENNE, JAMAHIRIYAARABE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MA">
+      <Name xml:lang="en">MOROCCO</Name>
+      <Name xml:lang="fr">MAROC</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MC">
+      <Name xml:lang="en">MONACO</Name>
+      <Name xml:lang="fr">MONACO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MD">
+      <Name xml:lang="en">MOLDOVA, REPUBLIC OF</Name>
+      <Name xml:lang="fr">MOLDOVA, REPUBLIQUE DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ME">
+      <Name xml:lang="en">MONTENEGRO</Name>
+      <Name xml:lang="fr">MONTENEGRO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MG">
+      <Name xml:lang="en">MADAGASCAR</Name>
+      <Name xml:lang="fr">MADAGASCAR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MH">
+      <Name xml:lang="en">MARSHALLISLANDS</Name>
+      <Name xml:lang="fr">MARSHALL, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MK">
+      <Name xml:lang="en">MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</Name>
+      <Name xml:lang="fr">MACEDOINE, L'EX-REPUBLIQUE YOUGOSLAVE DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ML">
+      <Name xml:lang="en">MALI</Name>
+      <Name xml:lang="fr">MALI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MM">
+      <Name xml:lang="en">MYANMAR</Name>
+      <Name xml:lang="fr">MYANMAR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MN">
+      <Name xml:lang="en">MONGOLIA</Name>
+      <Name xml:lang="fr">MONGOLIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MO">
+      <Name xml:lang="en">MACAO</Name>
+      <Name xml:lang="fr">MACAO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MP">
+      <Name xml:lang="en">NORTHERN MARIANA ISLANDS</Name>
+      <Name xml:lang="fr">MARIANNES DU NORD, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MQ">
+      <Name xml:lang="en">MARTINIQUE</Name>
+      <Name xml:lang="fr">MARTINIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MR">
+      <Name xml:lang="en">MAURITANIA</Name>
+      <Name xml:lang="fr">MAURITANIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MS">
+      <Name xml:lang="en">MONTSERRAT</Name>
+      <Name xml:lang="fr">MONTSERRAT</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MT">
+      <Name xml:lang="en">MALTA</Name>
+      <Name xml:lang="fr">MALTE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MU">
+      <Name xml:lang="en">MAURITIUS</Name>
+      <Name xml:lang="fr">MAURICE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MV">
+      <Name xml:lang="en">MALDIVES</Name>
+      <Name xml:lang="fr">MALDIVES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MW">
+      <Name xml:lang="en">MALAWI</Name>
+      <Name xml:lang="fr">MALAWI</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MX">
+      <Name xml:lang="en">MEXICO</Name>
+      <Name xml:lang="fr">MEXIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MY">
+      <Name xml:lang="en">MALAYSIA</Name>
+      <Name xml:lang="fr">MALAISIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="MZ">
+      <Name xml:lang="en">MOZAMBIQUE</Name>
+      <Name xml:lang="fr">MOZAMBIQUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NA">
+      <Name xml:lang="en">NAMIBIA</Name>
+      <Name xml:lang="fr">NAMIBIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NC">
+      <Name xml:lang="en">NEWCALEDONIA</Name>
+      <Name xml:lang="fr">NOUVELLE-CALEDONIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NE">
+      <Name xml:lang="en">NIGER</Name>
+      <Name xml:lang="fr">NIGER</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NF">
+      <Name xml:lang="en">NORFOLK ISLAND</Name>
+      <Name xml:lang="fr">NORFOLK, ILE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NG">
+      <Name xml:lang="en">NIGERIA</Name>
+      <Name xml:lang="fr">NIGERIA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NI">
+      <Name xml:lang="en">NICARAGUA</Name>
+      <Name xml:lang="fr">NICARAGUA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NL">
+      <Name xml:lang="en">NETHERLANDS</Name>
+      <Name xml:lang="fr">PAYS-BAS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NO">
+      <Name xml:lang="en">NORWAY</Name>
+      <Name xml:lang="fr">NORVEGE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NP">
+      <Name xml:lang="en">NEPAL</Name>
+      <Name xml:lang="fr">NEPAL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NR">
+      <Name xml:lang="en">NAURU</Name>
+      <Name xml:lang="fr">NAURU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NU">
+      <Name xml:lang="en">NIUE</Name>
+      <Name xml:lang="fr">NIUE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="NZ">
+      <Name xml:lang="en">NEW ZEALAND</Name>
+      <Name xml:lang="fr">NOUVELLE-ZELANDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="OM">
+      <Name xml:lang="en">OMAN</Name>
+      <Name xml:lang="fr">OMAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PA">
+      <Name xml:lang="en">PANAMA</Name>
+      <Name xml:lang="fr">PANAMA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PE">
+      <Name xml:lang="en">PERU</Name>
+      <Name xml:lang="fr">PEROU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PF">
+      <Name xml:lang="en">FRENCH POLYNESIA</Name>
+      <Name xml:lang="fr">POLYNESIE FRAN�AISE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PG">
+      <Name xml:lang="en">PAPUA NEW GUINEA</Name>
+      <Name xml:lang="fr">PAPOUASIE-NOUVELLE-GUINEE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PH">
+      <Name xml:lang="en">PHILIPPINES</Name>
+      <Name xml:lang="fr">PHILIPPINES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PK">
+      <Name xml:lang="en">PAKISTAN</Name>
+      <Name xml:lang="fr">PAKISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PL">
+      <Name xml:lang="en">POLAND</Name>
+      <Name xml:lang="fr">POLOGNE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PM">
+      <Name xml:lang="en">SAINT PIERRE AND MIQUELON</Name>
+      <Name xml:lang="fr">SAINT-PIERRE-ET-MIQUELON</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PN">
+      <Name xml:lang="en">PITCAIRN</Name>
+      <Name xml:lang="fr">PITCAIRN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PR">
+      <Name xml:lang="en">PUERTORICO</Name>
+      <Name xml:lang="fr">PORTORICO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PS">
+      <Name xml:lang="en">PALESTINIAN TERRITORY, OCCUPIED</Name>
+      <Name xml:lang="fr">PALESTINIEN OCCUPE,TERRITOIRE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PT">
+      <Name xml:lang="en">PORTUGAL</Name>
+      <Name xml:lang="fr">PORTUGAL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PW">
+      <Name xml:lang="en">PALAU</Name>
+      <Name xml:lang="fr">PALAOS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="PY">
+      <Name xml:lang="en">PARAGUAY</Name>
+      <Name xml:lang="fr">PARAGUAY</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="QA">
+      <Name xml:lang="en">QATAR</Name>
+      <Name xml:lang="fr">QATAR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="RE">
+      <Name xml:lang="en">REUNION</Name>
+      <Name xml:lang="fr">REUNION</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="RO">
+      <Name xml:lang="en">ROMANIA</Name>
+      <Name xml:lang="fr">ROUMANIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="RS">
+      <Name xml:lang="en">SERBIA</Name>
+      <Name xml:lang="fr">SERBIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="RU">
+      <Name xml:lang="en">RUSSIAN FEDERATION</Name>
+      <Name xml:lang="fr">RUSSIE, FEDERATION DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="RW">
+      <Name xml:lang="en">RWANDA</Name>
+      <Name xml:lang="fr">RWANDA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SA">
+      <Name xml:lang="en">SAUDIARABIA</Name>
+      <Name xml:lang="fr">ARABIE SAOUDITE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SB">
+      <Name xml:lang="en">SOLOMON ISLANDS</Name>
+      <Name xml:lang="fr">SALOMON, ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SC">
+      <Name xml:lang="en">SEYCHELLES</Name>
+      <Name xml:lang="fr">SEYCHELLES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SD">
+      <Name xml:lang="en">SUDAN</Name>
+      <Name xml:lang="fr">SOUDAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SE">
+      <Name xml:lang="en">SWEDEN</Name>
+      <Name xml:lang="fr">SUEDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SG">
+      <Name xml:lang="en">SINGAPORE</Name>
+      <Name xml:lang="fr">SINGAPOUR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SH">
+      <Name xml:lang="en">SAINTHELENA</Name>
+      <Name xml:lang="fr">SAINTE-HELENE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SI">
+      <Name xml:lang="en">SLOVENIA</Name>
+      <Name xml:lang="fr">SLOVENIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SJ">
+      <Name xml:lang="en">SVALBARD AND JANMAYEN</Name>
+      <Name xml:lang="fr">SVALBARD ET ILE JANMAYEN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SK">
+      <Name xml:lang="en">SLOVAKIA</Name>
+      <Name xml:lang="fr">SLOVAQUIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SL">
+      <Name xml:lang="en">SIERRA LEONE</Name>
+      <Name xml:lang="fr">SIERRA LEONE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SM">
+      <Name xml:lang="en">SAN MARINO</Name>
+      <Name xml:lang="fr">SAINT-MARIN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SN">
+      <Name xml:lang="en">SENEGAL</Name>
+      <Name xml:lang="fr">SENEGAL</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SO">
+      <Name xml:lang="en">SOMALIA</Name>
+      <Name xml:lang="fr">SOMALIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SR">
+      <Name xml:lang="en">SURINAME</Name>
+      <Name xml:lang="fr">SURINAME</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ST">
+      <Name xml:lang="en">SAOTOME AND PRINCIPE</Name>
+      <Name xml:lang="fr">SAOTOME-ET-PRINCIPE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SV">
+      <Name xml:lang="en">EL SALVADOR</Name>
+      <Name xml:lang="fr">EL SALVADOR</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SY">
+      <Name xml:lang="en">SYRIAN ARAB REPUBLIC</Name>
+      <Name xml:lang="fr">SYRIENNE, REPUBLIQUE ARABE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="SZ">
+      <Name xml:lang="en">SWAZILAND</Name>
+      <Name xml:lang="fr">SWAZILAND</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TC">
+      <Name xml:lang="en">TURKS AND CAICOS ISLANDS</Name>
+      <Name xml:lang="fr">TURKS ET CAIQUES,ILES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TD">
+      <Name xml:lang="en">CHAD</Name>
+      <Name xml:lang="fr">TCHAD</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TF">
+      <Name xml:lang="en">FRENCH SOUTHERN TERRITORIES</Name>
+      <Name xml:lang="fr">TERRES AUSTRALES FRAN�AISES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TG">
+      <Name xml:lang="en">TOGO</Name>
+      <Name xml:lang="fr">TOGO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TH">
+      <Name xml:lang="en">THAILAND</Name>
+      <Name xml:lang="fr">THAILANDE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TJ">
+      <Name xml:lang="en">TAJIKISTAN</Name>
+      <Name xml:lang="fr">TADJIKISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TK">
+      <Name xml:lang="en">TOKELAU</Name>
+      <Name xml:lang="fr">TOKELAU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TL">
+      <Name xml:lang="en">TIMOR-LESTE</Name>
+      <Name xml:lang="fr">TIMOR-LESTE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TM">
+      <Name xml:lang="en">TURKMENISTAN</Name>
+      <Name xml:lang="fr">TURKMENISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TN">
+      <Name xml:lang="en">TUNISIA</Name>
+      <Name xml:lang="fr">TUNISIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TO">
+      <Name xml:lang="en">TONGA</Name>
+      <Name xml:lang="fr">TONGA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TR">
+      <Name xml:lang="en">TURKEY</Name>
+      <Name xml:lang="fr">TURQUIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TT">
+      <Name xml:lang="en">TRINIDAD AND TOBAGO</Name>
+      <Name xml:lang="fr">TRINITE-ET-TOBAGO</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TV">
+      <Name xml:lang="en">TUVALU</Name>
+      <Name xml:lang="fr">TUVALU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TW">
+      <Name xml:lang="en">TAIWAN, PROVINCE OF CHINA</Name>
+      <Name xml:lang="fr">TAIWAN, PROVINCE DE CHINE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="TZ">
+      <Name xml:lang="en">TANZANIA, UNITED REPUBLIC OF</Name>
+      <Name xml:lang="fr">TANZANIE, REPUBLIQUE-UNIE DE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="UA">
+      <Name xml:lang="en">UKRAINE</Name>
+      <Name xml:lang="fr">UKRAINE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="UG">
+      <Name xml:lang="en">UGANDA</Name>
+      <Name xml:lang="fr">OUGANDA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="UM">
+      <Name xml:lang="en">UNITED STATES MINOR OUTLYING ISLANDS</Name>
+      <Name xml:lang="fr">ILES MINEURES ELOIGNEES DES ETATS-UNIS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="US">
+      <Name xml:lang="en">UNITED STATES</Name>
+      <Name xml:lang="fr">ETATS-UNIS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="UY">
+      <Name xml:lang="en">URUGUAY</Name>
+      <Name xml:lang="fr">URUGUAY</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="UZ">
+      <Name xml:lang="en">UZBEKISTAN</Name>
+      <Name xml:lang="fr">OUZBEKISTAN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VA">
+      <Name xml:lang="en">HOLY SEE (VATICAN CITY STATE)</Name>
+      <Name xml:lang="fr">SAINT-SIEGE (ETAT DE LA CITE DU VATICAN)</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VC">
+      <Name xml:lang="en">SAINT VINCENT AND THE GRENADINES</Name>
+      <Name xml:lang="fr">SAINT-VINCENT-ET-LES-GRENADINES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VE">
+      <Name xml:lang="en">VENEZUELA</Name>
+      <Name xml:lang="fr">VENEZUELA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VG">
+      <Name xml:lang="en">VIRGIN ISLANDS, BRITISH</Name>
+      <Name xml:lang="fr">ILES VIERGES BRITANNIQUES</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VI">
+      <Name xml:lang="en">VIRGIN ISLANDS, U.S.</Name>
+      <Name xml:lang="fr">ILES VIERGES DES ETATS-UNIS</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VN">
+      <Name xml:lang="en">VIETNAM</Name>
+      <Name xml:lang="fr">VIETNAM</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="VU">
+      <Name xml:lang="en">VANUATU</Name>
+      <Name xml:lang="fr">VANUATU</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="WF">
+      <Name xml:lang="en">WALLIS AND FUTUNA</Name>
+      <Name xml:lang="fr">WALLIS ET FUTUNA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="WS">
+      <Name xml:lang="en">SAMOA</Name>
+      <Name xml:lang="fr">SAMOA</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="YE">
+      <Name xml:lang="en">YEMEN</Name>
+      <Name xml:lang="fr">YEMEN</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="YT">
+      <Name xml:lang="en">MAYOTTE</Name>
+      <Name xml:lang="fr">MAYOTTE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ZA">
+      <Name xml:lang="en">SOUTH AFRICA</Name>
+      <Name xml:lang="fr">AFRIQUE DU SUD</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ZM">
+      <Name xml:lang="en">ZAMBIA</Name>
+      <Name xml:lang="fr">ZAMBIE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+   
+   <Term termID="ZW">
+      <Name xml:lang="en">ZIMBABWE</Name>
+      <Name xml:lang="fr">ZIMBABWE</Name>
+      <Reference>ISO 3166-1</Reference>
+      <ChangeComment>First version after conversion of P/META into XML. First version date is version date from ISO</ChangeComment>
+      <ChangeVersionDate>2007-04-12</ChangeVersionDate>
+      <FirstVersiondate>2007-04-12</FirstVersiondate>
+      <ValidityFlag>1</ValidityFlag>
+   </Term>
+
+
+
+</ClassificationScheme>

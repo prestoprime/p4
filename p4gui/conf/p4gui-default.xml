@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>p4gui properties</comment>
+	<entry key="gui.version">2.1.2</entry>
+	<entry key="derby.home">/opt/p4/p4guidb</entry>
+	<entry key="mail.server">62.152.112.34</entry>
+	<entry key="mail.address">p4admin@eurixgroup.com</entry>
+</properties>

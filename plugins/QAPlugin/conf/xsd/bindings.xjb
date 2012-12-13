@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:globalBindings>
+    	<xjc:serializable uid="1" />
+  	</jaxb:globalBindings>
+ 			
+    <!-- MPEG-7 AVDP Schema Bindings-->
+    <jaxb:bindings schemaLocation="mpeg7-avdp.xsd" node="/xs:schema">
+        <!-- Creates the classes into a custom package -->
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.prestoprime.model.ext.qa"/>
+        </jaxb:schemaBindings>
+     </jaxb:bindings>
+	
+     <!-- MPEG-7 Visual Descriptor Quality Assessment Schema Bindings-->
+     <jaxb:bindings schemaLocation="prestospace-vdqa.xsd" node="/xs:schema">
+         <!-- Creates the classes into a custom package -->
+         <jaxb:schemaBindings>
+             <jaxb:package name="eu.prestoprime.model.ext.qa"/>
+         </jaxb:schemaBindings>
+     </jaxb:bindings>
+	
+</jaxb:bindings>

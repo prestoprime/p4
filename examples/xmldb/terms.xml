@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p4service xmlns="http://www.prestoprime.eu/model/2012/terms" id="p4.eurixgroup.com">
+ <terms role="consumer">
+
+&lt;p&gt;
+By using this instance of P4, you will get access to sample test materials, provided by partners of PrestoPRIME , which are intended for testing the platform only. P4 is not a publication or a distribution medium of those audio-visual materials. 
+&lt;/p&gt;
+
+&lt;p&gt;
+For activating your account you have to explicitly accept the general terms on test materials included in the Consortium Agreement and also the terms specifically requested by the project partners for their samples. Please refer to Section VII.2 of the Consortium Agreement and to the additional terms of use for each partner listed below.
+&lt;/p&gt;
+
+&lt;p&gt;
+You will be responsible for your account and you will not let other persons to use your account.
+&lt;/p&gt;
+
+&lt;p&gt;
+In order to associate each AV sample file to the appropriate content provider and hence to the related terms of use, the following notation has been adopted for naming the AV files:
+&lt;/p&gt;
+
+&lt;i style="margin-left: 20px;"&gt;PrestoPRIME_[provider]_[id].[extension]&lt;/i&gt;
+
+&lt;p&gt;
+where [provider] is the short name of the partner organization that provided the sample,&lt;/li&gt;
+
+&lt;hr width="80%"/&gt;
+
+&lt;p&gt;
+&lt;h3&gt;
+TERMS OF USE FOR AUDIO VIDEO MATERIAL SAMPLES PROVIDED BY RAI&lt;br/&gt;
+RADIOTELEVISIONE ITALIANA (RAI) TO PARTNERS OF FP7-ICT-2007-3 231161 (PrestoPRIME)
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;The use of any portion of material samples implies the acceptance of these terms of use.&lt;/li&gt;
+&lt;li&gt;RAI keeps all rights reserved. The use of the material samples is granted with the limitations given by these terms of use.&lt;/li&gt;
+&lt;li&gt;The material samples are provided exclusively for testing activities within the project PrestoPRIME project. Any use outside of the context of PrestoPRIME is not granted.&lt;/li&gt;
+&lt;li&gt;You may present the original material samples or any derivative material only in publication events officially organised or permitted by the project PrestoPRIME any you have to attribute to RAI the credit about providing the original material samples. You may not present or publish the material samples and any derivative material in any other context.&lt;/li&gt;
+&lt;li&gt;You may not use the material samples and any derivative material for commercial purpose.&lt;/li&gt;
+&lt;li&gt;The material samples can be copied and distributed among the members of the project PrestoPRIME provided that you make clear to other these terms of use.&lt;/li&gt;
+&lt;li&gt;As a result of the testing activities and processes you may derive from the original material samples other material samples in any format is deemed useful for the objective of the project PrestoPRIME.&lt;/li&gt;
+&lt;li&gt;Any of these conditions may be waived if you get permission from RAI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+</terms>
+    <terms role="producer">
+
+&lt;p&gt;
+By using this instance of P4, you will get access to sample test materials, provided by partners of PrestoPRIME , which are intended for testing the platform only. P4 is not a publication or a distribution medium of those audio-visual materials. For activating your account you have to explicitly accept the general terms on test materials included in the Consortium Agreement and also the terms specifically requested by the project partners for their samples. The PrestoPRIME Consortium Agreement is available at https://prestoprimews.ina.fr/workpackages/wp1_mngt/contract/PrestoPRIME_CA_final.pdf, the additional terms of use for each partner are listed below.
+&lt;/p&gt;
+
+&lt;p&gt;
+You will be responsible for your account and you will not let other persons to use your account.
+&lt;/p&gt;
+
+&lt;p&gt;
+In order to associate each AV sample file to the appropriate content provider and hence to the related terms of use, the following notation has been adopted for naming the AV files:
+&lt;/p&gt;
+
+&lt;i&gt;PrestoPRIME_[provider]_[info].[extension]&lt;/i&gt;
+
+&lt;p&gt;
+where:
+&lt;ul&gt;
+&lt;li&gt;[provider] is the short name of the partner organization that provided the sample,&lt;/li&gt;
+&lt;li&gt;[info] contains an identifier in the provider sample set and could optionally contain information about the AV file format (wrapper, codec, etc),&lt;/li&gt;
+&lt;li&gt;[extension] provides information about the wrapper (tipically "application/mxf", although other formats could be supported).&lt;/li&gt;
+&lt;/ul&gt;
+For example file "PrestoPRIME_RAI_007.mxf" has been provided by RAI - Radiotelevisione Italiana and is sample file "007" in a specific material sample set provided by RAI.
+&lt;/p&gt;
+
+&lt;hr width="80%"/&gt;
+
+&lt;p&gt;
+&lt;h3&gt;
+TERMS OF USE FOR AUDIO VIDEO MATERIAL SAMPLES PROVIDED BY RAI&lt;br/&gt;
+RADIOTELEVISIONE ITALIANA (RAI) TO PARTNERS OF FP7-ICT-2007-3 231161 (PrestoPRIME)
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;The use of any portion of material samples implies the acceptance of these terms of use.&lt;/li&gt;
+&lt;li&gt;RAI keeps all rights reserved. The use of the material samples is granted with the limitations given by these terms of use.&lt;/li&gt;
+&lt;li&gt;The material samples are provided exclusively for testing activities within the project PrestoPRIME project. Any use outside of the context of PrestoPRIME is not granted.&lt;/li&gt;
+&lt;li&gt;You may present the original material samples or any derivative material only in publication events officially organised or permitted by the project PrestoPRIME any you have to attribute to RAI the credit about providing the original material samples. You may not present or publish the material samples and any derivative material in any other context.&lt;/li&gt;
+&lt;li&gt;You may not use the material samples and any derivative material for commercial purpose.&lt;/li&gt;
+&lt;li&gt;The material samples can be copied and distributed among the members of the project PrestoPRIME provided that you make clear to other these terms of use.&lt;/li&gt;
+&lt;li&gt;As a result of the testing activities and processes you may derive from the original material samples other material samples in any format is deemed useful for the objective of the project PrestoPRIME.&lt;/li&gt;
+&lt;li&gt;Any of these conditions may be waived if you get permission from RAI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+</terms>
+    <terms role="admin">
+&lt;p&gt;
+By using this instance of P4, you will get access to sample test materials, provided by partners of PrestoPRIME , which are intended for testing the platform only. P4 is not a publication or a distribution medium of those audio-visual materials. For activating your account you have to explicitly accept the general terms on test materials included in the Consortium Agreement and also the terms specifically requested by the project partners for their samples. The PrestoPRIME Consortium Agreement is available at https://prestoprimews.ina.fr/workpackages/wp1_mngt/contract/PrestoPRIME_CA_final.pdf, the additional terms of use for each partner are listed below.
+&lt;/p&gt;
+
+&lt;p&gt;
+You will be responsible for your account and you will not let other persons to use your account.
+&lt;/p&gt;
+
+&lt;p&gt;
+In order to associate each AV sample file to the appropriate content provider and hence to the related terms of use, the following notation has been adopted for naming the AV files:
+&lt;/p&gt;
+
+&lt;i&gt;PrestoPRIME_[provider]_[info].[extension]&lt;/i&gt;
+
+&lt;p&gt;
+where:
+&lt;ul&gt;
+&lt;li&gt;[provider] is the short name of the partner organization that provided the sample,&lt;/li&gt;
+&lt;li&gt;[info] contains an identifier in the provider sample set and could optionally contain information about the AV file format (wrapper, codec, etc),&lt;/li&gt;
+&lt;li&gt;[extension] provides information about the wrapper (tipically "application/mxf", although other formats could be supported).&lt;/li&gt;
+&lt;/ul&gt;
+For example file "PrestoPRIME_RAI_007.mxf" has been provided by RAI - Radiotelevisione Italiana and is sample file "007" in a specific material sample set provided by RAI.
+&lt;/p&gt;
+
+&lt;hr width="80%"/&gt;
+
+&lt;p&gt;
+&lt;h3&gt;
+TERMS OF USE FOR AUDIO VIDEO MATERIAL SAMPLES PROVIDED BY RAI&lt;br/&gt;
+RADIOTELEVISIONE ITALIANA (RAI) TO PARTNERS OF FP7-ICT-2007-3 231161 (PrestoPRIME)
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;The use of any portion of material samples implies the acceptance of these terms of use.&lt;/li&gt;
+&lt;li&gt;RAI keeps all rights reserved. The use of the material samples is granted with the limitations given by these terms of use.&lt;/li&gt;
+&lt;li&gt;The material samples are provided exclusively for testing activities within the project PrestoPRIME project. Any use outside of the context of PrestoPRIME is not granted.&lt;/li&gt;
+&lt;li&gt;You may present the original material samples or any derivative material only in publication events officially organised or permitted by the project PrestoPRIME any you have to attribute to RAI the credit about providing the original material samples. You may not present or publish the material samples and any derivative material in any other context.&lt;/li&gt;
+&lt;li&gt;You may not use the material samples and any derivative material for commercial purpose.&lt;/li&gt;
+&lt;li&gt;The material samples can be copied and distributed among the members of the project PrestoPRIME provided that you make clear to other these terms of use.&lt;/li&gt;
+&lt;li&gt;As a result of the testing activities and processes you may derive from the original material samples other material samples in any format is deemed useful for the objective of the project PrestoPRIME.&lt;/li&gt;
+&lt;li&gt;Any of these conditions may be waived if you get permission from RAI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+</terms>
+</p4service>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sets>
+  <set>
+  	<spec>fp7:pprime</spec>
+  	<name>PrestoPRIME</name>
+  </set>
+  <set>
+    <spec>fp6:sapir</spec>
+    <name>SAPIR</name>
+  </set>
+  <set>
+    <spec>poloict:salc</spec>
+    <name>SALC</name>
+  </set>
+  <set>
+    <spec>potovr:adam</spec>
+    <name>ADAM</name>
+  </set>
+  <set>
+    <spec>towireless:tspr</spec>
+    <name>TSPR</name>
+  </set>
+</sets>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:globalBindings>
+    	<xjc:serializable uid="1" />
+  	</jaxb:globalBindings>
+
+	 <!-- OAI-PMH EPrints Schema Bindings -->
+	<jaxb:bindings schemaLocation="eprints-patched.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>	
+	
+	 <!-- OAI-PMH Friends Schema Bindings -->
+	<jaxb:bindings schemaLocation="friends-patched.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<!-- OAI-PMH oai-identifier Schema Bindings -->
+	<jaxb:bindings schemaLocation="identifier-patched.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<!-- OAI-PMH Identify Schema Bindings -->
+	<jaxb:bindings schemaLocation="identify.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>	
+
+	<!-- OAI-PMH Schema Bindings -->
+	<jaxb:bindings schemaLocation="OAI-PMH-patched.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+		
+    <!-- OAI-PMH Sets Schema Bindings -->
+	<jaxb:bindings schemaLocation="sets.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.oaipmh"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>	
+	
+</jaxb:bindings>

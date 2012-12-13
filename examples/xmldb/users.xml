@@ -1,0 +1,3 @@
+<users:users xmlns:dt="http://www.prestoprime.eu/model/2012/datatypes" xmlns:users="http://www.prestoprime.eu/model/2012/users" xmlns:tools="http://www.prestoprime.eu/model/2012/tools" xmlns:terms="http://www.prestoprime.eu/model/2012/terms" xmlns:ns6="http://www.prestoprime.eu/model/2012/search" xmlns:wf="http://www.prestoprime.eu/model/2012/wf">
+	<users:user id="pprime" role="superadmin" />
+</users:users>

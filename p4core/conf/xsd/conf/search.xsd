@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/search"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"  
+           xmlns="http://www.prestoprime.eu/model/2012/search"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+	<xs:element name="searchResults">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="errorMessage" type="xs:string"/>
+				<xs:element name="params">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="query" type="xs:string">
+<!-- 								<xs:complexType> -->
+<!-- 									<xs:choice> -->
+<!-- 										<xs:element name="allfields" type="xs:string"/> -->
+<!-- 										<xs:sequence> -->
+<!-- 											<xs:element name="creator" type="xs:string"/> -->
+<!-- 											<xs:element name="title" type="xs:string"/> -->
+<!-- 											<xs:element name="publisher" type="xs:string"/> -->
+<!-- 											<xs:element name="fromDate" type="xs:string"/> -->
+<!-- 											<xs:element name="toDate" type="xs:string"/> -->
+<!-- 											<xs:element name="identifier" type="xs:string"/> -->
+<!-- 											<xs:element name="format" type="xs:string"/> -->
+<!-- 											<xs:element name="description" type="xs:string"/> -->
+<!-- 											<xs:element name="createDate" type="xs:string"/> -->
+<!-- 											<xs:element name="userAnnot" type="xs:string"/> -->
+<!-- 										</xs:sequence> -->
+<!-- 									</xs:choice> -->
+<!-- 								</xs:complexType> -->
+							</xs:element>
+							<xs:element name="from" type="xs:unsignedInt"/>
+							<xs:element name="resultCount" type="xs:unsignedInt"/>
+							<xs:element name="sortField" type="xs:string"/>
+							<xs:element name="sortAscending" type="xs:boolean"/>
+							<xs:element name="selectedFacets">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="selectedFacet">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string"/>
+												</xs:sequence>
+												<xs:attribute name="facetName" type="xs:string" use="required"/>
+												<xs:attribute name="filterQuery" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hits">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="hit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="title" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="creator" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="date" type="xs:string"/> <!-- type="xs:date"/>  -->
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="publisher" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="description" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="format" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="identifier" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="language" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="subject" type="xs:string"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="userAnnot" type="xs:string"/>
+										</xs:sequence>
+										<xs:element name="aspectRat" type="xs:string"/>
+										<xs:element name="width" type="xs:int"/>
+										<xs:element name="height" type="xs:int"/>
+										<xs:element name="resolution" type="xs:string"/>
+										<xs:element name="codec" type="xs:string"/>
+										<xs:element name="duration" type="xs:float"/>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required"/>
+									<xs:attribute name="pos" type="xs:string" use="required"/>
+									<xs:attribute name="createDate" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="total" type="xs:unsignedInt" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="facets">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="facet" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="value">
+											<xs:complexType>
+												<xs:attribute name="term" type="xs:string" use="required"/>
+												<xs:attribute name="count" type="xs:unsignedInt" use="required"/>
+												<xs:attribute name="filterQuery" type="xs:string" use="required"/>
+												<xs:attribute name="selected" type="xs:boolean" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="facetName"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

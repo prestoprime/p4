@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0">
+
+  <info organisation="exist" module="exist" revision="20110815"/>
+  
+  <configurations>
+    <conf name="default"/>
+  </configurations>
+  
+  <publications>
+    <artifact type="jar" ext="jar" conf="default"/>
+  </publications>
+
+  <dependencies>
+        <dependency org="org.apache.xmlrpc" name="xmlrpc-client" rev="3.1.2"/>
+        <dependency org="org.apache.xmlrpc" name="xmlrpc-common" rev="3.1.2"/>
+        <dependency org="org.apache.ws.commons.util" name="ws-commons-util" rev="1.0.2"/>
+        <dependency org="xmldb" name="xmldb-api" rev="20110815"/>
+  </dependencies>
+  
+</ivy-module>

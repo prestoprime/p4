@@ -1,0 +1,35 @@
+#admin {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.admin_icon {
+	display: inline-table;
+	margin: 10px;
+	width: 140px;
+	text-align: center;
+	cursor: pointer;
+}
+.admin_block .admin_block {
+	display: block;
+}
+.admin_icon:HOVER > div {
+	visibility: visible;
+}
+.admin_icon img {
+	height: 80px;
+}
+.admin_icon > div {
+	float: none;
+	visibility: hidden;
+	margin-top: 20px;
+	background-color: yellow;
+}
+.admin_icon > div > div {
+	margin: 0px;
+	padding: 0px;
+}
+.admin_menu {
+	
+}

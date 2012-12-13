@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0">
+
+  <info organisation="xmldb" module="xmldb-api" revision="20110815"/>
+  
+  <configurations>
+    <conf name="default"/>
+  </configurations>
+  
+  <publications>
+    <artifact type="jar" ext="jar" conf="default"/>
+  </publications>
+  
+</ivy-module>

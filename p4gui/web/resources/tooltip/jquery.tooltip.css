@@ -1,0 +1,196 @@
+#et {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0px;
+	width: 100%;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.et {
+	display: block;
+	position: absolute;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 0.5em 1em;
+
+	border-width: 2px;
+	border-style: solid;
+
+	box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.et:before, .et:after {
+	width: 0px;
+	height: 0px;
+	display: block;
+	position: absolute;
+	content: '';
+	border-style: solid;
+	top: auto;
+	left: auto;
+	bottom: auto;
+	right: auto;
+}
+
+.et.etTop, .et.etBottom {
+	min-width: 30px;
+}
+.et.etLeft, .et.etRight {
+	min-height: 30px;
+}
+.et.etBottom {
+	margin-top: 15px;
+}
+.et.etTop {
+	margin-bottom: 15px;
+}
+
+/* NESTED TOOLTIPS INSIDE CLOSED TOOLTIP */
+.etNested {
+	/* display: none !important; */
+}
+
+/* CONTROLS */
+.etClose {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	right: -0px;
+	top: -0px;
+	font-family: arial, tahoma;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 20px;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+}
+.et:hover .etClose, .et:active .etClose, .et:focus .etClose {
+	display: block;
+}
+
+/* OFFSETS */
+.et.etBottom:before, .et.etTop:before {margin-left: -15px;}
+.et.etBottom:after, .et.etTop:after {margin-left: -12px;}
+.et.etBottom.etEnd:before, .et.etTop.etEnd:before {margin-right: -15px;}
+.et.etBottom.etEnd:after, .et.etTop.etEnd:after {margin-right: -12px;}
+
+.et.etRight:before, .et.etLeft:before {margin-top: -15px;}
+.et.etRight:after, .et.etLeft:after {margin-top: -12px;}
+.et.etRight.etEnd:before, .et.etLeft.etEnd:before {margin-bottom: -15px;}
+.et.etRight.etEnd:after, .et.etLeft.etEnd:after {margin-bottom: -12px;}
+
+/*** ALIGN ***/
+
+/* Center*/
+.et.etBottom.etCenter:before, .et.etBottom.etCenter:after, .et.etTop.etCenter:before, .et.etTop.etCenter:after {left: 50%;}
+.et.etLeft.etCenter:before, .et.etLeft.etCenter:after, .et.etRight.etCenter:before, .et.etRight.etCenter:after {top: 50%;}
+
+/* Start */
+.et.etBottom.etStart:before, .et.etBottom.etStart:after, .et.etTop.etStart:before, .et.etTop.etStart:after {left: 23px;}
+.et.etLeft.etStart:before, .et.etLeft.etStart:after, .et.etRight.etStart:before, .et.etRight.etStart:after {top: 23px;}
+
+/* End */
+.et.etBottom.etEnd:before, .et.etBottom.etEnd:after, .et.etTop.etEnd:before, .et.etTop.etEnd:after {right: 23px;}
+.et.etLeft.etEnd:before, .et.etLeft.etEnd:after, .et.etRight.etEnd:before, .et.etRight.etEnd:after {bottom: 23px;}
+
+/*** POSITIONS ***/
+
+/* Bottom */
+.et.etBottom:before {top: -15px; border-width: 0px 15px 15px 15px; }
+.et.etBottom:after {top: -12px; border-width: 0px 12px 12px 12px; }
+
+/* Top */
+.et.etTop:before {bottom: -15px; border-width: 15px 15px 0px 15px; }
+.et.etTop:after {bottom: -12px; border-width: 12px 12px 0px 12px; }
+
+/* Left */
+.et.etLeft:before {right: -15px; border-width: 15px 0px 15px 15px; }
+.et.etLeft:after {right: -12px; border-width: 12px 0px 12px 12px; }
+
+/* Right */
+.et.etRight:before {left: -15px; border-width: 15px 15px 15px 0px; }
+.et.etRight:after {left: -12px; border-width: 12px 12px 12px 0px; }
+
+/*** FXs ***/
+.etFadeFx.etOff {
+	-moz-transform: scale(0.0);
+	-webkit-transform: scale(0.0);
+	-ms-transform: scale(0.0);
+	-o-transform: scale(0.0);
+	transform: scale(0.0);
+
+	-webkit-transition: -webkit-transform 0.24s ease-in-out;
+	-moz-transition: -moz-transform 0.24s ease-in-out;
+	-o-transition: -o-transform 0.24s ease-in-out;
+	-ms-transition: -ms-transform 0.24s ease-in-out;
+	transition: transform 0.24s ease-in-out;
+}
+.etFadeFx.etOn {
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+
+	-webkit-transition: -webkit-transform 0.24s ease-in-out;
+	-moz-transition: -moz-transform 0.24s ease-in-out;
+	-o-transition: -o-transform 0.24s ease-in-out;
+	-ms-transition: -ms-transform 0.24s ease-in-out;
+	transition: transform 0.24s ease-in-out;
+}
+
+/*** COLORS ***/
+
+/* dark */
+.et.dark { opacity: 0.9; background-color: #000; border-color: #555; color: white; }
+.et.dark a {color: gray;}
+.et.dark:before { border-color: #555 transparent; }
+.et.dark:after {border-color: #000 transparent; }
+.et.dark.etLeft:before, .et.dark.etRight:before { border-color: transparent #555; }
+.et.dark.etLeft:after, .et.dark.etRight:after {border-color: transparent #000; }
+
+/* yellow */
+.et.yellow { opacity: 0.9; background-color: #FFFF6B; border-color: #959500; color: black; }
+.et.yellow a {color: blue;}
+.et.yellow:before { border-color: #959500 transparent; }
+.et.yellow:after {border-color: #FFFF6B transparent; }
+.et.yellow.etLeft:before, .et.yellow.etRight:before { border-color: transparent #959500; }
+.et.yellow.etLeft:after, .et.yellow.etRight:after {border-color: transparent #FFFF6B; }
+
+/* blue */
+.et.blue { opacity: 0.9; background-color: #D9F1FB; border-color: #7FCDEE; color: black; }
+.et.blue a {color: blue;}
+.et.blue:before { border-color: #7FCDEE transparent; }
+.et.blue:after {border-color: #D9F1FB transparent; }
+.et.blue.etLeft:before, .et.blue.etRight:before { border-color: transparent #7FCDEE; }
+.et.blue.etLeft:after, .et.blue.etRight:after {border-color: transparent #D9F1FB; }
+
+/* sand */
+.et.sand { opacity: 0.9; background-color: #F9F2BA; border-color: #E9D315; color: black; }
+/* .et.sand a {color: blue;} */
+.et.sand:before { border-color: #E9D315 transparent; }
+.et.sand:after {border-color: #F9F2BA transparent; }
+.et.sand.etLeft:before, .et.sand.etRight:before { border-color: transparent #E9D315; }
+.et.sand.etLeft:after, .et.sand.etRight:after {border-color: transparent #F9F2BA; }
+
+/* green */
+.et.green { opacity: 0.9; background-color: #F2FDF1; border-color: #B6E184; color: black; }
+.et.green a {color: blue;}
+.et.green:before { border-color: #B6E184 transparent; }
+.et.green:after {border-color: #F2FDF1 transparent; }
+.et.green.etLeft:before, .et.green.etRight:before { border-color: transparent #B6E184; }
+.et.green.etLeft:after, .et.green.etRight:after {border-color: transparent #F2FDF1; }
+
+/* red */
+.et.red { opacity: 0.9; background-color: #CC2226; border-color: #8F2A0F; color: white; }
+.et.red a {color: #EEE;}
+.et.red:before { border-color: #8F2A0F transparent; }
+.et.red:after {border-color: #CC2226 transparent; }
+.et.red.etLeft:before, .et.red.etRight:before { border-color: transparent #8F2A0F; }
+.et.red.etLeft:after, .et.red.etRight:after {border-color: transparent #CC2226; }

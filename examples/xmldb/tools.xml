@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tools xmlns="http://www.prestoprime.eu/model/2012/tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.prestoprime.eu/2012/tools tools.xsd">
+	<tool>
+		<name>FFMPEG</name>
+		<executable os.name="Linux">/usr/bin/ffmpeg</executable>
+	</tool>
+	<tool>
+		<name>FFMBC</name>
+		<executable os.name="Linux">/opt/p4/tools/bin/ffmbc</executable>
+	</tool>
+	<tool>
+		<name>FFPROBE</name>
+		<executable os.name="Linux">/usr/bin/ffprobe</executable>
+	</tool>
+	<tool>
+		<name>FFMPEG2THEORA</name>
+		<executable os.name="Linux">/usr/bin/ffmpeg2theora</executable>
+	</tool>
+	<tool>
+		<name>D10SUMCHECKER</name>
+		<executable os.name="Linux">/opt/p4/tools/bin/d10sumchecker</executable>
+		<dynlib os.name="Linux">/opt/p4/tools/bin/libd10sumchecker.so</dynlib>
+	</tool>
+	<tool>
+		<name>XSLTPROC</name>
+		<executable os.name="Linux">/usr/bin/xsltproc</executable>
+	</tool>
+	<tool>
+		<name>DOT</name>
+		<executable os.name="Linux">/usr/bin/dot</executable>
+	</tool>
+</tools>

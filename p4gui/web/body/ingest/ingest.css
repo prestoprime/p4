@@ -1,0 +1,52 @@
+#ingest_panel_container {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	text-align: center;
+}
+#ingest_identifier_alert img {
+	width: 40px;
+	position: absolute;
+}
+
+.preview_title {
+	position: fixed;
+	left: 30px;
+	top: 120px;
+	text-align: right;	
+}
+.preview_display {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	width: 900px;
+	overflow-x: hidden;
+}
+.sip_preview_img {
+	position: fixed;
+	left: 60px;
+	top: 40px;
+}
+.sip_preview_img_float {
+	left: 60px;
+	top: 40px;
+}
+#sip_preview_loader {
+	height: 40px;
+	margin: 20px;
+}
+#sip_submit_button {
+	height: 80px;
+	cursor: pointer; 
+}
+.sip_error_display {
+	display:none;
+	width: 33%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	background-color: #CC2900;
+	padding : 10px;
+	border-radius: 5px;
+
+}

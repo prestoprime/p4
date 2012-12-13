@@ -1,0 +1,17 @@
+#preview {
+	float: left;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	margin: 5px 5px 5px 0 ;
+}
+
+#test_jnlp {
+	position: fixed;
+	top: 50px;
+	left: 380px;
+	display: none;
+}
+#preview:HOVER #test_jnlp {
+	display: inline;
+}

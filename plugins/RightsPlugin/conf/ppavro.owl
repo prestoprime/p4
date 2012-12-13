@@ -1,0 +1,1319 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.prestoprime.eu/2010/ppavro.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     ontologyIRI="http://www.prestoprime.eu/2010/ppavro.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl</Import>
+    <Import>http://purl.oclc.org/NET/mvco.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&xsd;string">Extension of the MVCO for audiovisual contracts</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Adaptation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Copy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Distribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Fact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Instance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeAdaptation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeCopy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeInstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#PublicCommunication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BroadcastTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Broadcasting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicationToThePublic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeliveryModality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Duplicate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Excerpt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExploitIPRights"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExploitationCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExploitationConstraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FactComposition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FactIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FactUnion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fixate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FreeOfCharge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IPNetwork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Internet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Limited"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Linear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakeCutAndEdit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakeExcerpt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Means"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileBroadcastDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileBroadcastTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileTelecommunicationDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileTelecommunicationTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonLinear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnDemandBasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnDemandDownload"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnDemandStreaming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Open"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PayPerView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicPerformance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RTSimultaneous"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Radio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restricted"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Run"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Satellite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceAccessPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Simulcasting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Simultaneous"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Subscription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TelevisionDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TelevisionSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Terrestrial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeShifting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unlimited"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserTimeAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Videogram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Webcasting"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFact"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#afterDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#beforeDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLanguage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberOfRuns"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReceiptPercentage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSublicenseRight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUsePercentage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#inCountry"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isExclusive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#permissionProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AccessPolicy"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Distribute"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BroadcastTechnology"/>
+        <Class IRI="#Means"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Broadcasting"/>
+        <Class IRI="#Linear"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cable"/>
+        <Class IRI="#BroadcastTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationToThePublic"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#PublicCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationToThePublic"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Computer"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeliveryModality"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Duplicate"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeCopy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Duplicate"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Excerpt"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Adaptation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExploitIPRights"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExploitationCondition"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExploitationConstraint"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FactComposition"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FactIntersection"/>
+        <Class IRI="#FactComposition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FactUnion"/>
+        <Class IRI="#FactComposition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fixate"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeInstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fixate"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FreeOfCharge"/>
+        <Class IRI="#AccessPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IPNetwork"/>
+        <Class IRI="#BroadcastTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Internet"/>
+        <Class IRI="#Means"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Language"/>
+        <Class IRI="#ExploitationConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Limited"/>
+        <Class IRI="#UserTimeAccess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Linear"/>
+        <Class IRI="#DeliveryModality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakeCutAndEdit"/>
+        <Class IRI="#Transform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakeExcerpt"/>
+        <Class IRI="#Transform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Means"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileBroadcastDevice"/>
+        <Class IRI="#MobileDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileBroadcastDevice"/>
+        <Class IRI="#TelevisionDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileBroadcastTechnology"/>
+        <Class IRI="#BroadcastTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileBroadcastTechnology"/>
+        <Class IRI="#MobileTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileTechnology"/>
+        <Class IRI="#Means"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileTelecommunicationDevice"/>
+        <Class IRI="#MobileDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileTelecommunicationTechnology"/>
+        <Class IRI="#MobileTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonLinear"/>
+        <Class IRI="#DeliveryModality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnDemandBasis"/>
+        <Class IRI="#NonLinear"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnDemandDownload"/>
+        <Class IRI="#OnDemandBasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnDemandStreaming"/>
+        <Class IRI="#NonLinear"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Open"/>
+        <Class IRI="#ServiceAccessPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pay"/>
+        <Class IRI="#AccessPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PayPerView"/>
+        <Class IRI="#Pay"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicPerformance"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#PublicCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicPerformance"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RTSimultaneous"/>
+        <Class IRI="#Simultaneous"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Radio"/>
+        <Class IRI="#Means"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restricted"/>
+        <Class IRI="#ServiceAccessPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Run"/>
+        <Class IRI="#ExploitationConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite"/>
+        <Class IRI="#BroadcastTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServiceAccessPolicy"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Simulcasting"/>
+        <Class IRI="#Simultaneous"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Simultaneous"/>
+        <Class IRI="#Linear"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialContext"/>
+        <Class IRI="#ExploitationConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subscription"/>
+        <Class IRI="#Pay"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TelevisionDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TelevisionSet"/>
+        <Class IRI="#TelevisionDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalContext"/>
+        <Class IRI="#ExploitationConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Terrestrial"/>
+        <Class IRI="#BroadcastTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeShifting"/>
+        <Class IRI="#Linear"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transform"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#MakeAdaptation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transform"/>
+        <Class IRI="#ExploitIPRights"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unlimited"/>
+        <Class IRI="#UserTimeAccess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserTimeAccess"/>
+        <Class IRI="#ExploitationCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Videogram"/>
+        <Class IRI="#Means"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Webcasting"/>
+        <Class IRI="#Linear"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFact"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFact"/>
+        <Class IRI="#FactComposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFact"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Fact"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#afterDate"/>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#beforeDate"/>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLanguage"/>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasNumberOfRuns"/>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasReceiptPercentage"/>
+        <DataProperty IRI="#permissionProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSublicenseRight"/>
+        <DataProperty IRI="#permissionProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUsePercentage"/>
+        <DataProperty IRI="#permissionProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#inCountry"/>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isExclusive"/>
+        <DataProperty IRI="#hasUsePercentage"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#afterDate"/>
+        <Class IRI="#TemporalContext"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#beforeDate"/>
+        <Class IRI="#TemporalContext"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLanguage"/>
+        <Class IRI="#Language"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNumberOfRuns"/>
+        <Class IRI="#Run"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReceiptPercentage"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSublicenseRight"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUsePercentage"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#inCountry"/>
+        <Class IRI="#SpatialContext"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isExclusive"/>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#afterDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#beforeDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLanguage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNumberOfRuns"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReceiptPercentage"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSublicenseRight"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUsePercentage"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#inCountry"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isExclusive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="owl:factProperty"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccessPolicy</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the access policy (either free of charge or upon payment) to an IPEntity by a end user, as managed by the media provider. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AccessPolicy</IRI>
+        <Literal datatypeIRI="&xsd;string">AccessPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AudiovisualDistribute</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of distributing copies of the original work (book, illustration, photograph, movie, tv program, record, software ,etc.) to the public by sale, lease or rental</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AudiovisualDistribute</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of distributing copies of the original work (book, illustration, photograph, movie, tv program, record, software ,etc.) to the public by sale, lease or rental.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BroadcastTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to a point-to-multipoint technology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BroadcastTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">BroadcastTechnology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Broadcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the Linear delivery of audiovisual content via BroadcastDeliveryTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Broadcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Broadcasting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cable</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any BroadcastTechnology which makes use of co-axial and/or fibre optic cable for direct reception by a TelevisionSet. It does not include DSL or other Internet or Ip-based networks.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Cable</IRI>
+        <Literal datatypeIRI="&xsd;string">Cable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CommunicationToThePublic</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of communicating by electronic transmission being the provider and public in different places</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CommunicationToThePublic</IRI>
+        <Literal datatypeIRI="&xsd;string">CommunicationToThePublic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Computer</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any computer equipment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Computer</IRI>
+        <Literal datatypeIRI="&xsd;string">Computer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DeliveryModality</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the way the content is delivered to the end user, according to the control over the selection of the contents and over their organization in a chronological schedule (Linear) or in a catalogue (Non-Linear).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DeliveryModality</IRI>
+        <Literal datatypeIRI="&xsd;string">DeliveryModality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Device</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the type of equipment which can be used by the User to execute a certain Action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Device</IRI>
+        <Literal datatypeIRI="&xsd;string">Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Duplicate</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of duplicating the physical materials (including preprint materials, internegatives, interpositives, prints, soundtrack and still photos) in any medium now or hereafter known for the purpose of fully exploiting the Distribution rights.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Excerpt</IRI>
+        <Literal datatypeIRI="&xsd;string">Fragment of a Work.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExploitationCondition</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact used as a restriction on the use of the exploitation rights on an IP Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExploitationCondition</IRI>
+        <Literal datatypeIRI="&xsd;string">ExploitationCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExploitationConstraint</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact used as a spatial and temporal restriction on the exploitation rights on an IP Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExploitationConstraint</IRI>
+        <Literal datatypeIRI="&xsd;string">ExploitationConstraint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FactComposition</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact whose truth is determined by the logical combination of two other Facts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FactComposition</IRI>
+        <Literal datatypeIRI="&xsd;string">FactComposition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FactIntersection</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact asserted as true when two other Facts are true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FactIntersection</IRI>
+        <Literal datatypeIRI="&xsd;string">FactIntersection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FactUnion</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact asserted as true when either one or both of other Facts are true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FactUnion</IRI>
+        <Literal datatypeIRI="&xsd;string">FactUnion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fixate</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of fixing the oral works and/or performances on a material support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FreeOfCharge</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing that no payment is required to execute an Action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FreeOfCharge</IRI>
+        <Literal datatypeIRI="&xsd;string">FreeOfCharge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IPNetwork</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any BroadcastTechnology which makes use of a DSL (including ADSL) or Ip-based network, excluding Internet.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IPNetwork</IRI>
+        <Literal datatypeIRI="&xsd;string">IPNetwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Internet</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to TCP/IP software protocols or any equivalent protocol.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Internet</IRI>
+        <Literal datatypeIRI="&xsd;string">Internet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Language</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the language of a certain IP Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Language</IRI>
+        <Literal datatypeIRI="&xsd;string">Language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Limited</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing a limited availability over time of the content for the access by the end user (e.g rental). </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Limited</IRI>
+        <Literal datatypeIRI="&xsd;string">Limited</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Linear</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the simultaneous delivery of audiovisual contents by a media service provider to many end users, on the basis of a programme schedule.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Linear</IRI>
+        <Literal datatypeIRI="&xsd;string">Linear</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MakeCutAndEdit</IRI>
+        <Literal datatypeIRI="&xsd;string">MakeCutAndEdit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MakeExcerpt</IRI>
+        <Literal datatypeIRI="&xsd;string">The Action of making an Excerpt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Means</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the technology used for the transmission of a audiovisual content to end users.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Means</IRI>
+        <Literal datatypeIRI="&xsd;string">Means</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileBroadcastDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any MobileDevice capable of receiving transmissions by means of MobileBroadcastTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileBroadcastDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileBroadcastDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileBroadcastTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any technology which is both MobileTechnology and BroadcastTechnology (e.g. Digital Video Broadcasting-Handheld (DVB-H); Digital Audio Broadcasting (DAB); Digital Multimedia Broadcasting Terrestrial (DMB-T); Digital Multimedia Broadcasting-Satellite (DMB-S) ).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileBroadcastTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileBroadcastTechnology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any portable equipment capable of receiving transmissions while the user is in motion, made by means of a MobileTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any technology which enables reception while the user is in motion for viewing a MobileDevice.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileTechnology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileTelecommunicationDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any MobileDevice capable of receiving transmissions by means of MobileTelecommunicationTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileTelecommunicationDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileTelecommunicationDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileTelecommunicationTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any MobileTechnology which is not a BroadcastTechnology (e.g. Global System for Mobile Communications (GSM), Code Division Multiple Access (CDMA); Universal Mobile Telecommunications System (UMTS)).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileTelecommunicationTechnology</IRI>
+        <Literal datatypeIRI="&xsd;string">MobileTelecommunicationTechnology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NonLinear</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the delivery of audiovisual contents by a media service provider
+for the view at the moment chosen by the end user and at his individual request on the basis of a catalogue of programmes selected by the media service provider.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NonLinear</IRI>
+        <Literal datatypeIRI="&xsd;string">NonLinear</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnDemandBasis</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the NonLinear delivery of content at a time specified by the end user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnDemandBasis</IRI>
+        <Literal datatypeIRI="&xsd;string">OnDemandBasis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnDemandDownload</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the NonLinear delivery of content with the possibility of storing it into a local system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnDemandStreaming</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the NonLinear delivery of contents by streaming modality via Internet or telecommunications technology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnDemandStreaming</IRI>
+        <Literal datatypeIRI="&xsd;string">OnDemandStreaming</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Open</IRI>
+        <Literal datatypeIRI="&xsd;string">Service Access Policy according to which the service is provided to all consumers without the need for approval by the service provider. This condition is independent from the policy of access that could be free of charge or pay.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Open</IRI>
+        <Literal datatypeIRI="&xsd;string">Open</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pay</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing that a payment in any form is required to execute an Action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Pay</IRI>
+        <Literal datatypeIRI="&xsd;string">Pay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PayPerView</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing that the execution of an Action requires the payment by the final user on a per-exhibition basis.  Audio-visual contents are delivered at a time scheduled by the service provider, by continuous exhibition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PayPerView</IRI>
+        <Literal datatypeIRI="&xsd;string">PayPerView</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PublicPerformance</IRI>
+        <Literal datatypeIRI="&xsd;string">In the context of audiovisual exploitation, the Action of making a public exhibition (performing, showing and playing the work in public), being the provider and the public in the same place, i.e., Theater and Cinema exhibition. To present or execute a work in a place open to the public or at a place where a substantial number of persons outside of a normal circle of a family are gathered a indoor or outdoor environment to which members of the public are given access either for an admission fee or free of charge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PublicPerformance</IRI>
+        <Literal datatypeIRI="&xsd;string">PublicPerformance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <IRI>#PublicPerformance</IRI>
+        <Literal datatypeIRI="&xsd;string">1.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RTSimultaneous</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the Simultaneous delivery of the content via BroadcastDeliveryTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RTSimultaneous</IRI>
+        <Literal datatypeIRI="&xsd;string">RTSimultaneous</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Radio</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any ..................................</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Radio</IRI>
+        <Literal datatypeIRI="&xsd;string">Radio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Restricted</IRI>
+        <Literal datatypeIRI="&xsd;string">Service Access Policy according to which the service is provided only to customers who have obtained an approval by the service provider. The restricted policy service access is often linked to the concept of subscription (payment of service) but free forms of restricted access are possible.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Restricted</IRI>
+        <Literal datatypeIRI="&xsd;string">Restricted</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Run</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact asserting the number of the times an Action can be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Run</IRI>
+        <Literal datatypeIRI="&xsd;string">Run</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Satellite</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any BroadcastTechnology which makes use of a geostationary satellite system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Satellite</IRI>
+        <Literal datatypeIRI="&xsd;string">Satellite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServiceAccessPolicy</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the service access policy (either open or restricted) to an IPEntity by the end user, as managed by the media provider. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ServiceAccessPolicy</IRI>
+        <Literal datatypeIRI="&xsd;string">ServiceAccessPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Simulcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the Simultaneous delivery of the content via Internet or MobileTelecommunicationTechnology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Simulcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Simulcasting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Simultaneous</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the delivery of the audiovisual content simultaneously and unmodified with respect to the television broadcast of the same content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Simultaneous</IRI>
+        <Literal datatypeIRI="&xsd;string">Simultaneous</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpatialContext</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the location where an Action can be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StorageDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any device with storage capabilities, allowing the user to keep and reuse the content saved locally.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StorageDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">StorageDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Subscription</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing that the execution of an Action requires the payment of a subscription fee by the final user. Audio-visual contents are streamed or downloaded.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Subscription</IRI>
+        <Literal datatypeIRI="&xsd;string">Subscription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TelevisionDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any equipment with television functionalities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TelevisionDevice</IRI>
+        <Literal datatypeIRI="&xsd;string">TelevisionDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TelevisionSet</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Device to any TelvisionDevice, excluding MobileBroadcastDevice.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TelevisionSet</IRI>
+        <Literal datatypeIRI="&xsd;string">TelevisionSet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemporalContext</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the time period when an Action can be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Terrestrial</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any BroadcastTechnology which makes use of a terrestrial television transmitter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Terrestrial</IRI>
+        <Literal datatypeIRI="&xsd;string">Terrestrial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TimeShifting</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the delivery of the same audiovisual content by multiple regularly time-staggered trasmissions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimeShifting</IRI>
+        <Literal datatypeIRI="&xsd;string">TimeShifting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Unlimited</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact expressing unlimited availability over time of the content for the access by the end user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Unlimited</IRI>
+        <Literal datatypeIRI="&xsd;string">Unlimited</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserTimeAccess</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the temporal limitation to content availability on the access by the end user. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UserTimeAccess</IRI>
+        <Literal datatypeIRI="&xsd;string">UserTimeAccess</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Videogram</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact restricting the Means to any form of videocassettes, cartridges, tape, video discs, laser discs, any form of DVD, DVD ROM, internet access ready DVDs, CDi, CD-ROM, UMD, VCD or any other format.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Videogram</IRI>
+        <Literal datatypeIRI="&xsd;string">Videogram</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Webcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Fact describing the delivery of audio-visual contents by streaming modality via Internet.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Webcasting</IRI>
+        <Literal datatypeIRI="&xsd;string">Webcasting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFact</IRI>
+        <Literal datatypeIRI="&xsd;string">Relation between a FactComposition and each of its component Facts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFact</IRI>
+        <Literal datatypeIRI="&xsd;string">hasFact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasNumberOfRuns</IRI>
+        <Literal datatypeIRI="&xsd;string">hasNumberOfRuns</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasReceiptPercentage</IRI>
+        <Literal datatypeIRI="&xsd;string">hasReceiptPercentage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSublicenseRight</IRI>
+        <Literal datatypeIRI="&xsd;string">hasSublicenseRight</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasUsePercentage</IRI>
+        <Literal datatypeIRI="&xsd;string">hasUsePercentage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isExclusive</IRI>
+        <Literal datatypeIRI="&xsd;string">isExclusive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#permissionProperty</IRI>
+        <Literal datatypeIRI="&xsd;string">Boolean value attributable to a Permission</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>owl:factProperty</AbbreviatedIRI>
+        <Literal datatypeIRI="&xsd;string">Boolean value attributable to a Fact</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1451) http://owlapi.sourceforge.net -->
+

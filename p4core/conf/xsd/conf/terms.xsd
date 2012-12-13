@@ -1,0 +1,33 @@
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/terms"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"  
+           xmlns="http://www.prestoprime.eu/model/2012/terms"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+<xs:element name="p4service">
+ <xs:complexType>
+ 	<xs:complexContent>
+ 		<xs:extension base="service">
+ 			<xs:attribute name="id" type="xs:string"/>
+ 			
+ 		</xs:extension>
+ 	</xs:complexContent>
+ </xs:complexType>
+</xs:element>
+
+<xs:complexType name="service">
+		<xs:sequence>
+			<xs:element name="terms" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="role" type="xs:string" />
+						</xs:extension>
+					</xs:simpleContent>		
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

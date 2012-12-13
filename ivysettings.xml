@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivysettings>
+	<property name="ivy.repo.dir" value="${basedir}/dependencies" />
+
+	<settings defaultResolver="resolvers-chain" />
+	<resolvers>
+		<chain name="resolvers-chain">
+			<ibiblio name="ibiblio-resolver" m2compatible="true" usepoms="false" />
+		</chain>
+		<filesystem name="local-resolver">
+			<ivy pattern="${ivy.repo.dir}/[organisation]/[module]/[revision]/ivy-[revision].xml" />
+			<artifact pattern="${ivy.repo.dir}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+		</filesystem>
+	</resolvers>
+	<modules>
+		<module organisation="exist" name="exist" resolver="local-resolver" />
+		<module organisation="org.irods.jargon" name="jargon-core" resolver="local-resolver" />
+		<module organisation="xmldb" name="xmldb-api" resolver="local-resolver"/>
+	</modules>
+</ivysettings>

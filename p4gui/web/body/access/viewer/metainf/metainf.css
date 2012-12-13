@@ -1,0 +1,10 @@
+#metainf {
+	float: left;
+	width: 780px;
+	height: 340px;
+	overflow: auto;
+	margin: 0 5px 0 0;
+}
+.metainf_panel {
+	position: relative;
+}

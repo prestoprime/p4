@@ -1,0 +1,32 @@
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/users"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"  
+           xmlns="http://www.prestoprime.eu/model/2012/users"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+<xs:element name="users">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="user" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="service" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="key" type="xs:string" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="id" use="required" type="xs:string" />
+					<xs:attribute name="role" use="required" type="xs:string" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

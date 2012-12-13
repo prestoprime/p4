@@ -1,0 +1,31 @@
+.Utility {
+	color: black;
+}	
+.NodeName {
+	font-weight: bold;
+	color: #800080;	
+}
+.AttributeName {
+	font-weight: bold;
+	color: black;
+}
+.AttributeValue {
+	color: blue;
+}
+.NodeValue {
+	color: black;
+}
+.Element {
+	border-left: thin dotted #20A386;
+	padding-left: 2px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+.Clickable {	
+	font-weight: 900;
+	font-size: large;
+	color: #800080;	
+	cursor: pointer;
+	vertical-align: middle;
+	margin: 0 2px 0 2px;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/datatypes"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+           xmlns="http://www.prestoprime.eu/model/2012/datatypes"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+                      
+<xs:element name="datatypes">		
+<xs:complexType>
+      <xs:sequence>
+         <xs:element type="datatype" name="datatype" maxOccurs="unbounded"/>
+	  </xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="datatype">
+   		<xs:sequence>
+   			<xs:element type="xs:string" name="name" minOccurs="1"/>
+      		<xs:element type="xs:string" name="multiple" minOccurs="1"/>
+      		<xs:element type="section" name="section" minOccurs="1"/>
+      		<xs:element type="ref" name="ref" minOccurs="1"/>
+      	</xs:sequence>
+</xs:complexType>
+<xs:complexType name="section">
+      <xs:sequence>
+      	<xs:element name="type" type="xs:string" minOccurs="1"/>
+      	<xs:element name="id" type="xs:string" minOccurs="1"/>
+      	<xs:element name="status" type="xs:string" minOccurs="1"/>
+      </xs:sequence>  
+</xs:complexType>
+<xs:complexType name="ref">
+      <xs:sequence>
+      	<xs:element name="label" type="xs:string" minOccurs="1"/>
+      	<xs:element name="mdtype" type="xs:string" minOccurs="1"/>
+      	<xs:element name="othermdtype" type="xs:string" minOccurs="1"/>
+      </xs:sequence>     
+</xs:complexType>
+</xs:schema>
+
+
+	
+
+				
+					

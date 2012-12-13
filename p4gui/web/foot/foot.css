@@ -1,0 +1,88 @@
+#foot_container div {
+	margin: 5px;
+	float: left;
+}
+
+#presto_logo {
+	width: 100px;
+}
+#foot_menu {
+	padding-left: 200px;
+}
+#copyright {
+	position: absolute;
+	top: 70px;
+	right: 20px;
+}
+#eurix_logo {
+	position: absolute;
+	top: 0px;
+	right: 50px;
+	width: 100px;
+}
+
+.foot_item {
+	position: relative;
+	top: 55px;
+	width: 70px;
+	height: 100px;
+	margin-left: 5px;
+	border: 5px solid #F48438;
+	padding: 5px 5px 0px 5px;
+	float: left;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+}
+.foot_item span span {
+	display: block;
+	padding: 5px;
+}
+.foot_item span b {
+	display: block;
+	font-family: "Arial";
+	font-size: 60px;
+}
+.foot_item:HOVER {
+	top: 0px;
+}
+#foot_item1 {
+	background-color: #FF0099;
+}
+#foot_item2 {
+	background-color: #99CC00;
+}
+#foot_item3 {
+	background-color: #FF3300;
+}
+#foot_item4 {
+	background-color: #3399FF;
+}
+#foot_item5 {
+	background-color: #FFB300;
+}
+#foot_item6 {
+	background-color: #DD6600;
+}
+#foot_item1 span span {
+	background-color: #CC007A;
+}
+#foot_item2 span span {
+	background-color: #7AA300;
+}
+#foot_item3 span span {
+	background-color: #CC2900;
+}
+#foot_item4 span span {
+	background-color: #297ACC;
+}
+#foot_item5 span span {
+	background-color: #CC8F00;
+}
+#foot_item6 span span {
+	background-color: #BB4A10;
+}

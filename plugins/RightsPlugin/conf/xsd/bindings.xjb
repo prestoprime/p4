@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:globalBindings>
+    	<xjc:serializable uid="1" />
+  	</jaxb:globalBindings>
+  	
+	<!-- Rights Model Schema Bindings -->
+	<jaxb:bindings schemaLocation="RightsModel.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.ext.rights"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+    <!-- Rights Index Schema Bindings -->
+     <jaxb:bindings schemaLocation="RightsIndex.xsd" node="/xs:schema">
+                <!-- Creates the classes into a custom package -->
+                <jaxb:schemaBindings>
+                        <jaxb:package name="eu.prestoprime.model.ext.rights"/>
+                </jaxb:schemaBindings>
+        </jaxb:bindings>
+
+	<!-- Rights Query Schema Bindings -->
+	<jaxb:bindings schemaLocation="RightsQuery.xsd" node="/xs:schema">
+		<!-- Creates the classes into a custom package -->
+		<jaxb:schemaBindings>
+			<jaxb:package name="eu.prestoprime.model.ext.rights"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>			
+			
+</jaxb:bindings>

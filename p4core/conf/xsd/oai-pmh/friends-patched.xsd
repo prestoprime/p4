@@ -1,0 +1,23 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:friends="http://www.openarchives.org/OAI/2.0/friends/"
+  targetNamespace="http://www.openarchives.org/OAI/2.0/friends/"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      Schema for description section of Identify reply, for repositories 
+      that list "friends" (confederate data providers). 2002. 
+      Validated at http://www.w3.org/2001/03/webdata/xsv on 03-24-2002.
+    </documentation>
+  </annotation>
+
+  <element name="friends">
+  <complexType>
+    <sequence>
+     <element name="baseURL" minOccurs="0" maxOccurs="unbounded" type="anyURI"/>
+    </sequence>
+  </complexType>
+  </element>
+
+</schema>

@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerAdmin p4admin@prestoprime.eu
+  
+        ServerName p4.prestoprime.eu
+
+        RewriteEngine On
+        RewriteCond %{HTTPS} off
+        RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=302,NE,L]
+</VirtualHost>

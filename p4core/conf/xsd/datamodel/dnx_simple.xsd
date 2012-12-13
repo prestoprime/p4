@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.prestoprime.eu/model/2012/dnx" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://www.prestoprime.eu/model/2012/dnx" 
+           elementFormDefault="qualified"
+	       attributeFormDefault="unqualified">
+    
+	<xs:element name="dnx">
+		<xs:complexType>
+	    	<xs:sequence>
+	    	<xs:element name="aipId" type="xs:string" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="metsMdSecId" type="xs:string"
+					minOccurs="1" maxOccurs="1" />
+	      		<xs:element name="section" type="section" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="section">
+	    	<xs:sequence>
+	      		<xs:element name="record" type="record" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+        	<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="record">
+		<xs:sequence>
+			<xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded" />								
+		</xs:sequence>	
+	</xs:complexType>
+
+
+	<xs:complexType name="key">
+      	   <xs:simpleContent>
+         	<xs:extension base="xs:string">
+            		<xs:attribute name="id" type="xs:string" use="required"/>
+         	</xs:extension>
+      	</xs:simpleContent>
+   	</xs:complexType>
+	
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://www.prestoprime.eu/xsd/rightsquery"
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified" 
+           targetNamespace="http://www.prestoprime.eu/xsd/rightsquery">
+	<xs:element name="Results">
+		<xs:complexType>
+			<xs:choice minOccurs="1">
+				<xs:sequence>
+					<xs:element name="Success" type="xs:boolean" fixed="true"/>
+					<xs:element name="Row" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType mixed="true">
+							<xs:attribute name="eeIdentifier" type="xs:anyURI" use="required"/>
+							<xs:attribute name="rightsgraph" type="xs:anyURI"/> 
+							<xs:attribute name="icon" type="xs:anyURI"/> 
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:element name="Failure" type="xs:string"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
