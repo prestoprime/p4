@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="p4core/src"/>
+	<classpathentry kind="src" path="p4ws/src"/>
+	<classpathentry kind="src" path="p4gui/src"/>
+	<classpathentry kind="src" path="plugins/P4Plugin/src"/>
+	<classpathentry kind="src" path="plugins/DRACMAPlugin/src"/>
+	<classpathentry kind="src" path="plugins/FPrintPlugin/src"/>
+	<classpathentry kind="src" path="plugins/IRODSPlugin/src"/>
+	<classpathentry kind="src" path="plugins/LTFSArchiverPlugin/src"/>
+	<classpathentry kind="src" path="plugins/MServePlugin/src"/>
+	<classpathentry kind="src" path="plugins/QAPlugin/src"/>
+	<classpathentry kind="src" path="plugins/RightsPlugin/src"/>
+	<classpathentry kind="src" path="plugins/UserMDPlugin/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=p4&amp;ivyXmlPath=ivy.xml&amp;confs=*&amp;ivySettingsPath=%24%7Bworkspace_loc%3Ap4%2Fivysettings.xml%7D&amp;loadSettingsOnDemand=false&amp;propertyFiles="/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
