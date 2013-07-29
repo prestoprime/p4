@@ -14,8 +14,9 @@
 		</filesystem>
 	</resolvers>
 	<modules>
+		<module organisation="it.eurix" name="archtools" resolver="local-resolver" />
 		<module organisation="exist" name="exist" resolver="local-resolver" />
 		<module organisation="org.irods.jargon" name="jargon-core" resolver="local-resolver" />
-		<module organisation="xmldb" name="xmldb-api" resolver="local-resolver"/>
+		<module organisation="xmldb" name="xmldb-api" resolver="local-resolver" />
 	</modules>
 </ivysettings>

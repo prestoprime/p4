@@ -21,20 +21,22 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class Dot extends P4Tool {
+public class Dot extends AbstractTool<Dot.AttributeType> {
 
+	public static enum AttributeType {
+		
+	}
+	
 	public Dot() {
-		super(Constants.DOT_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.DOT_NAME));
 	}
 
 	public void createGraph(String graphFile, String outputFile) throws ToolException {
-
-		execute("-Tpng", "-Grankdir=LR", "-o", outputFile, graphFile);
-
+		this.run("-Tpng", "-Grankdir=LR", "-o", outputFile, graphFile);
 	}
-
 }

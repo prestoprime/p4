@@ -21,6 +21,8 @@
  */
 package eu.prestoprime.p4gui.admin.jobs;
 
+import it.eurix.archtools.workflow.jaxb.WfStatus;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -29,7 +31,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eu.prestoprime.model.workflow.WfStatus;
 import eu.prestoprime.p4gui.P4GUI;
 import eu.prestoprime.p4gui.connection.WorkflowConnection;
 import eu.prestoprime.p4gui.model.User;

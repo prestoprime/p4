@@ -22,6 +22,9 @@
  */
 package eu.prestoprime.plugin.p4.legacy;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -40,11 +43,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.datamanagement.P4DIP;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.tasks.P4Task;
+import eu.prestoprime.datamanagement.P4DataManager;
+import eu.prestoprime.datamanagement.impl.P4DIP;
+import eu.prestoprime.workflow.P4Task;
 
 /**
  * Store a copy of the current DIP content as XML in the object's folder in
@@ -71,7 +72,7 @@ public class WriteMetsToLocalStorageTask implements P4Task {
 
 		try {
 			// get DIP from DB
-			final P4DIP dip = (P4DIP) DataManager.getInstance().getDIPByID(sipID);
+			final P4DIP dip = (P4DIP) P4DataManager.getInstance().getDIPByID(sipID);
 
 			// get xml content
 			final Node content = dip.getContent(); // TODO aggregate content

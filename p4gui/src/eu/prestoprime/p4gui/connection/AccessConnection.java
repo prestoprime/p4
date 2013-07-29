@@ -25,7 +25,6 @@ package eu.prestoprime.p4gui.connection;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -164,12 +163,6 @@ public abstract class AccessConnection {
 			} while ((eventNode = eventNode.getNextSibling()) != null);
 		}
 		return events;
-	}
-
-	public static void main(String[] args) throws MalformedURLException {
-		List<Event> events = AccessConnection.getEvents(new P4Service(new URL("https://p4.eurixgroup.com/p4ws"), "pr3st0.2012"), "9caf2d4a-c220-4cae-b401-f9c3b76a60a0");
-		for (Event event : events)
-			System.out.println(event);
 	}
 
 	public static ArrayList<Preview> getPreviewsPath(P4Service service, String id) {

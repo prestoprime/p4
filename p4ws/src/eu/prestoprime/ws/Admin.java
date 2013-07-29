@@ -22,6 +22,9 @@
  */
 package eu.prestoprime.ws;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.workflow.jaxb.StatusType;
+
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -37,9 +40,7 @@ import org.slf4j.LoggerFactory;
 
 import com.sun.jersey.api.client.ClientResponse.Status;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.workflow.StatusType;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @Path("/admin")
 public class Admin {
@@ -55,7 +56,7 @@ public class Admin {
 		ResponseBuilder rb;
 
 		try {
-			List<String> aipList = DataManager.getInstance().getAllAIP(null);// FIXME
+			List<String> aipList = P4DataManager.getInstance().getAllAIP(null);// FIXME
 
 			StringBuffer sb = new StringBuffer();
 			for (String aip : aipList)
@@ -78,7 +79,7 @@ public class Admin {
 		ResponseBuilder rb;
 
 		try {
-			List<String> aipList = DataManager.getInstance().getAIPByFormatRisk();
+			List<String> aipList = P4DataManager.getInstance().getAIPByFormatRisk();
 
 			StringBuffer sb = new StringBuffer();
 			for (String aip : aipList)
@@ -107,7 +108,7 @@ public class Admin {
 			else
 				qstatus = StatusType.valueOf(status.toUpperCase());
 
-			List<String> res = DataManager.getInstance().getWfStatus(null, qstatus);
+			List<String> res = P4DataManager.getInstance().getWfStatus(null, qstatus);
 
 			StringBuilder sb = new StringBuilder();
 			for (String s : res)

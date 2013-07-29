@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:acl="http://www.prestoprime.eu/model/2012/acl" xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	   xmlns:dnx="http://www.prestoprime.eu/model/2012/dnx" xmlns:premis="http://www.loc.gov/standards/premis/v1" xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <mets:dmdSec ID="dmd-001">
+	   <mets:mdWrap MDTYPE="DC">
+	     <mets:xmlData>
+	       <dc:record>
+		 <dc:title>Test First Ingestion with wrong MD5</dc:title>
+		 <dc:creator>F. Gallo</dc:creator>
+		 <dc:description>Test First Ingestion with wrong MD5</dc:description>
+		 <dc:publisher/>
+		 <dc:format/>
+		 <dc:identifier>erx:test:003</dc:identifier>
+		 <dc:source/>
+		 <dc:language/>
+	       </dc:record>
+	     </mets:xmlData>
+	  </mets:mdWrap>
+	</mets:dmdSec>
+	<mets:fileSec>
+	  <mets:fileGrp ADMID="dmd-001" ID="rep-001">
+	    <mets:file ID="file" MIMETYPE="application/mxf" CHECKSUM="a4ac10a0f346a07106b3e643eb16e54c" CHECKSUMTYPE="MD5">
+	      <mets:FLocat ID="FLocat-000" LOCTYPE="OTHER" OTHERLOCTYPE="FILE" xlink:href="/opt/p4/share/PrestoPRIME_RAI_TestSample.mxf"/>
+	   </mets:file>
+	</mets:fileGrp>
+	</mets:fileSec>
+	</mets:mets>

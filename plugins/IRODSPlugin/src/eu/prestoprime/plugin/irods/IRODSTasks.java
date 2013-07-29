@@ -21,6 +21,15 @@
 */
 package eu.prestoprime.plugin.irods;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -47,15 +56,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "IRODSPlugin")
 public class IRODSTasks {
@@ -83,7 +84,7 @@ public class IRODSTasks {
 
 			IRODSFileSystem irodsFileSystem = IRODSFileSystem.instance();
 
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			IRODSAccount account = IRODSAccount.instance(host, port, username, password, homeDir, zone, defaultResource);
 
@@ -130,7 +131,7 @@ public class IRODSTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to retrieve AV Material...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -154,7 +155,7 @@ public class IRODSTasks {
 
 		try {
 
-			DIP dip = DataManager.getInstance().getDIPByID(dipID);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 			String irodsFilePath = dip.getAVMaterial("application/mxf", "IRODS").get(0);
 
@@ -166,11 +167,26 @@ public class IRODSTasks {
 
 			logger.debug("IRODS File Path: " + irodsFilePath);
 
-			IRODSFileInputStream sourceFileIS = fileFactory.instanceIRODSFileInputStream(irodsFilePath);
+			//IRODSFileInputStream sourceFileIS = fileFactory.instanceIRODSFileInputStream(irodsFilePath);
 
 			File targetFile = new File(targetFolder, FilenameUtils.getName(irodsFilePath));
 
-			IOUtils.copy(sourceFileIS, new FileOutputStream(targetFile));
+			//IOUtils.copy(sourceFileIS, new FileOutputStream(targetFile));
+			
+			//new stuff for parallel transfer using iRODS
+			TransferOptions transferOptions = new TransferOptions();
+			transferOptions.setComputeAndVerifyChecksumAfterTransfer(true);
+
+			TransferControlBlock transferControlBlock = DefaultTransferControlBlock.instance();
+			transferControlBlock.setTransferOptions(transferOptions);
+
+			DataTransferOperations dataTransferOperations = irodsFileSystem.getIRODSAccessObjectFactory().getDataTransferOperations(account);
+
+			IRODSFile irodsFile = fileFactory.instanceIRODSFile(irodsFilePath);
+			dataTransferOperations.getOperation(irodsFile, targetFile, null, transferControlBlock);
+
+			//end new stuff
+
 
 		} catch (JargonException e) {
 			e.printStackTrace();
@@ -181,10 +197,10 @@ public class IRODSTasks {
 		} catch (IPException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to retrieve AV Material...");
-		} catch (IOException e) {
+		} /*catch (IOException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to execute file operation...");
-		} finally {
+		} */finally {
 			try {
 				if (irodsFileSystem != null)
 					irodsFileSystem.close();
@@ -221,7 +237,7 @@ public class IRODSTasks {
 
 			try {
 
-				dip = DataManager.getInstance().getDIPByID(dipID);
+				dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				// get MQ file
 				String videoFile = null;
@@ -288,7 +304,7 @@ public class IRODSTasks {
 			IRODSFileSystem irodsFileSystem = null;
 			AIP aip = null;
 			try {
-				aip = DataManager.getInstance().getAIPByID(aipID);
+				aip = P4DataManager.getInstance().getAIPByID(aipID);
 
 				List<String> videoFileList = aip.getAVMaterial(format, "FILE");
 				List<String> videoIRODSList = aip.getAVMaterial(format, "IRODS");
@@ -327,7 +343,7 @@ public class IRODSTasks {
 				e.printStackTrace();
 				throw new TaskExecutionFailedException("Unable to create JSON response...");
 			} finally {
-				DataManager.getInstance().releaseIP(aip);
+				P4DataManager.getInstance().releaseIP(aip);
 				try {
 					if (irodsFileSystem != null)
 						irodsFileSystem.close();

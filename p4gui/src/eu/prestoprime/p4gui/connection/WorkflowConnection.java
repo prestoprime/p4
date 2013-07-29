@@ -21,6 +21,10 @@
  */
 package eu.prestoprime.p4gui.connection;
 
+import it.eurix.archtools.workflow.jaxb.StatusType;
+import it.eurix.archtools.workflow.jaxb.WfDescriptor;
+import it.eurix.archtools.workflow.jaxb.WfStatus;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -45,10 +49,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
-import eu.prestoprime.model.workflow.StatusType;
-import eu.prestoprime.model.workflow.WfDescriptor;
-import eu.prestoprime.model.workflow.WfStatus;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.p4gui.model.JobList;
 import eu.prestoprime.p4gui.model.P4Service;
 import eu.prestoprime.p4gui.services.workflow.WorkflowRequestException;
@@ -86,7 +87,7 @@ public abstract class WorkflowConnection {
 			HttpResponse response = client.executeRequest(request);
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
-				WfDescriptor descriptor = (WfDescriptor) ModelUtils.getUnmarshaller(P4Namespace.CONF.getValue()).unmarshal(entity.getContent());
+				WfDescriptor descriptor = (WfDescriptor) ModelUtils.getUnmarshaller(P4JAXBPackage.CONF).unmarshal(entity.getContent());
 				return descriptor;
 			}
 		} catch (JAXBException e) {
@@ -192,7 +193,7 @@ public abstract class WorkflowConnection {
 				sb.append(line.trim());
 
 			// parse wfStatus
-			return (WfStatus) ModelUtils.getUnmarshaller(P4Namespace.CONF.getValue()).unmarshal(new ByteArrayInputStream(sb.toString().getBytes()));
+			return (WfStatus) ModelUtils.getUnmarshaller(P4JAXBPackage.CONF).unmarshal(new ByteArrayInputStream(sb.toString().getBytes()));
 		} catch (IOException | JAXBException e) {
 			e.printStackTrace();
 			return new WfStatus();

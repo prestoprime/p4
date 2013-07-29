@@ -22,27 +22,26 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
+
 import java.io.File;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class FFmpeg extends P4Tool {
+public class FFmpeg extends AbstractTool<FFmpeg.AttributeType> {
 
-	private static Logger logger = LoggerFactory.getLogger(FFmpeg.class);
-
+	public static enum AttributeType {
+		
+	}
+	
 	public FFmpeg() {
-		super(Constants.FFMPEG_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.FFMPEG_NAME));
 	}
 
 	public void encode(String inputFile, String outputFile) throws ToolException {
-
 		execute("-i", inputFile, outputFile);
-
 	}
 
 	/**

@@ -1,0 +1,23 @@
+<users:users xmlns:dt="http://www.prestoprime.eu/model/2012/datatypes" xmlns:users="http://www.prestoprime.eu/model/2012/users" xmlns:tools="http://www.prestoprime.eu/model/2012/tools" xmlns:terms="http://www.prestoprime.eu/model/2012/terms" xmlns:ns6="http://www.prestoprime.eu/model/2012/search" xmlns:wf="http://www.prestoprime.eu/model/2012/wf">
+    <users:user id="pr3st0.2012" role="superadmin">
+        <users:service key="mserve">z5nFJhmVRhN8JvKU1F3XN5DYKOnNVYrB8zIp351zers</users:service>
+    </users:user>
+    <users:user id="5d9b5f78-a5df-483c-8e50-a612964f2060" role="producer">
+        <users:service key="mserve">EoXS3rfjyYqqtwExdkaphSd8dsFszUJ1jQ00VBu42A</users:service>
+    </users:user>
+    <users:user id="b001a034-c2e2-4d42-a61b-a25b2d6c4c37" role="producer">
+        <users:service key="mserve">EoXS3rfjyYqqtwExdkaphSd8dsFszUJ1jQ00VBu42A</users:service>
+    </users:user>
+    <users:user id="697e83b2-052a-4bd5-89bf-f91640654276" role="producer">
+        <users:service key="mserve">EoXS3rfjyYqqtwExdkaphSd8dsFszUJ1jQ00VBu42A</users:service>
+    </users:user>
+    <users:user id="71c9b2c1-e470-404f-9971-22821dce11e3" role="producer">
+        <users:service key="mserve">EoXS3rfjyYqqtwExdkaphSd8dsFszUJ1jQ00VBu42A</users:service>
+    </users:user>
+    <users:user id="801dc81c-3858-4f8e-aecd-d897cd2adb87" role="admin">
+        <users:service key="mserve">EoXS3rfjyYqqtwExdkaphSd8dsFszUJ1jQ00VBu42A</users:service>
+    </users:user>
+    <users:user id="2578babf-ee9a-4fa1-8b92-989e1464e91b" role="producer">
+        <users:service key="mserve">Mia8CSL0GlI7Bg7pqYVvrWYg3IrKtNdqqIm9eofqN2M</users:service>
+    </users:user>
+</users:users>

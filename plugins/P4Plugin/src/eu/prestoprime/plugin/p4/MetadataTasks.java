@@ -21,6 +21,17 @@
  */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,24 +45,15 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.dnx.Dnx;
 import eu.prestoprime.model.dnx.Key;
 import eu.prestoprime.model.dnx.Record;
 import eu.prestoprime.model.dnx.Section;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
 import eu.prestoprime.plugin.p4.tools.D10SumChecker;
 import eu.prestoprime.plugin.p4.tools.FFprobe;
 import eu.prestoprime.plugin.p4.tools.MXFTechMDExtractor;
 import eu.prestoprime.search.P4Indexer;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WfPlugin(name = "P4Plugin")
 public class MetadataTasks {
@@ -67,7 +69,7 @@ public class MetadataTasks {
 		SIP sip = null;
 		try {
 			// get sip
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String videoFile = null;
@@ -86,10 +88,9 @@ public class MetadataTasks {
 
 			// run FFprobe
 			FFprobe ffprobe = new FFprobe();
-			StringBuffer sbFormat = new StringBuffer();
 
-			ffprobe.extract(videoFile);
-			String ffprobeOutput = ffprobe.getAttributeByName("json");
+			ToolOutput<FFprobe.AttributeType> output = ffprobe.extract(videoFile);
+			String ffprobeOutput = output.getAttribute(FFprobe.AttributeType.json);
 
 			Section section = new Section();
 			section.setId("ffprobe");
@@ -233,6 +234,7 @@ public class MetadataTasks {
 			sip.addDNX(videoDnx, "videoMD", false);
 
 		} catch (JSONException e) {
+			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to parse JSON output from ffprobe...");
 		} catch (DataException e) {
 			e.printStackTrace();
@@ -245,7 +247,7 @@ public class MetadataTasks {
 			throw new TaskExecutionFailedException("Unable to run FFProbe...");
 		} finally {
 			// release SIP
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -259,7 +261,7 @@ public class MetadataTasks {
 			SIP sip = null;
 			try {
 				// get SIP
-				sip = DataManager.getInstance().getSIPByID(sipID);
+				sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 				// get MQ file
 				String mxfFile = sip.getAVMaterial("application/mxf", "FILE").get(0);
@@ -325,7 +327,7 @@ public class MetadataTasks {
 				throw new TaskExecutionFailedException("Unable to run MXFTechMD extractor...");
 			} finally {
 				// release SIP
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 			}
 		}
 	}
@@ -339,12 +341,12 @@ public class MetadataTasks {
 
 			SIP sip = null;
 			try {
-				sip = DataManager.getInstance().getSIPByID(sipID);
+				sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 				String videoFilePath = sip.getAVMaterial("application/mxf", "FILE").get(0);
 
 				D10SumChecker d10SumChecker = new D10SumChecker();
-				d10SumChecker.extract(videoFilePath);
+				ToolOutput<D10SumChecker.AttributeType> output = d10SumChecker.extract(videoFilePath);
 
 				Record d10Record = new Record();
 				Key d10agKey = new Key();
@@ -357,7 +359,7 @@ public class MetadataTasks {
 				d10Record.getKey().add(d10ftKey);
 				Key d10eunKey = new Key();
 				d10eunKey.setId("fixityValue");
-				d10eunKey.setValue(d10SumChecker.getAttributeByName("D10SumChecker"));
+				d10eunKey.setValue(output.getAttribute(D10SumChecker.AttributeType.D10SumChecker));
 				d10Record.getKey().add(d10eunKey);
 
 				Section section = new Section();
@@ -378,7 +380,7 @@ public class MetadataTasks {
 				e.printStackTrace();
 				throw new TaskExecutionFailedException("Unable to run D10SumChecker...");
 			} finally {
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 			}
 		}
 	}
@@ -398,7 +400,7 @@ public class MetadataTasks {
 
 				logger.debug("Retrieving SIP " + sipID + " from Persistence DB");
 
-				sip = DataManager.getInstance().getDIPByID(sipID);
+				sip = P4DataManager.getInstance().getDIPByID(sipID);
 
 				logger.debug("Got DIP object " + sip);
 
@@ -431,7 +433,7 @@ public class MetadataTasks {
 
 			logger.debug("Successfully cleared search index...");
 
-			List<String> aipIdList = DataManager.getInstance().getAllAIP(null);
+			List<String> aipIdList = P4DataManager.getInstance().getAllAIP(null);
 
 			if (aipIdList.isEmpty()) {
 				logger.debug("No AIPs found.");
@@ -441,7 +443,7 @@ public class MetadataTasks {
 
 				logger.debug("Indexing AIP " + aipId);
 
-				DIP dip = DataManager.getInstance().getDIPByID(aipId);
+				DIP dip = P4DataManager.getInstance().getDIPByID(aipId);
 
 				boolean aipSuccess = indexer.indexIP(dip);
 				success &= aipSuccess;

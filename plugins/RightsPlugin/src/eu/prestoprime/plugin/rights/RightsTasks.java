@@ -21,6 +21,20 @@
 */
 package eu.prestoprime.plugin.rights;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.persistence.DatabaseException;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -50,25 +64,13 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Property;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.datamanagement.PersistenceDBException;
+import eu.prestoprime.conf.P4PropertyManager.P4Property;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.ext.rights.Results;
-import eu.prestoprime.model.ext.rights.RightsIndex;
 import eu.prestoprime.model.ext.rights.Results.Row;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
-import eu.prestoprime.model.oais.DIP.DCField;
+import eu.prestoprime.model.ext.rights.RightsIndex;
 import eu.prestoprime.plugin.p4.tools.Dot;
 import eu.prestoprime.plugin.p4.tools.XSLTProc;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WfPlugin(name = "RightsPlugin")
 public class RightsTasks {
@@ -84,7 +86,7 @@ public class RightsTasks {
 		// get sip
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// check if rights are either in mdWrap or in mdRef
 			List<String> rightsList = sip.executeQuery("//mets:rightsMD/mets:mdRef/@xlink:href");
@@ -172,7 +174,7 @@ public class RightsTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to extract graph...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -203,7 +205,7 @@ public class RightsTasks {
 			Node node = dbf.newDocumentBuilder().parse(rightsFile);
 
 			// get AIP
-			AIP aip = DataManager.getInstance().getAIPByID(id);
+			AIP aip = P4DataManager.getInstance().getAIPByID(id);
 
 			// update AIP
 			String rightsID = aip.updateSection(node, "rights");
@@ -241,7 +243,7 @@ public class RightsTasks {
 			rightsFile.delete();
 
 			// release AIP
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 
 			logger.debug("Updated QA section...");
 		} catch (Exception e) {
@@ -282,7 +284,7 @@ public class RightsTasks {
 					Row row = new Row();
 					row.setEeIdentifier(aipId);
 
-					DIP dip = DataManager.getInstance().getDIPByID(aipId);
+					DIP dip = P4DataManager.getInstance().getDIPByID(aipId);
 
 					StringBuffer sb = new StringBuffer();
 
@@ -409,7 +411,7 @@ public class RightsTasks {
 
 				Map<String, String> elements = new HashMap<String, String>();
 				elements.put("identifier", dcIdentifierNoFrags);
-				String aipId = DataManager.getInstance().getAIPByDCID(dcIdentifierNoFrags);
+				String aipId = P4DataManager.getInstance().getAIPByDCID(dcIdentifierNoFrags);
 
 				/*
 				 * logger.debug("Retrieving RightsModel for AIP "+aipId);
@@ -447,7 +449,7 @@ public class RightsTasks {
 
 			List<String> aipIdList;
 
-			aipIdList = DataManager.getInstance().getAllAIP(null);
+			aipIdList = P4DataManager.getInstance().getAllAIP(null);
 
 			if (aipIdList.isEmpty()) {
 				logger.debug("No AIPs found.");
@@ -459,7 +461,7 @@ public class RightsTasks {
 
 				logger.debug("Indexing AIP " + aipId);
 
-				DIP dip = DataManager.getInstance().getDIPByID(aipId);
+				DIP dip = P4DataManager.getInstance().getDIPByID(aipId);
 
 				if (Boolean.valueOf(dip.hasDatatype("rights"))) {
 
@@ -493,7 +495,7 @@ public class RightsTasks {
 		} catch (IPException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to get rights from DIP");
-		} catch (PersistenceDBException e) {
+		} catch (DatabaseException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to store Rights Index to DB");
 		} catch (Exception e) {
@@ -514,7 +516,7 @@ public class RightsTasks {
 
 		DIP dip = null;
 		try {
-			dip = DataManager.getInstance().getDIPByID(aipID);
+			dip = P4DataManager.getInstance().getDIPByID(aipID);
 
 			// if is rights_only
 			if (dip.hasRights() && !dip.hasAVMaterial()) {
@@ -524,11 +526,11 @@ public class RightsTasks {
 					fileSize = file.length();
 
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(filePath);
-					if (fileMD5 != null && mde.getAttributeByName("MD5") != fileMD5) {
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(filePath);
+					if (fileMD5 != null && output.getAttribute(MessageDigestExtractor.AttributeType.MD5) != fileMD5) {
 						throw new TaskExecutionFailedException("MD5 doesn't corresponds...");
 					}
-					fileMD5 = mde.getAttributeByName("MD5");
+					fileMD5 = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 				} else {
 					throw new TaskExecutionFailedException("Invalid file...");
 				}
@@ -549,7 +551,7 @@ public class RightsTasks {
 		}
 
 		try {
-			DataManager.getInstance().invalidateAIP(aipID);
+			P4DataManager.getInstance().invalidateAIP(aipID);
 		} catch (DataException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to invalidate AIP with aipID " + aipID + "...");
@@ -561,7 +563,7 @@ public class RightsTasks {
 
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			sip.addExternalFile(mimeType, filePath, fileMD5, fileSize);
 		} catch (DataException e) {
@@ -571,7 +573,7 @@ public class RightsTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to add new file to invalidated SIP " + sipID + "(ex AIP)...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 }

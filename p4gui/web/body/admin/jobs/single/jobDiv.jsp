@@ -1,16 +1,16 @@
 <%@page import="eu.prestoprime.p4gui.util.TableColouringManager"%>
-<%@page import="eu.prestoprime.model.workflow.WfStatus.Params.DParamFile"%>
-<%@page import="eu.prestoprime.model.workflow.WfStatus.Params.DParamString"%>
-<%@page import="eu.prestoprime.model.workflow.WfStatus.Params.SParam"%>
-<%@page import="eu.prestoprime.model.workflow.StatusType"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfStatus.Params.DParamFile"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfStatus.Params.DParamString"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfStatus.Params.SParam"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.StatusType"%>
 <%@page import="eu.prestoprime.p4gui.P4GUI"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.awt.Color"%>
 <%@page import="java.util.Random"%>
-<%@page import="eu.prestoprime.model.workflow.WfStatus.TimeTable.TaskReport"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfStatus.TimeTable.TaskReport"%>
 <%@page import="java.util.List"%>
 
-<jsp:useBean id="wfStatus" class="eu.prestoprime.model.workflow.WfStatus" scope="request" />
+<jsp:useBean id="wfStatus" class="it.eurix.archtools.workflow.jaxb.WfStatus" scope="request" />
 <%TableColouringManager tcm = new TableColouringManager(); %>
 
 <div id="top_menu">

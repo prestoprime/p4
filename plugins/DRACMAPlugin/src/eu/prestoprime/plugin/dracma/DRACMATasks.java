@@ -1,4 +1,15 @@
 package eu.prestoprime.plugin.dracma;
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,19 +30,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.plugin.dracma.client.DRACMAClient;
 import eu.prestoprime.plugin.dracma.client.DRACMAException;
 import eu.prestoprime.plugin.dracma.client.DRACMASegment;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 /**
  * DRACMATasks.java
@@ -73,7 +75,7 @@ public class DRACMATasks {
 
 			SIP sip = null;
 			try {
-				sip = DataManager.getInstance().getSIPByID(sipID);
+				sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 				for (String format : MQFormats) {
 					List<String> MQFilePathList = sip.getAVMaterial(format, "FILE");
@@ -85,9 +87,9 @@ public class DRACMATasks {
 						String UMID = new DRACMAClient(indexServer).index(mxfFile);
 
 						MessageDigestExtractor mde = new MessageDigestExtractor();
-						mde.extract(mxfFile.getAbsolutePath());
+						ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(mxfFile.getAbsolutePath());
 
-						sip.addFile(format, "DRACMA", UMID, mde.getAttributeByName("MD5"), mxfFile.length());
+						sip.addFile(format, "DRACMA", UMID, output.getAttribute(MessageDigestExtractor.AttributeType.MD5), mxfFile.length());
 
 						break;
 					}
@@ -109,7 +111,7 @@ public class DRACMATasks {
 				e.printStackTrace();
 				throw new TaskExecutionFailedException("Bad DRACMA indexing URL in wfDescriptor...");
 			} finally {
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 			}
 		}
 	}
@@ -134,7 +136,7 @@ public class DRACMATasks {
 			String outputFolder = destVolume + File.separator + destFolder;
 
 			try {
-				DIP dip = DataManager.getInstance().getDIPByID(dipID);
+				DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				// get UMID
 				String UMID = null;

@@ -22,6 +22,9 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
@@ -33,15 +36,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.tools.GenericTool;
-import eu.prestoprime.tools.ToolException;
-
-public class MXFTechMDExtractor implements GenericTool {
-
-	private Logger logger = LoggerFactory.getLogger(MXFTechMDExtractor.class);
+public class MXFTechMDExtractor extends AbstractTool {
 
 	private Map<String, String> attributeMap;
 	private Map<String, String> propertyMap;
@@ -49,6 +45,7 @@ public class MXFTechMDExtractor implements GenericTool {
 	private static final short SMPTEKEYSIZE = 16;
 
 	public MXFTechMDExtractor() {
+		super("MXFTechMDExtractor");
 		init();
 	}
 

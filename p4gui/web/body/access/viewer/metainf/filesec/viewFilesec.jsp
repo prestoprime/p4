@@ -62,7 +62,7 @@ if (itResources.hasNext()) {
 						<input type="hidden" name="mimetype" value="<%=tmpResource.getMimetype() %>" />
 						<input type="submit" value="Export File" />
 					</form>
-					<%if (tmpResource.getMimetype().equals("application/mxf")) { %>
+					<%if (tmpResource.getMimetype().equals("application/mxf") || tmpResource.getMimetype().equals("video/mp4")) { %>
 						<form id="segment_form" method="POST" action="<%=request.getContextPath() %>/access/consumersegment" style="display: none;">
 							<input type="hidden" name="id" value="<%=dip.getID() %>" />
 							<input type="hidden" name="mimetype" value="<%=tmpResource.getMimetype() %>" />

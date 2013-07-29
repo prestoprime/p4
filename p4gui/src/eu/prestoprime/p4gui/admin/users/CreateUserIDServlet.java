@@ -21,6 +21,9 @@
  */
 package eu.prestoprime.p4gui.admin.users;
 
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.jaxb.StatusType;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +40,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eu.prestoprime.model.workflow.StatusType;
 import eu.prestoprime.p4gui.P4GUI;
 import eu.prestoprime.p4gui.P4GUI.P4guiProperty;
 import eu.prestoprime.p4gui.connection.WorkflowConnection;
@@ -47,7 +49,6 @@ import eu.prestoprime.p4gui.services.auth.RoleManager;
 import eu.prestoprime.p4gui.services.auth.RoleManager.USER_ROLE;
 import eu.prestoprime.p4gui.util.DataBaseManager;
 import eu.prestoprime.p4gui.util.Tools;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
 
 @WebServlet("/admin/users/service/create")
 public class CreateUserIDServlet extends HttpServlet {

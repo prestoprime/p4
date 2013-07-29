@@ -21,6 +21,8 @@
  */
 package eu.prestoprime.p4gui.update;
 
+import it.eurix.archtools.workflow.jaxb.WfDescriptor;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,7 +41,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.model.workflow.WfDescriptor;
 import eu.prestoprime.p4gui.P4GUI;
 import eu.prestoprime.p4gui.connection.WorkflowConnection;
 import eu.prestoprime.p4gui.connection.WorkflowConnection.P4Workflow;

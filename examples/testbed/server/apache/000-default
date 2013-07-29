@@ -1,0 +1,60 @@
+JkWorkersFile   /etc/libapache2-mod-jk/workers.properties
+
+<VirtualHost *:80>
+	ServerAdmin philip.kahle@uibk.ac.at
+	ServerName c108-DIG10.uibk.ac.at
+	UseCanonicalName On
+
+#============== MOD_PROXY_AJP CONFIG ====================
+#       ProxyRequests Off
+#       ProxyPreserveHost On
+#
+#        ProxyPass /p4gui ajp://localhost:8010/p4gui
+#        ProxyPass /p4ws ajp://localhost:8009/p4ws
+#       ProxyPass /p4db ajp://localhost:8009/p4db
+#       ProxyPass /p4solr ajp://localhost:8009/solr
+#
+#       <Proxy *>
+#                Order deny,allow
+#                Allow from all
+#        </Proxy>
+#===================================================0
+	
+	DocumentRoot /var/www
+	<Directory />
+		Options FollowSymLinks -Indexes
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/>
+		Options -Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+</VirtualHost>

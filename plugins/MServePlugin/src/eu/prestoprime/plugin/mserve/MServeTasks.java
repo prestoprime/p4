@@ -21,6 +21,17 @@
 */
 package eu.prestoprime.plugin.mserve;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -55,23 +66,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.dnx.Dnx;
 import eu.prestoprime.model.dnx.Key;
 import eu.prestoprime.model.dnx.Record;
 import eu.prestoprime.model.dnx.Section;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
-import eu.prestoprime.model.oais.DIP.DCField;
 import eu.prestoprime.plugin.mserve.client.MServeClient;
-import eu.prestoprime.plugin.mserve.client.MServeException;
 import eu.prestoprime.plugin.mserve.client.MServeClient.MServeTask;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.plugin.mserve.client.MServeException;
 
 @WfPlugin(name = "MServePlugin")
 public class MServeTasks {
@@ -201,7 +203,7 @@ public class MServeTasks {
 
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			File videoFile = new File(sip.getAVMaterial("application/mxf", "FILE").get(0));
 			if (videoFile.isFile()) {
@@ -214,7 +216,7 @@ public class MServeTasks {
 		} catch (MServeException e) {
 			throw new TaskExecutionFailedException(e.getMessage());
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 	
@@ -235,7 +237,7 @@ public class MServeTasks {
 		SIP sip = null;
 		try {
 			// get sip
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// run FFprobe
 			MServeClient cl = new MServeClient(url, serviceID);
@@ -417,7 +419,7 @@ public class MServeTasks {
 			throw new TaskExecutionFailedException("Unable to parse JSON from MServe...");
 		} finally {
 			// release SIP
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -439,7 +441,7 @@ public class MServeTasks {
 			SIP sip = null;
 			try {
 				// get SIP
-				sip = DataManager.getInstance().getSIPByID(sipID);
+				sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 				// run MXFTechMD
 				MServeClient cl = new MServeClient(url, serviceID);
@@ -510,7 +512,7 @@ public class MServeTasks {
 				throw new TaskExecutionFailedException("Unable to parse JSON from MServe...");
 			} finally {
 				// release SIP
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 			}
 		}
 	}
@@ -532,7 +534,7 @@ public class MServeTasks {
 
 			SIP sip = null;
 			try {
-				sip = DataManager.getInstance().getSIPByID(sipID);
+				sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 				MServeClient cl = new MServeClient(url, serviceID);
 				File outputFile = cl.runMServeTask(fileID, MServeTask.d10mxfchecksum, null);
@@ -589,7 +591,7 @@ public class MServeTasks {
 			} catch (MServeException e) {
 				throw new TaskExecutionFailedException(e.getMessage());
 			} finally {
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 			}
 		}
 	}
@@ -611,7 +613,7 @@ public class MServeTasks {
 		// get SIP
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// run FFmbc
 			MServeClient cl = new MServeClient(url, serviceID);
@@ -627,8 +629,8 @@ public class MServeTasks {
 
 			// MD5
 			MessageDigestExtractor mde = new MessageDigestExtractor();
-			mde.extract(output.getAbsolutePath());
-			String md5sum = mde.getAttributeByName("MD5");
+			ToolOutput<MessageDigestExtractor.AttributeType> toolOutput = mde.extract(output.getAbsolutePath());
+			String md5sum = toolOutput.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 			// get outputVideo
 			String outputVideoName = FilenameUtils.removeExtension(FilenameUtils.getName(sip.getAVMaterial("application/mxf", "FILE").get(0))) + ".webm";
@@ -657,7 +659,7 @@ public class MServeTasks {
 			throw new TaskExecutionFailedException("Unable to copy the output file...");
 		} finally {
 			// release SIP
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 	
@@ -678,7 +680,7 @@ public class MServeTasks {
 		// get SIP
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// run FFmbc
 			MServeClient cl = new MServeClient(url, serviceID);
@@ -690,8 +692,8 @@ public class MServeTasks {
 
 			// MD5
 			MessageDigestExtractor mde = new MessageDigestExtractor();
-			mde.extract(output.getAbsolutePath());
-			String md5sum = mde.getAttributeByName("MD5");
+			ToolOutput<MessageDigestExtractor.AttributeType> toolOutput = mde.extract(output.getAbsolutePath());
+			String md5sum = toolOutput.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 			// get outputVideo
 			String outputVideoName = FilenameUtils.removeExtension(FilenameUtils.getName(sip.getAVMaterial("application/mxf", "FILE").get(0))) + ".ogv";
@@ -717,7 +719,7 @@ public class MServeTasks {
 			throw new TaskExecutionFailedException("Unable to run FFmbc extractor on MServe...");
 		} finally {
 			// release SIP
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 }

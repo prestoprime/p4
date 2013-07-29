@@ -25,6 +25,8 @@ request.setAttribute("title", "AIP to be checked");
 				<th>AIPid</th>
 				<th>
 					<input type="button" value="Select All" onclick="$('input:checkbox').prop('checked', true);" />
+					<br/>
+					<a class="button orange" onclick="$('input:checkbox').prop('checked', true);">Select All</a>
 				</th>
 			</tr>
 			<%

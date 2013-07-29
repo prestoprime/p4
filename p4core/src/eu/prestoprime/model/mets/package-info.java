@@ -5,6 +5,16 @@
 // Generated on: 2012.08.04 at 02:21:33 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = eu.prestoprime.model.P4NamespaceContext.METS, xmlns = { @javax.xml.bind.annotation.XmlNs(prefix = "mets", namespaceURI = eu.prestoprime.model.P4NamespaceContext.METS), @javax.xml.bind.annotation.XmlNs(prefix = "xlink", namespaceURI = eu.prestoprime.model.P4NamespaceContext.XLINK) }, elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(
+		namespace = eu.prestoprime.model.P4NamespaceContext.METS,
+		xmlns = {
+				@javax.xml.bind.annotation.XmlNs(
+						prefix = "mets",
+						namespaceURI = eu.prestoprime.model.P4NamespaceContext.METS),
+				@javax.xml.bind.annotation.XmlNs(
+						prefix = "xlink",
+						namespaceURI = eu.prestoprime.model.P4NamespaceContext.XLINK)
+		},
+		elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package eu.prestoprime.model.mets;
 

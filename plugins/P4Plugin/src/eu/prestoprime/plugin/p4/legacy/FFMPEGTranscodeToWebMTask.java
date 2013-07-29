@@ -22,6 +22,14 @@
  */
 package eu.prestoprime.plugin.p4.legacy;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -29,15 +37,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.plugin.p4.tools.FFmpeg;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.tasks.P4Task;
+import eu.prestoprime.workflow.P4Task;
 
 public class FFMPEGTranscodeToWebMTask implements P4Task {
 
@@ -57,7 +59,7 @@ public class FFMPEGTranscodeToWebMTask implements P4Task {
 		SIP sip = null;
 
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String videoFile = null;
@@ -85,8 +87,8 @@ public class FFMPEGTranscodeToWebMTask implements P4Task {
 					}
 					// MD5
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(outputVideo);
-					String md5sum = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo);
+					String md5sum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					// update SIP
 					sip.addFile("video/webm", "FILE", outputVideo, md5sum, new File(outputVideo).length());
@@ -108,7 +110,7 @@ public class FFMPEGTranscodeToWebMTask implements P4Task {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to transcode video file...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 }

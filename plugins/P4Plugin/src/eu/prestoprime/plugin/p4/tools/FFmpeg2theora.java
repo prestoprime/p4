@@ -21,14 +21,15 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class FFmpeg2theora extends P4Tool {
+public class FFmpeg2theora extends AbstractTool {
 
 	public FFmpeg2theora() {
-		super(Constants.FFMPEG2THEORA_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.FFMPEG2THEORA_NAME));
 	}
 
 	/**

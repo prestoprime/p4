@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mets:mets xmlns:dnx="http://www.prestoprime.eu/xsd/dnx" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:mets="http://www.loc.gov/METS/" xmlns:ri="http://www.crit.rai.it/prestoprime/rights/rightsindex" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ns7="http://eu.prestoprime/xsd/acl" xmlns:ns8="http://www.openarchives.org/OAI/1.1/eprints" xmlns:ns9="http://www.openarchives.org/OAI/2.0/friends/" xmlns:ns10="http://www.openarchives.org/OAI/2.0/oai-identifier" xmlns:ns11="http://www.prestoprime.eu/xsd/set" xmlns:ns12="http://www.prestoprime.eu/xsd/oaipmhidentify" xmlns:ns13="urn:mpeg:mpeg7:schema:2004" xmlns:ns14="http://www.prestospace.org/res/defect_quality" xmlns:ns15="http://www.prestoprime.eu/xsd/rightsquery" xmlns:ns16="http://www.prestoprime.eu/xsd/rightsmodel" ID="4dbcf706-be09-4a05-840c-6d79423a81c0">
+    <mets:dmdSec ID="dmd-001">
+        <mets:mdWrap MDTYPE="DC">
+            <mets:xmlData>
+                <dc:record>
+                    <dc:title>TestTest</dc:title>
+                    <dc:identifier>erx:test:rights:005</dc:identifier>
+                </dc:record>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:amdSec ID="amd-001">
+       <mets:rightsMD>
+         <mets:mdWrap>
+          <mets:xmlData>
+<owl:Ontology xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://www.prestoprime.eu/ppavro/2010-09-13/rights_new_instance.owl" ontologyIRI="http://www.prestoprime.eu/ppavro/2010-09-13/rights_new_instance.owl">
+  <owl:Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+  <owl:Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+  <owl:Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+  <owl:Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+  <owl:Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+  <owl:Import>http://prestoprime.eurixgroup.com/ppavro.owl</owl:Import>
+  <owl:Declaration>
+        <owl:NamedIndividual IRI="#p001"/>
+    </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#cttp"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#foc"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#td"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#p002"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#bc"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#srt"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#V029"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#period"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#Territory"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#runs_n"/>
+  </owl:Declaration>
+  <ClassAssertion>
+        <Class IRI="http://purl.oclc.org/NET/mvco.owl#Permission"/>
+        <NamedIndividual IRI="#p001"/>
+    </ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#CommunicationToThePublic"/>
+    <owl:NamedIndividual IRI="#cttp"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#FreeOfCharge"/>
+    <owl:NamedIndividual IRI="#foc"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#TelevisionDevice"/>
+    <owl:NamedIndividual IRI="#td"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#Permission"/>
+    <owl:NamedIndividual IRI="#p002"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#Broadcasting"/>
+    <owl:NamedIndividual IRI="#bc"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#RTSimultaneous"/>
+    <owl:NamedIndividual IRI="#srt"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://purl.oclc.org/NET/mvco.owl#IPEntity"/>
+    <owl:NamedIndividual IRI="#V029"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#TemporalContext"/>
+    <owl:NamedIndividual IRI="#period"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#SpatialContext"/>
+    <owl:NamedIndividual IRI="#Territory"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#Run"/>
+    <owl:NamedIndividual IRI="#runs_n"/>
+  </owl:ClassAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#permitsAction"/>
+    <owl:NamedIndividual IRI="#p002"/>
+    <owl:NamedIndividual IRI="#cttp"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#permitsAction"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#cttp"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p002"/>
+    <owl:NamedIndividual IRI="#foc"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#foc"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p002"/>
+    <owl:NamedIndividual IRI="#td"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#td"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#bc"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p002"/>
+    <owl:NamedIndividual IRI="#srt"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#actedOver"/>
+    <owl:NamedIndividual IRI="#cttp"/>
+    <owl:NamedIndividual IRI="#V029"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#period"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#Territory"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#hasRequired"/>
+    <owl:NamedIndividual IRI="#p001"/>
+    <owl:NamedIndividual IRI="#runs_n"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="urn:mpeg:mpeg21:2002:01-DII-NS#RelatedIdentifier"/>
+    <owl:NamedIndividual IRI="#V029"/>
+    <owl:Literal datetypeIRI="">erx:test:rights:005</owl:Literal>
+  </owl:DataPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="http://www.prestoprime.eu/2010/ppavro.owl#hasNumberOfRuns"/>
+    <owl:NamedIndividual IRI="#runs_n"/>
+    <owl:Literal datetypeIRI="">4</owl:Literal>
+  </owl:DataPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="http://www.prestoprime.eu/2010/ppavro.owl#inNation"/>
+    <owl:NamedIndividual IRI="#Territory"/>
+    <owl:Literal datetypeIRI="">#IT;#VA;#SM;</owl:Literal>
+  </owl:DataPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="http://www.prestoprime.eu/2010/ppavro.owl#afterDate"/>
+    <owl:NamedIndividual IRI="#period"/>
+    <owl:Literal datetypeIRI="">20040714</owl:Literal>
+  </owl:DataPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="http://www.prestoprime.eu/2010/ppavro.owl#beforeDate"/>
+    <owl:NamedIndividual IRI="#period"/>
+    <owl:Literal datetypeIRI="">20040716</owl:Literal>
+  </owl:DataPropertyAssertion>
+</owl:Ontology>
+</mets:xmlData>
+  </mets:mdWrap>
+  </mets:rightsMD>
+  </mets:amdSec>
+</mets:mets>
+

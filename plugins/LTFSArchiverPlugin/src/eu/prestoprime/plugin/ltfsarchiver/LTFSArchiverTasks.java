@@ -22,6 +22,14 @@
 */
 package eu.prestoprime.plugin.ltfsarchiver;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,19 +39,12 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.plugin.ltfsarchiver.client.LTFSClient;
 import eu.prestoprime.plugin.ltfsarchiver.client.LTFSException;
 import eu.prestoprime.plugin.ltfsarchiver.client.LTFSRequest;
 import eu.prestoprime.plugin.ltfsarchiver.client.LTFSRequestBuilder;
 import eu.prestoprime.plugin.ltfsarchiver.client.LTFSResponse;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WfPlugin(name = "LTFSArchiverPlugin")
 public class LTFSArchiverTasks {
@@ -62,7 +63,7 @@ public class LTFSArchiverTasks {
 
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String fileName = null;
@@ -100,7 +101,7 @@ public class LTFSArchiverTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to execute LTFSRequest...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 	
@@ -116,7 +117,7 @@ public class LTFSArchiverTasks {
 
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String fileName = null;
@@ -154,7 +155,7 @@ public class LTFSArchiverTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to execute LTFSRequest...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 	
@@ -173,7 +174,7 @@ public class LTFSArchiverTasks {
 			String mimetype = dParamsString.get("mimetype");
 
 			try {
-				DIP dip = DataManager.getInstance().getDIPByID(dipID);
+				DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				// get MQ file
 				if (mimetype != null) {
@@ -216,7 +217,7 @@ public class LTFSArchiverTasks {
 
 			DIP dip = null;
 			try {
-				dip = DataManager.getInstance().getDIPByID(dipID);
+				dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				String[] MQFormats = sParams.get("MQformats").split(",");
 				for (String MQFormat : MQFormats) {

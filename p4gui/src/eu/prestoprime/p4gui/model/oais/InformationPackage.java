@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.model.mets.Mets;
 import eu.prestoprime.p4gui.util.parse.DC;
 import eu.prestoprime.p4gui.util.parse.Location;
@@ -63,7 +63,7 @@ public abstract class InformationPackage {
 	public Mets getMets() {
 
 		try {
-			Unmarshaller unmarshaller = ModelUtils.getUnmarshaller(P4Namespace.DATA_MODEL.getValue());
+			Unmarshaller unmarshaller = ModelUtils.getUnmarshaller(P4JAXBPackage.DATA_MODEL);
 			Mets mets = (Mets) unmarshaller.unmarshal(content);
 
 			return mets;

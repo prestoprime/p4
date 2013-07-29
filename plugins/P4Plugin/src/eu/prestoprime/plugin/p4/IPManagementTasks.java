@@ -21,6 +21,18 @@
  */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,17 +44,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "P4Plugin")
 public class IPManagementTasks {
@@ -58,7 +60,7 @@ public class IPManagementTasks {
 		// parse the SIP
 		String sipID;
 		try {
-			sipID = DataManager.getInstance().createNewSIP(sipFile);
+			sipID = P4DataManager.getInstance().createNewSIP(sipFile);
 		} catch (DataException e) {
 			e.printStackTrace();
 			logger.error("Unable to create new SIP...");
@@ -71,11 +73,11 @@ public class IPManagementTasks {
 		// get the SIP
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// check DC identifier in AIP_COLLECTION
 			for (String identifier : sip.getDCField(DCField.identifier)) {
-				String tmpID = DataManager.getInstance().getAIPByDCID(identifier);
+				String tmpID = P4DataManager.getInstance().getAIPByDCID(identifier);
 				if (tmpID != null)
 					throw new TaskExecutionFailedException("Found another AIP with same DC identifier...");
 			}
@@ -105,7 +107,7 @@ public class IPManagementTasks {
 			logger.error("Unable to retrieve DC identifier...");
 			throw new TaskExecutionFailedException("Unable to retrieve DC identifier...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -118,7 +120,7 @@ public class IPManagementTasks {
 		// get SIP
 		SIP sip = null;
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			if (sip.getDCField(DCField.description).size() == 0) {
 				List<String> description = new ArrayList<>();
@@ -174,8 +176,8 @@ public class IPManagementTasks {
 					if (providerChecksum != null) {
 
 						MessageDigestExtractor mde = new MessageDigestExtractor();
-						mde.extract(mqFilePath);
-						String computedChecksum = mde.getAttributeByName("MD5");
+						ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(mqFilePath);
+						String computedChecksum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 						if (!providerChecksum.equals(computedChecksum))
 							throw new TaskExecutionFailedException("Invalid checksum from SIP provider or wrong file...");
@@ -192,7 +194,7 @@ public class IPManagementTasks {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -204,19 +206,19 @@ public class IPManagementTasks {
 
 		// consolidate
 		try {
-			SIP sip = DataManager.getInstance().getSIPByID(sipID);
+			SIP sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			try {
 				sip.purgeFiles();
 			} catch (IPException e) {
 				e.printStackTrace();
-				DataManager.getInstance().releaseIP(sip);
+				P4DataManager.getInstance().releaseIP(sip);
 				throw new TaskExecutionFailedException("Unable to purge files...");
 			}
 
 			dParamsString.put("result", sip.toString());
 
-			DataManager.getInstance().consolidateSIP(sip);
+			P4DataManager.getInstance().consolidateSIP(sip);
 			sip = null;
 
 		} catch (DataException e) {
@@ -227,7 +229,7 @@ public class IPManagementTasks {
 		String aipID = sipID;
 		AIP aip = null;
 		try {
-			aip = DataManager.getInstance().getAIPByID(aipID);
+			aip = P4DataManager.getInstance().getAIPByID(aipID);
 
 			aip.addPreservationEvent("INGESTION", "status=success");
 
@@ -238,7 +240,7 @@ public class IPManagementTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to add a new preservation event...");
 		} finally {
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 }

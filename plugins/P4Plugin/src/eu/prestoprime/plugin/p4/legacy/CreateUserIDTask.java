@@ -22,6 +22,10 @@
  */
 package eu.prestoprime.plugin.p4.legacy;
 
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.util.Map;
 
@@ -29,10 +33,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
-import eu.prestoprime.workflow.tasks.P4Task;
+import eu.prestoprime.workflow.P4Task;
 
 @WfPlugin(name = "P4Plugin")
 public class CreateUserIDTask implements P4Task {

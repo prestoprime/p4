@@ -30,25 +30,4 @@
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 	
-	<!-- Tools Schema Bindings -->
-	<jaxb:bindings schemaLocation="tools.xsd" node="/xs:schema">
-		<jaxb:schemaBindings>
-			<jaxb:package name="eu.prestoprime.model.tools"/>
-		</jaxb:schemaBindings>
-	</jaxb:bindings>
-  					
-	<!-- Users Schema Bindings -->
-	<jaxb:bindings schemaLocation="users.xsd" node="/xs:schema">
-		<jaxb:schemaBindings>
-			<jaxb:package name="eu.prestoprime.model.users"/>
-		</jaxb:schemaBindings>
-	</jaxb:bindings>
-			
-	<!-- Workflow Descriptor Schema Bindings -->
-	<jaxb:bindings schemaLocation="workflows.xsd" node="/xs:schema">
-		<jaxb:schemaBindings>
-			<jaxb:package name="eu.prestoprime.model.workflow"/>
-		</jaxb:schemaBindings>
-	</jaxb:bindings>
-						
 </jaxb:bindings>

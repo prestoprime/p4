@@ -22,6 +22,8 @@
  */
 package eu.prestoprime.ws.auth;
 
+import it.eurix.archtools.user.UserManager.UserRole;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -35,7 +37,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Role;
 
 @WebFilter("/wf/*")
 public class WorkflowAuthFilter implements Filter {
@@ -49,7 +50,7 @@ public class WorkflowAuthFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
 		String userID = ((HttpServletRequest) request).getHeader("userID");
-		if (userID == null || !ConfigurationManager.getUserInstance().isValidUser(userID) || ConfigurationManager.getUserInstance().getUserRole(userID).getLevel() < P4Role.producer.getLevel()) {
+		if (userID == null || !ConfigurationManager.getUserInstance().isValidUser(userID) || ConfigurationManager.getUserInstance().getUserRole(userID).getLevel() < UserRole.producer.getLevel()) {
 			((HttpServletResponse) response).setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}

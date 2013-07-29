@@ -21,6 +21,13 @@
  */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -31,12 +38,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "P4Plugin")
 public class FixityTasks {
@@ -45,7 +47,8 @@ public class FixityTasks {
 
 	@WfService(name = "fixity_checks", version = "1.0.0")
 	public void fixityCheck(Map<String, String> sParams, Map<String, String> dParamsString, Map<String, File> dParamsFile) throws TaskExecutionFailedException {
-
+		logger.debug("Starting fixity checks...");
+		
 		// static parameters
 		String[] formats = sParams.get("MQformats").split(",");
 
@@ -54,16 +57,16 @@ public class FixityTasks {
 
 		AIP aip = null;
 		try {
-			aip = DataManager.getInstance().getAIPByID(aipID);
+			aip = P4DataManager.getInstance().getAIPByID(aipID);
 			for (String format : formats) {
 				List<String> videoFileList = aip.getAVMaterial(format, "FILE");
 				if (videoFileList.size() > 0) {
 					String inputVideo = videoFileList.get(0);
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(inputVideo);
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(inputVideo);
 
 					String MD5 = aip.getChecksum(format, "MD5");
-					String currentMD5 = mde.getAttributeByName("MD5");
+					String currentMD5 = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					if (!currentMD5.equals(MD5)) {
 						aip.addPreservationEvent("FIXITY_CHECK", "type=md5sum;mimetype=" + format + ";locatype=FILE;result=failed");
@@ -83,7 +86,7 @@ public class FixityTasks {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 
@@ -95,7 +98,7 @@ public class FixityTasks {
 
 		AIP aip = null;
 		try {
-			aip = DataManager.getInstance().getAIPByID(aipID);
+			aip = P4DataManager.getInstance().getAIPByID(aipID);
 
 			if (format != null) {
 				List<String> videoFileList = aip.getAVMaterial(format, "FILE");
@@ -130,7 +133,7 @@ public class FixityTasks {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 }

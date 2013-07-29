@@ -44,9 +44,9 @@ import com.sun.jersey.api.client.ClientResponse.Status;
 import com.sun.jersey.api.core.HttpContext;
 import com.sun.jersey.api.core.ResourceConfig;
 
-import eu.prestoprime.datamanagement.DataManager;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.model.oaipmh.OAIPMH;
 import eu.prestoprime.model.search.SearchResults;
 import eu.prestoprime.search.OAIPMHManager;
@@ -103,7 +103,7 @@ public class Search {
 			elements.put("description", description);
 			elements.put("format", format);
 			elements.put("identifier", identifier);
-			List<String> aipList = DataManager.getInstance().getAllAIP(elements);
+			List<String> aipList = P4DataManager.getInstance().getAllAIP(elements);
 
 			StringBuffer sb = new StringBuffer();
 			for (String aipId : aipList)
@@ -126,7 +126,7 @@ public class Search {
 
 		try {
 
-			String aipId = DataManager.getInstance().getAIPByDCID(identifier);
+			String aipId = P4DataManager.getInstance().getAIPByDCID(identifier);
 
 			StringBuffer sb = new StringBuffer();
 
@@ -354,7 +354,7 @@ public class Search {
 	}
 
 	private String marshallSearchResults(SearchResults results) throws JAXBException {
-		Marshaller marshaller = ModelUtils.getMarshaller(P4Namespace.CONF.getValue());
+		Marshaller marshaller = ModelUtils.getMarshaller(P4JAXBPackage.CONF);
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		// DocumentBuilderFactory docBuilderFactory =
@@ -392,7 +392,7 @@ public class Search {
 
 		try {
 			StringWriter sw = new StringWriter();
-			Marshaller marshaller = ModelUtils.getMarshaller(P4Namespace.OAI_PMH.getValue());
+			Marshaller marshaller = ModelUtils.getMarshaller(P4JAXBPackage.OAI_PMH);
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			marshaller.marshal(oaipmh, sw);
 			rb = Response.status(Status.OK).entity(sw.toString());

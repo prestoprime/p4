@@ -21,6 +21,14 @@
  */
 package eu.prestoprime.plugin.p4.legacy;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -34,19 +42,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.dnx.Dnx;
 import eu.prestoprime.model.dnx.Key;
 import eu.prestoprime.model.dnx.Record;
 import eu.prestoprime.model.dnx.Section;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
 import eu.prestoprime.plugin.p4.tools.FFprobe;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.tasks.P4Task;
+import eu.prestoprime.workflow.P4Task;
 
 /**
  * Same as FFProbeTask but injects more techMd values directly into the AIP,
@@ -65,7 +67,7 @@ public class FFProbeTaskExtended implements P4Task {
 		SIP sip = null;
 		try {
 			// get sip
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String videoFile = null;
@@ -85,8 +87,8 @@ public class FFProbeTaskExtended implements P4Task {
 			// run FFprobe
 			FFprobe ffprobe = new FFprobe();
 
-			ffprobe.extract(videoFile);
-			String ffprobeOutput = ffprobe.getAttributeByName("json");
+			ToolOutput<FFprobe.AttributeType> output = ffprobe.extract(videoFile);
+			String ffprobeOutput = output.getAttribute(FFprobe.AttributeType.json);
 
 			Section section = new Section();
 			section.setId("ffprobe");
@@ -222,7 +224,7 @@ public class FFProbeTaskExtended implements P4Task {
 			throw new TaskExecutionFailedException("Unable to run FFProbe...");
 		} finally {
 			// release SIP
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 

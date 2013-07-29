@@ -21,13 +21,13 @@
  */
 package eu.prestoprime.p4gui.model;
 
+import it.eurix.archtools.workflow.jaxb.StatusType;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-
-import eu.prestoprime.model.workflow.StatusType;
 
 public class JobList {
 

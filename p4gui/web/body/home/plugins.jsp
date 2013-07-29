@@ -1,7 +1,7 @@
-<%@page import="eu.prestoprime.workflow.plugin.WfPlugin.WfService"%>
+<%@page import="it.eurix.archtools.workflow.plugin.WfPlugin.WfService"%>
 <%@page import="eu.prestoprime.p4gui.util.TableColouringManager"%>
 <%@page import="java.util.Set"%>
-<%@page import="eu.prestoprime.workflow.plugin.WfPlugin"%>
+<%@page import="it.eurix.archtools.workflow.plugin.WfPlugin"%>
 <%@page import="java.util.Map"%>
 
 <%

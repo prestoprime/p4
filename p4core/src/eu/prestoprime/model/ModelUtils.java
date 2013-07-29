@@ -13,12 +13,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 public class ModelUtils {
 
-	public static enum P4Namespace {
-		DATA_MODEL("eu.prestoprime.model.acl:eu.prestoprime.model.dc:eu.prestoprime.model.dnx:eu.prestoprime.model.mets:eu.prestoprime.model.premis"), CONF("eu.prestoprime.model.datatypes:eu.prestoprime.model.search:eu.prestoprime.model.terms:eu.prestoprime.model.tools:eu.prestoprime.model.users:eu.prestoprime.model.workflow"), OAI_PMH("eu.prestoprime.model.oaipmh");
+	public static enum P4JAXBPackage {
+		DATA_MODEL("eu.prestoprime.model.acl:eu.prestoprime.model.dc:eu.prestoprime.model.dnx:eu.prestoprime.model.mets:eu.prestoprime.model.premis"),
+		CONF("it.eurix.archtools.workflow.jaxb:eu.prestoprime.model.datatypes:eu.prestoprime.model.search:eu.prestoprime.model.terms"),
+		OAI_PMH("eu.prestoprime.model.oaipmh");
 
 		private String ns = null;
 
-		private P4Namespace(String ns) {
+		private P4JAXBPackage(String ns) {
 			this.ns = ns;
 		}
 
@@ -27,17 +29,17 @@ public class ModelUtils {
 		}
 	};
 
-	public static Marshaller getMarshaller(String namespace) throws JAXBException {
+	public static Marshaller getMarshaller(P4JAXBPackage jaxbPackage) throws JAXBException {
 
-		JAXBContext context = JAXBContext.newInstance(namespace);
+		JAXBContext context = JAXBContext.newInstance(jaxbPackage.getValue());
 		Marshaller marshaller = context.createMarshaller();
 
 		return marshaller;
 	}
 
-	public static Unmarshaller getUnmarshaller(String namespace) throws JAXBException {
+	public static Unmarshaller getUnmarshaller(P4JAXBPackage jaxbPackage) throws JAXBException {
 
-		JAXBContext context = JAXBContext.newInstance(namespace);
+		JAXBContext context = JAXBContext.newInstance(jaxbPackage.getValue());
 		Unmarshaller unmarshaller = context.createUnmarshaller();
 
 		return unmarshaller;

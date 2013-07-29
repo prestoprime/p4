@@ -21,6 +21,10 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,23 +32,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class D10SumChecker extends P4Tool {
+public class D10SumChecker extends AbstractTool<D10SumChecker.AttributeType> {
 
-	private static Logger logger = LoggerFactory.getLogger(D10SumChecker.class);
+	public static enum AttributeType {
+		MD5,
+		D10SumChecker,
+		D10SumCheckerOutput
+	}
+	
 	private String d10Checksums = null;
 
 	public D10SumChecker() {
-		super(Constants.D10SUMCHECKER_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.D10SUMCHECKER_NAME));
 	}
 
-	public void extract(String mxfFile) throws ToolException {
+	public ToolOutput<D10SumChecker.AttributeType> extract(String mxfFile) throws ToolException {
 
 		File d10OutputFile;
 		try {
@@ -53,14 +58,15 @@ public class D10SumChecker extends P4Tool {
 			throw new ToolException("Error writing D10 checksums file");
 		}
 
-		execute("-i", mxfFile, "-o", d10OutputFile.getAbsolutePath());
+		ToolOutput<D10SumChecker.AttributeType> output = execute("-i", mxfFile, "-o", d10OutputFile.getAbsolutePath());
 
 		this.d10Checksums = d10OutputFile.getAbsolutePath();
-		this.parseD10Checksums();
+		this.parseD10Checksums(output);
+		return output;
 
 	}
 
-	private void parseD10Checksums() throws ToolException {
+	private void parseD10Checksums(ToolOutput<D10SumChecker.AttributeType> output) throws ToolException {
 		logger.info("D10 Check Sums in " + d10Checksums + "...");
 		InputStream is;
 		try {
@@ -72,7 +78,7 @@ public class D10SumChecker extends P4Tool {
 			while ((line = br.readLine()) != null) {
 				if (line.contains("File checksum")) {
 					String checksum = line.split("\t+")[1].trim();
-					attributeMap.put("MD5", checksum);
+					output.setAttribute(D10SumChecker.AttributeType.MD5, checksum);
 				} else {
 
 					String[] checksArray = line.split("\t+");
@@ -82,10 +88,10 @@ public class D10SumChecker extends P4Tool {
 					sb.append(result + "\n");
 
 				}
-				attributeMap.put("D10SumChecker", sb.toString());
+				output.setAttribute(D10SumChecker.AttributeType.D10SumChecker, sb.toString());
 			}
 
-			attributeMap.put("D10SumCheckerOutput", d10Checksums);
+			output.setAttribute(D10SumChecker.AttributeType.D10SumCheckerOutput, d10Checksums);
 
 		} catch (IOException e) {
 			throw new ToolException("Error parsing D10SumChecker output");

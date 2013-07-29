@@ -37,7 +37,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.model.mets.Mets;
 import eu.prestoprime.p4gui.P4GUI;
 import eu.prestoprime.p4gui.model.User;
@@ -75,7 +75,7 @@ public class InitializeIngestServlet extends HttpServlet {
 				try {
 					// validate sip
 					logger.debug("Unmarshalling...");
-					Unmarshaller unmarshaller = ModelUtils.getUnmarshaller(P4Namespace.DATA_MODEL.getValue());
+					Unmarshaller unmarshaller = ModelUtils.getUnmarshaller(P4JAXBPackage.DATA_MODEL);
 					Mets mets = (Mets) unmarshaller.unmarshal(sipFile.getInputStream());
 
 					// set currentSIP bean

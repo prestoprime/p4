@@ -2,9 +2,8 @@ xquery version "1.0";
 declare namespace wf="http://www.prestoprime.eu/model/2012/wf";
 declare variable $userID as xs:string external;
 declare variable $qstatus as xs:string external;
-declare variable $COLLECTION as xs:string external;
 
-for $wfStatus in collection($COLLECTION)//wf:wfStatus
+for $wfStatus in //wf:wfStatus
 let $sParam := $wfStatus/wf:params/wf:dParamString[@key='userID']/text()
 let $status := $wfStatus/@status
 where

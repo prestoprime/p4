@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="p4">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/p4core/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/p4ws/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/p4gui/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/P4Plugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/DRACMAPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/FPrintPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/IRODSPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/LTFSArchiverPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/MServePlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/QAPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/RightsPlugin/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/plugins/UserMDPlugin/src"/>
+        <wb-resource deploy-path="/" source-path="/p4gui/web"/>
+        <property name="context-root" value="p4"/>
+        <property name="java-output-path" value="/p4/bin"/>
+    </wb-module>
+</project-modules>

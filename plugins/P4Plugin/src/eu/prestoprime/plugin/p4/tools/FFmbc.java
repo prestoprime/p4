@@ -23,14 +23,15 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class FFmbc extends P4Tool {
+public class FFmbc extends AbstractTool {
 
 	public FFmbc() {
-		super(Constants.FFMBC_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.FFMBC_NAME));
 	}
 
 	/**
@@ -83,18 +84,18 @@ public class FFmbc extends P4Tool {
 		if (mimeType != null && mimeType.equalsIgnoreCase("application/mxf")) {
 			if (mapping.contains("D10")) {
 				// MXF/D10
-				execute("-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-f", "mxf_d10", "-acodec", "copy", "-vcodec", "copy", outputFile);
+				execute("-y", "-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-f", "mxf_d10", "-acodec", "copy", "-vcodec", "copy", outputFile);
 			} else if (mapping.contains("Uncompressed")) {
 				// MXF/Uncompressed
-				execute("-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-ac", "4", "-map_audio_channel", "0:1:0:0:1", "-map_audio_channel", "0:2:0:0:1", "-map_audio_channel", "0:3:0:0:1", "-map_audio_channel", "0:4:0:0:1", "-target", "imx50", "-f", "mxf_d10", outputFile);
+				execute("-y", "-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-ac", "4", "-map_audio_channel", "0:1:0:0:1", "-map_audio_channel", "0:2:0:0:1", "-map_audio_channel", "0:3:0:0:1", "-map_audio_channel", "0:4:0:0:1", "-target", "imx50", "-f", "mxf_d10", outputFile);
 			} else {
 				// Other MXF (e.g. XDCAM), generic command
-				execute("-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-acodec", "copy", "-vcodec", "copy", outputFile);
+				execute("-y", "-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-acodec", "copy", "-vcodec", "copy", outputFile);
 			}
 
 		} else {
 			// Others, no MXF, generic command
-			execute("-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-acodec", "copy", "-vcodec", "copy", outputFile);
+			execute("-y", "-i", inputFile, "-threads", numOfThreads, "-ss", start, "-t", duration, "-acodec", "copy", "-vcodec", "copy", outputFile);
 		}
 
 	}

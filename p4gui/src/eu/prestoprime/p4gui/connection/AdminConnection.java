@@ -21,6 +21,8 @@
  */
 package eu.prestoprime.p4gui.connection;
 
+import it.eurix.archtools.workflow.jaxb.StatusType;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -38,7 +40,6 @@ import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.util.EntityUtils;
 
-import eu.prestoprime.model.workflow.StatusType;
 import eu.prestoprime.p4gui.admin.fixity.FixityCheckResponse;
 import eu.prestoprime.p4gui.model.JobList;
 import eu.prestoprime.p4gui.model.P4Service;

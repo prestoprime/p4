@@ -21,6 +21,14 @@
  */
 package eu.prestoprime.plugin.fprint;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -36,14 +44,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "FPrintPlugin")
 public class FPrintTasks {
@@ -69,7 +70,7 @@ public class FPrintTasks {
 
 		// retrieve AIP
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(id);
+			DIP dip = P4DataManager.getInstance().getDIPByID(id);
 			List<String> fLocatList = dip.getAVMaterial("video/webm", "FILE");
 			fileLocation = fLocatList.get(0);
 		} catch (DataException | IPException e) {
@@ -132,13 +133,13 @@ public class FPrintTasks {
 			Node node = dbf.newDocumentBuilder().parse(resultFile);
 
 			// get AIP
-			AIP aip = DataManager.getInstance().getAIPByID(id);
+			AIP aip = P4DataManager.getInstance().getAIPByID(id);
 
 			// update AIP
 			aip.updateSection(node, "fprint");
 
 			// release AIP
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 
 			logger.debug("Updated FPrint section...");
 		} catch (Exception e) {

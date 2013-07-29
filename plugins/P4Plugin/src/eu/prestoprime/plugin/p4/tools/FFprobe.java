@@ -21,18 +21,25 @@
  */
 package eu.prestoprime.plugin.p4.tools;
 
+import it.eurix.archtools.tool.AbstractTool;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
 import eu.prestoprime.conf.Constants;
-import eu.prestoprime.tools.P4Tool;
-import eu.prestoprime.tools.ToolException;
+import eu.prestoprime.tools.P4ToolManager;
 
-public class FFprobe extends P4Tool {
+public class FFprobe extends AbstractTool<FFprobe.AttributeType> {
 
+	public static enum AttributeType {
+		json
+	}
+	
 	public FFprobe() {
-		super(Constants.FFPROBE_NAME);
+		super(P4ToolManager.getInstance().getToolDescriptor(Constants.FFPROBE_NAME));
 	}
 
-	public void extract(String inputFile) throws ToolException {
-		this.execute("-v", "quiet", "-print_format", "json", "-show_format", "-show_streams", inputFile);
-		this.attributeMap.put("json", getProcessOutput());
+	public ToolOutput<FFprobe.AttributeType> extract(String inputFile) throws ToolException {
+		ToolOutput<FFprobe.AttributeType> output = this.execute("-v", "quiet", "-print_format", "json", "-show_format", "-show_streams", inputFile);
+		output.setAttribute(FFprobe.AttributeType.json, output.getProcessOutput());
+		return output;
 	}
 }

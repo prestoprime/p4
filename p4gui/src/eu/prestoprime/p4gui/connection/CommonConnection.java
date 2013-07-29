@@ -21,6 +21,9 @@
  */
 package eu.prestoprime.p4gui.connection;
 
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,11 +46,28 @@ import org.json.JSONObject;
 
 import eu.prestoprime.p4gui.model.P4Service;
 import eu.prestoprime.p4gui.services.auth.RoleManager.USER_ROLE;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 public abstract class CommonConnection {
 
+	public static String getVersion(P4Service service) {
+		String path = service.getURL() + "/version";
+		
+		try {
+			P4HttpClient client = new P4HttpClient(service.getUserID());
+			HttpRequestBase request = new HttpGet(path);
+			HttpResponse response = client.executeRequest(request);
+			HttpEntity entity = response.getEntity();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent()));
+			String line;
+			if ((line = reader.readLine()) != null) {
+				return line;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public static USER_ROLE getUserRole(P4Service service) {
 		String path = service.getURL() + "/checkrole";
 

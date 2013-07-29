@@ -1,0 +1,37 @@
+Configure Persistence DB
+
+1 Open the DB admin page and browse collections:
+
+  http://localhost:8080/p4db/admin   (user "admin" with empty pwd) 
+
+2 Create DB root (/db) under /db/system/config using the user interface
+  You should be able to browse the collections and go into /db/system/config/db
+
+3 Add the DB Trigger for enabling AIP versioning
+  Simply upload in /db/system/config/db the file "collection.xconf"
+
+4 Add scheduler jobs in WEB-INF/conf.xml for incremental and full backup
+
+       <!-- perform an incremental backup every day -->
+       <job type="system" name="check1"
+            class="org.exist.storage.ConsistencyCheckTask"
+            cron-trigger="0 59 23 * * ?">
+            <parameter name="output" value="export"/>
+            <parameter name="backup" value="yes"/>
+            <parameter name="incremental" value="yes"/>
+            <parameter name="incremental-check" value="no"/>
+            <parameter name="max" value="2"/>
+        </job>
+
+
+5 Replace file controller.xql to set the ADMIN page as welcome page 
+  for the database
+
+6 Restart the DB
+
+7 Create collection /db/p4/admin
+
+8 Create user pprime (pwd: pr3st0.2012) in group dba and assign /db/p4 
+  as home collection
+
+9 Copy all configuration files in /db/p4/admin

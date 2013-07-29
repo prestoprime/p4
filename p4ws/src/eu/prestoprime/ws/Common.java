@@ -21,6 +21,12 @@
  */
 package eu.prestoprime.ws;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.user.UserManager.UserRole;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+import it.eurix.archtools.workflow.plugin.WfServiceScanner;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,13 +51,9 @@ import org.slf4j.LoggerFactory;
 import com.sun.jersey.api.core.HttpContext;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Property;
-import eu.prestoprime.conf.ConfigurationManager.P4Role;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
-import eu.prestoprime.workflow.plugin.WfServiceScanner;
+import eu.prestoprime.conf.P4PropertyManager.P4Property;
+import eu.prestoprime.conf.P4StartupConfig;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @Path("/")
 public class Common {
@@ -63,6 +65,27 @@ public class Common {
 
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/version")
+	public Response getVersion() {
+		
+		ResponseBuilder rb;
+		
+		try {
+			String version = P4StartupConfig.getVersion();
+			
+			logger.debug("Version: " + version);
+			
+			rb = Response.status(Status.OK).entity(version);
+		} catch (Exception e) {
+			e.printStackTrace();
+			rb = Response.status(Status.INTERNAL_SERVER_ERROR);
+		}
+		
+		return rb.build();
+	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/checkrole")
 	public Response getRole() {
 		logger.debug("Called /common/checkrole");
@@ -71,7 +94,7 @@ public class Common {
 
 		String userID = context.getRequest().getHeaderValue("userID");
 		if (userID != null) {
-			P4Role role = ConfigurationManager.getUserInstance().getUserRole(userID);
+			UserRole role = ConfigurationManager.getUserInstance().getUserRole(userID);
 
 			rb = Response.status(Status.OK).entity(role.toString());
 		} else {
@@ -90,8 +113,8 @@ public class Common {
 		ResponseBuilder rb;
 
 		try {
-			P4Role p4role = P4Role.valueOf(role);
-			String terms = DataManager.getInstance().getTermsOfUse(p4role);
+			UserRole p4role = UserRole.valueOf(role);
+			String terms = P4DataManager.getInstance().getTermsOfUse(p4role);
 
 			rb = Response.status(Status.OK).entity(terms);
 		} catch (DataException e) {

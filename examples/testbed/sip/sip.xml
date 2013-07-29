@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mets:mets xmlns:dnx="http://www.prestoprime.eu/xsd/dnx" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:mets="http://www.loc.gov/METS/" xmlns:ri="http://www.crit.rai.it/prestoprime/rights/rightsindex" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ns7="http://eu.prestoprime/xsd/acl" xmlns:ns8="http://www.openarchives.org/OAI/1.1/eprints" xmlns:ns9="http://www.openarchives.org/OAI/2.0/friends/" xmlns:ns10="http://www.openarchives.org/OAI/2.0/oai-identifier" xmlns:ns11="http://www.prestoprime.eu/xsd/set" xmlns:ns12="http://www.prestoprime.eu/xsd/oaipmhidentify" xmlns:ns13="urn:mpeg:mpeg7:schema:2004" xmlns:ns14="http://www.prestospace.org/res/defect_quality" xmlns:ns15="http://www.prestoprime.eu/xsd/rightsquery" xmlns:ns16="http://www.prestoprime.eu/xsd/rightsmodel" ID="4dbcf706-be09-4a05-840c-6d79423a81c0">
+    <mets:dmdSec ID="dmd-001">
+        <mets:mdWrap MDTYPE="DC">
+            <mets:xmlData>
+                <dc:record>
+                    <dc:title>TestTest</dc:title>
+                    <dc:identifier>erx-test-123</dc:identifier>
+                </dc:record>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:fileSec>
+        <mets:fileGrp ID="rep-001" ADMID="dmd-001">
+            <mets:file ID="file" MIMETYPE="application/mxf">
+                <mets:FLocat ID="FLocat-000" xlink:href="/opt/p4/share/PrestoPRIME_RAI_007.mxf" LOCTYPE="OTHER" OTHERLOCTYPE="FILE"/>
+            </mets:file>
+        </mets:fileGrp>
+    </mets:fileSec>
+</mets:mets>
+

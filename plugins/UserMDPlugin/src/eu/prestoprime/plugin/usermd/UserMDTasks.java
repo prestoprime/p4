@@ -21,6 +21,15 @@
 */
 package eu.prestoprime.plugin.usermd;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -43,15 +52,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "UserMDPlugin")
 public class UserMDTasks {
@@ -70,7 +71,7 @@ public class UserMDTasks {
 
 		// retrieve DIP
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipID);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 			List<String> fLocatList = dip.getAVMaterial("video/webm", "FILE");
 			String fileLocation = fLocatList.get(0);
 
@@ -141,7 +142,7 @@ public class UserMDTasks {
 		AIP aip = null;
 		try {
 			// get AIP
-			aip = DataManager.getInstance().getAIPByID(id);
+			aip = P4DataManager.getInstance().getAIPByID(id);
 
 			// parse resultFile
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -157,7 +158,7 @@ public class UserMDTasks {
 		} catch (Exception e) {
 			throw new TaskExecutionFailedException("Unable to update AIP...\n" + e.getMessage());
 		} finally {
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 }

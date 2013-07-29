@@ -1,4 +1,4 @@
-<jsp:useBean id="wfStatus" class="eu.prestoprime.model.workflow.WfStatus" scope="request" />
+<jsp:useBean id="wfStatus" class="it.eurix.archtools.workflow.jaxb.WfStatus" scope="request" />
 <%
 request.setAttribute("title", wfStatus.getId());
 %>

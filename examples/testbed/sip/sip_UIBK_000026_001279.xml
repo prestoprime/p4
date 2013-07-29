@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<METS:mets LABEL="26#id=1279" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/dc.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ACL="http://www.prestoprime.eu/xsd/acl" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:METS="http://www.loc.gov/METS/">
+   <METS:metsHdr CREATEDATE="2012-08-01T10:05:16" LASTMODDATE="2012-08-01T10:05:16"/>
+   <METS:dmdSec ID="DMD_1">
+      <METS:mdWrap MDTYPE="DC">
+         <METS:xmlData>
+            <dc:identifier>26#id=1279</dc:identifier>
+            <dc:title>Melodii Dunaevskogo</dc:title>
+            <dc:creator>Pyr'ev, Ėrik</dc:creator>
+            <dc:coverage>UdSSR</dc:coverage>
+            <dc:date>1963</dc:date>
+            <dc:description>Der Film ist der von Isaak Dunaevskij komponierten Filmmusik gewidmet. Kollegen wie Nikolaj Čerkasov erzählen von ihrer Zusammenarbeit mit Dunaevskij und stellen Lieder sowie Filmausschnitte vor. Auf der vorliegenden Kassette ist lediglich ein fünfminütiger Ausschnitt aus der Dokumentation aufgezeichnet, mit Ausschnitten aus dem Film Deti Kapitana Granta, die Nikolaj Čerkasov kommentiert.
+			Drehbuch: Pyr'ev, Ėrik; Matusovskij, Michail. Ausstattung: Lukaševič, Irina; Boguslavskij, Feliks. Ton: Kaškevič, Evgenij. Kamera: Černych, Igor'; Gindin, Michail. Musik: Dunaevskij, Isaak. Studio: Mosfil'm.</dc:description>
+            <dc:language>R</dc:language>
+            <dc:publisher>University of Innsbruck</dc:publisher>
+            <dc:source>digitalisiert Auer (id 5918)</dc:source>
+            <dc:subject>Filmmusik</dc:subject>
+         </METS:xmlData>
+      </METS:mdWrap>
+   </METS:dmdSec>
+   <METS:fileSec>
+      <METS:fileGrp ID="MASTER">
+         <METS:file ID="AVI_0001" CREATED="2004-05-08T00:00:00" MIMETYPE="video/x-msvideo" SEQ="1">
+            <METS:FLocat LOCTYPE="URL" xlink:href="000026_001279.mp4"/>
+         </METS:file>
+      </METS:fileGrp>
+   </METS:fileSec>
+   <METS:structMap ID="STRUCTMAP" TYPE="VIDEO">
+      <METS:div ID="DIV0" TYPE="VHS">
+         <METS:div ID="DIV1" TYPE="MOVIE" ORDER="1" DMDID="DMD_1">
+            <METS:fptr FILEID="AVI_0001"/>
+         </METS:div>
+      </METS:div>
+   </METS:structMap>
+</METS:mets>

@@ -31,7 +31,7 @@
 	</target>
 
 	<target name="clean">
-		<delete dir="${lib.dir}" includes="**/*" />
+		<delete dir="${lib.dir}" />
 		<delete dir="${build.dir}" />
 		<delete dir="${dist.dir}" />
 	</target>
@@ -56,6 +56,10 @@
 			<classpath refid="lib.path.id" />
 		</javac>
 		<jar jarfile="${dist.dir}/${project.name}-${build.number}.jar">
+			<manifest>
+				<attribute name="Main-Class" value="${project.main.class}" />
+				<attribute name="Version" value="${build.number}" />
+			</manifest>
 			<fileset dir="${build.dir}" />
 			<fileset dir="${project.dir}/conf">
 				<include name="**/*" />
@@ -76,6 +80,9 @@
 		</javac>
 		<war destfile="${dist.dir}/${project.name}.war" webxml="${project.dir}/web/WEB-INF/web.xml" manifest="${project.dir}/web/META-INF/MANIFEST.MF">
 			<lib dir="${lib.dir}" />
+			<manifest>
+				<attribute name="Version" value="${build.number}" />
+			</manifest>
 			<classes dir="${build.dir}" />
 			<classes dir="${project.dir}/conf" />
 			<fileset dir="${project.dir}/web" />
@@ -124,9 +131,17 @@
 	</target>
 
 	<target name="build.all" depends="build.p4gui,build.p4ws">
-		<delete dir="${lib.dir}" includes="**/*" />
+		<delete dir="${lib.dir}" />
 		<delete dir="${build.dir}" />
 		<echo>Built-all revision ${build.number}...</echo>
+	</target>
+	
+	<target name="build.installer" depends="init">
+		<antcall target="build.jar">
+			<param name="project.dir" value="installer" />
+			<param name="project.name" value="p4installer" />
+			<param name="project.main.class" value="eu.prestoprime.installer.Main" />
+		</antcall>
 	</target>
 
 	<!-- 
@@ -175,7 +190,7 @@
 		<delete dir="${tomcat.home}/webapps/p4gui" />
 		<delete dir="${tomcat.home}/webapps/p4ws" />
 	</target>
-	
+
 	<target name="deploy" depends="undeploy,build.all">
 		<delete dir="${tomcat.home}/webapps/p4ws" />
 		<delete dir="${tomcat.home}/webapps/p4gui" />

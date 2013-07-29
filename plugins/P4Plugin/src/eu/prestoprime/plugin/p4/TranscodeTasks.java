@@ -21,6 +21,17 @@
  */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -28,19 +39,10 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.plugin.p4.tools.FFmbc;
 import eu.prestoprime.plugin.p4.tools.FFmpeg;
 import eu.prestoprime.plugin.p4.tools.FFmpeg2theora;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WfPlugin(name = "P4Plugin")
 public class TranscodeTasks {
@@ -57,7 +59,7 @@ public class TranscodeTasks {
 		SIP sip = null;
 
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String videoFile = null;
@@ -83,8 +85,8 @@ public class TranscodeTasks {
 
 					// MD5
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(outputVideo);
-					String md5sum = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo);
+					String md5sum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					// update SIP
 					sip.addFile("video/webm", "FILE", outputVideo, md5sum, new File(outputVideo).length());
@@ -106,7 +108,7 @@ public class TranscodeTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to transcode video file...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -120,7 +122,7 @@ public class TranscodeTasks {
 		SIP sip = null;
 
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get MQ file
 			String videoFile = null;
@@ -142,8 +144,8 @@ public class TranscodeTasks {
 
 					// MD5
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(outputVideo);
-					String md5sum = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo);
+					String md5sum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					// update SIP
 					sip.addFile("video/ogg", "FILE", outputVideo, md5sum, new File(outputVideo).length());
@@ -163,7 +165,7 @@ public class TranscodeTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to transcode video file...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -177,7 +179,7 @@ public class TranscodeTasks {
 		SIP sip = null;
 
 		try {
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			// get LQ file
 			File lqFile = dParamsFile.get("webm");
@@ -207,7 +209,7 @@ public class TranscodeTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to extract thumb or frames...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -220,7 +222,7 @@ public class TranscodeTasks {
 
 		AIP aip = null;
 		try {
-			aip = DataManager.getInstance().getAIPByID(aipID);
+			aip = P4DataManager.getInstance().getAIPByID(aipID);
 			List<String> videoFiles = aip.getAVMaterial("video/x-raw-yuv", "FILE");
 			// check if already migrated
 			if (videoFiles == null || videoFiles.size() == 0) {
@@ -238,15 +240,15 @@ public class TranscodeTasks {
 						String outputVideoName = MQFileName + ".avi";
 						File outputVideo = new File(outputFolder, outputVideoName);
 						ffmpeg.encodeToRawVideo(MQFile, outputVideo.getAbsolutePath());
-						mde.extract(outputVideo.getAbsolutePath());
-						String outputVideoMD5 = mde.getAttributeByName("MD5");
+						ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo.getAbsolutePath());
+						String outputVideoMD5 = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 						// encode raw audio
 						String outputAudioName = MQFileName + ".pcm";
 						File outputAudio = new File(outputFolder, outputAudioName);
 						ffmpeg.encodeToRawAudio(MQFile, outputAudio.getAbsolutePath());
-						mde.extract(outputAudio.getAbsolutePath());
-						String outputAudioMD5 = mde.getAttributeByName("MD5");
+						output = mde.extract(outputAudio.getAbsolutePath());
+						String outputAudioMD5 = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 						// add both video and audio to AIP
 						aip.addFile("video/x-raw-yuv", "FILE", outputVideo.getAbsolutePath(), outputVideoMD5, outputVideo.length());
@@ -265,7 +267,7 @@ public class TranscodeTasks {
 		} catch (ToolException e) {
 			throw new TaskExecutionFailedException("Unable to encode to raw audio or raw video...");
 		} finally {
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 }

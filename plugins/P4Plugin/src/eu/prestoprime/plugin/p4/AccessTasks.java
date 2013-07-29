@@ -21,28 +21,32 @@
 */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Property;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
+import eu.prestoprime.conf.P4PropertyManager.P4Property;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.plugin.p4.tools.FFmbc;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WfPlugin(name = "P4Plugin")
 public class AccessTasks {
@@ -75,7 +79,7 @@ public class AccessTasks {
 				if (mimeType == null)
 					throw new TaskExecutionFailedException("Missing MIME Type to extract fragment");
 
-				DIP dip = DataManager.getInstance().getDIPByID(dipID);
+				DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				if (inputFilePath == null) {
 
@@ -101,7 +105,7 @@ public class AccessTasks {
 				if (!targetDir.canWrite())
 					throw new TaskExecutionFailedException("Unable to write to output dir " + outputFolder);
 
-				String targetFileName = dipID + "." + startFrame + "." + stopFrame + ".mxf";
+				String targetFileName = dipID + "." + startFrame + "." + stopFrame + "." + FilenameUtils.getExtension(inputFilePath);
 				File targetFile = new File(targetDir, targetFileName);
 
 				int startSec = startFrame / 25;
@@ -111,7 +115,7 @@ public class AccessTasks {
 				String start = Integer.toString(startSec);
 				String duration = Integer.toString(durationSec);
 
-				List<String> formats = dip.getAVFormats();
+				List<String> formats = dip.getDCField(DCField.format);
 
 				StringBuilder formatSB = new StringBuilder();
 

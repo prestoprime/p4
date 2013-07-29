@@ -1,0 +1,17 @@
+<properties>
+    <comment>p4core properties</comment>
+    <entry key="p4.version">0.8.0</entry>
+    <entry key="p4.share">/mnt/pprime/producers</entry>
+    <entry key="p4.storage.volume">/opt/p4</entry>
+    <entry key="p4.storage.folder">p4store</entry>
+    <entry key="p4.videos.folder">videos</entry>
+    <entry key="p4.graph.folder">rights</entry>
+    <entry key="p4.frames.folder">frames</entry>
+
+    <entry key="p4.url">https://172.20.238.77</entry>
+    <entry key="p4.ws.url">https://172.20.238.77/p4ws</entry>
+    <entry key="p4.placeholder">P4_PH</entry>
+    <entry key="activity.db.folder">/opt/p4/p4wsdb</entry>
+    <entry key="master.quality.formats">application/mxf,video/mp4</entry>
+    <entry key="browsing.quality.formats">video/webm,video/ogg</entry>
+</properties>

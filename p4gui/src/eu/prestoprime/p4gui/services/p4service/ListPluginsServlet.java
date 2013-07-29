@@ -21,6 +21,9 @@
  */
 package eu.prestoprime.p4gui.services.p4service;
 
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
@@ -38,8 +41,6 @@ import eu.prestoprime.p4gui.connection.ConnectionException;
 import eu.prestoprime.p4gui.model.P4Service;
 import eu.prestoprime.p4gui.model.User;
 import eu.prestoprime.p4gui.util.Tools;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
 
 @WebServlet("/p4service/plugins")
 public class ListPluginsServlet extends HttpServlet {

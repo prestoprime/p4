@@ -48,7 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.model.search.SearchResults;
 import eu.prestoprime.p4gui.model.P4Service;
 import eu.prestoprime.p4gui.util.URLUtils;
@@ -155,7 +155,7 @@ public abstract class SearchConnection {
 			}
 			EntityUtils.consume(entity);
 
-			unmarshaller = ModelUtils.getUnmarshaller(P4Namespace.CONF.getValue());
+			unmarshaller = ModelUtils.getUnmarshaller(P4JAXBPackage.CONF);
 			results = (SearchResults) unmarshaller.unmarshal(new ByteArrayInputStream(resultString.getBytes()));
 		} catch (JAXBException | IOException e) {
 			String message = e.getMessage() + " - ";

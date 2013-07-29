@@ -1,10 +1,8 @@
 package eu.prestoprime.model;
 
-import java.util.Iterator;
+import it.eurix.archtools.config.NamespaceManager;
 
-import javax.xml.namespace.NamespaceContext;
-
-public class P4NamespaceContext implements NamespaceContext {
+public class P4NamespaceContext extends NamespaceManager {
 
 	public static final String METS = "http://www.loc.gov/METS/";
 	public static final String DC = "http://purl.org/dc/elements/1.1/";
@@ -15,57 +13,86 @@ public class P4NamespaceContext implements NamespaceContext {
 	public static final String PREMIS = "http://www.loc.gov/standards/premis/v1";
 	public static final String OAI_PMH = "http://www.openarchives.org/OAI/2.0/";
 
-	public static final String USERS = "http://www.prestoprime.eu/model/2012/users";
 	public static final String DATATYPES = "http://www.prestoprime.eu/model/2012/datatypes";
 	public static final String SEARCH = "http://www.prestoprime.eu/model/2012/search";
 	public static final String TERMS = "http://www.prestoprime.eu/model/2012/terms";
-	public static final String TOOLS = "http://www.prestoprime.eu/model/2012/tools";
-	public static final String WORKFLOW = "http://www.prestoprime.eu/model/2012/wf";
 
-	@Override
-	public String getNamespaceURI(String prefix) {
-		switch (prefix) {
-		// DATA_MODEL
-		case "mets":
-			return METS;
-		case "dc":
-			return DC;
-		case "xlink":
-			return XLINK;
-		case "dnx":
-			return DNX;
-		case "owl":
-			return OWL;
-		case "acl":
-			return ACL;
-		case "premis":
-			return PREMIS;
-			// CONF
-		case "users":
-			return USERS;
-		case "datatypes":
-			return DATATYPES;
-		case "search":
-			return SEARCH;
-		case "terms":
-			return TERMS;
-		case "tools":
-			return TOOLS;
-		case "wf":
-			return WORKFLOW;
-
-		default:
-			return METS;
+	public static enum P4Namespace {
+		mets(METS),
+		dc(DC),
+		xlink(XLINK),
+		dnx(DNX),
+		owl(OWL),
+		acl(ACL),
+		premis(PREMIS),
+		oai_pmh(OAI_PMH),
+		
+		datatypes(DATATYPES),
+		search(SEARCH),
+		terms(TERMS);
+		
+		private String namespaceURI;
+		
+		private P4Namespace(String namespaceURI) {
+			this.namespaceURI = namespaceURI;
+		}
+		
+		public String getNamespaceURI() {
+			return namespaceURI;
 		}
 	}
-
-	@Override
-	public String getPrefix(String namespaceURI) {
-		return null;
+	
+	private static P4NamespaceContext instance;
+	
+	private P4NamespaceContext() {
+		for (P4Namespace namespace : P4Namespace.values())
+			super.addNamespace(namespace.toString(), namespace.getNamespaceURI());
 	}
-
-	@Override
-	public Iterator<String> getPrefixes(String namespaceURI) {
-		return null;
+	
+	public static P4NamespaceContext getInstance() {
+		if (instance == null)
+			instance = new P4NamespaceContext();
+		return instance;
 	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println(P4NamespaceContext.getInstance().getNamespaceURI("mets"));
+	}
+//	@Override
+//	public String getNamespaceURI(String prefix) {
+//		switch (prefix) {
+//		// DATA_MODEL
+//		case "mets":
+//			return METS;
+//		case "dc":
+//			return DC;
+//		case "xlink":
+//			return XLINK;
+//		case "dnx":
+//			return DNX;
+//		case "owl":
+//			return OWL;
+//		case "acl":
+//			return ACL;
+//		case "premis":
+//			return PREMIS;
+//			// CONF
+//		case "users":
+//			return USERS;
+//		case "datatypes":
+//			return DATATYPES;
+//		case "search":
+//			return SEARCH;
+//		case "terms":
+//			return TERMS;
+//		case "tools":
+//			return TOOLS;
+//		case "wf":
+//			return WORKFLOW;
+//
+//		default:
+//			return METS;
+//		}
+//	}
 }

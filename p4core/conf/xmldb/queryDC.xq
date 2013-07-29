@@ -5,9 +5,8 @@ declare variable $qtitle as xs:string external;
 declare variable $qformat as xs:string external;
 declare variable $qdescription as xs:string external;
 declare variable $qidentifier as xs:string external;
-declare variable $COLLECTION as xs:string external;
 
-for $mets in collection($COLLECTION)//mets:mets
+for $mets in //mets:mets
 
 for $record in $mets/mets:dmdSec/mets:mdWrap/mets:xmlData/dc:record
 

@@ -22,6 +22,9 @@
  */
 package eu.prestoprime.plugin.qa;
 
+import it.eurix.archtools.data.model.AIP;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+
 import java.io.File;
 import java.util.Map;
 
@@ -30,10 +33,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.AIP;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.tasks.P4Task;
+import eu.prestoprime.datamanagement.P4DataManager;
+import eu.prestoprime.workflow.P4Task;
 
 public class ManualUpdateAIPTask implements P4Task {
 
@@ -55,7 +56,7 @@ public class ManualUpdateAIPTask implements P4Task {
 			Node node = dbf.newDocumentBuilder().parse(resultFile);
 
 			// get AIP
-			aip = DataManager.getInstance().getAIPByID(id);
+			aip = P4DataManager.getInstance().getAIPByID(id);
 
 			// update AIP
 			aip.updateSection(node, "qa_manual");
@@ -65,7 +66,7 @@ public class ManualUpdateAIPTask implements P4Task {
 			throw new TaskExecutionFailedException("Unable to update AIP...\n" + e.getMessage());
 		} finally {
 			// release AIP
-			DataManager.getInstance().releaseIP(aip);
+			P4DataManager.getInstance().releaseIP(aip);
 		}
 	}
 }

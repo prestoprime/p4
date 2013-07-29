@@ -5,6 +5,6 @@
 // Generated on: 2012.08.04 at 02:21:33 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.prestoprime.eu/model/2012/acl", xmlns = { @javax.xml.bind.annotation.XmlNs(prefix = "acl", namespaceURI = eu.prestoprime.model.P4NamespaceContext.ACL) }, elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = eu.prestoprime.model.P4NamespaceContext.ACL, xmlns = { @javax.xml.bind.annotation.XmlNs(prefix = "acl", namespaceURI = eu.prestoprime.model.P4NamespaceContext.ACL) }, elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package eu.prestoprime.model.acl;
 

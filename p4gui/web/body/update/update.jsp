@@ -1,8 +1,8 @@
 <%@page import="eu.prestoprime.p4gui.util.TableColouringManager"%>
-<%@page import="eu.prestoprime.model.workflow.WfType"%>
-<%@page import="eu.prestoprime.model.workflow.WfDescriptor.Workflows.Workflow"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfType"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfDescriptor.Workflows.Workflow"%>
 <%@page import="eu.prestoprime.p4gui.connection.WorkflowConnection"%>
-<%@page import="eu.prestoprime.model.workflow.WfDescriptor"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfDescriptor"%>
 
 <jsp:useBean id="user" class="eu.prestoprime.p4gui.model.User" scope="session" />
 

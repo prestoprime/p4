@@ -21,6 +21,12 @@
  */
 package eu.prestoprime.search;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.InformationPackage;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,11 +41,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.InformationPackage;
 import eu.prestoprime.search.util.P4IndexObject;
 
 public class P4Indexer extends AbstractPOJOIndexer {

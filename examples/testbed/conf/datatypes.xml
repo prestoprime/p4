@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datatypes xmlns="http://www.prestoprime.eu/model/2012/datatypes">
+   <!-- Generic QA DataType-->
+    <datatype>
+        <name>qa</name>
+        <multiple>false</multiple>
+        <section>
+            <id>pp-quality</id>
+            <type>techMD</type>
+        </section>
+        <ref>
+            <label>PPQUALITY</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>urn:mpeg:mpeg7:profiles:2011:AVDP</othermdtype>
+        </ref>
+    </datatype>
+   <!-- Automatic QA DataType -->
+    <datatype>
+        <name>qa_auto</name>
+        <multiple>false</multiple>
+        <section>
+            <id>pp-quality</id>
+            <status>NOT VALIDATED</status>
+            <type>techMD</type>
+        </section>
+        <ref>
+            <label>PPQUALITY</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>urn:mpeg:mpeg7:profiles:2011:AVDP</othermdtype>
+        </ref>
+    </datatype>
+   <!-- Manual QA DataType -->
+    <datatype>
+        <name>qa_manual</name>
+        <multiple>false</multiple>
+        <section>
+            <id>pp-quality</id>
+            <status>VALIDATED</status>
+            <type>techMD</type>
+        </section>
+        <ref>
+            <label>PPQUALITY</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>urn:mpeg:mpeg7:profiles:2011:AVDP</othermdtype>
+        </ref>
+    </datatype>
+   <!-- Rights DataType -->
+    <datatype>
+        <name>rights</name>
+        <multiple>false</multiple>
+        <section>
+            <id>pp-rights</id>
+            <type>rightsMD</type>
+        </section>
+        <ref>
+            <label>PPRIGHTS</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>CEL-OWL</othermdtype>
+        </ref>
+    </datatype>
+   <!-- User Metadata DataType -->
+    <datatype>
+        <name>usermd</name>
+        <multiple>true</multiple>
+        <section>
+            <id>pp-userannotation</id>
+            <type>dmdSec</type>
+        </section>
+        <ref>
+            <label>PPUSERANNOTATION</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>EDM</othermdtype>
+        </ref>
+    </datatype>
+   <!-- Fingerprint DataType -->
+    <datatype>
+        <name>fprint</name>
+        <multiple>false</multiple>
+        <section>
+            <id>pp-fingerprint</id>
+            <type>sourceMD</type>
+        </section>
+        <ref>
+            <label>PPFINGERPRINT</label>
+            <mdtype>OTHER</mdtype>
+            <othermdtype>INA-FP</othermdtype>
+        </ref>
+    </datatype>
+</datatypes>

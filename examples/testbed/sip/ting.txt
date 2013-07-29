@@ -1,0 +1,47 @@
+# CREATE A NEW SLA
+
+curl -X POST -d "name=P4-Test" -d "serviceFactory=captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/l22qer7lqg5stqophsyrkodqifcaqbcp" http://ting.eurixgroup.com/ting/resourcemanager/slas?cap=captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/bixptti37ycmapjswj74atholr3ar2x7 
+
+# STOP/START JETTY
+
+sudo /etc/init.d/jetty stop
+sudo /etc/init.d/jetty start 
+
+# LIST ALL SLA
+
+curl http://ting.eurixgroup.com/ting/resourcemanager/slas?cap=captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/bixptti37ycmapjswj74atholr3ar2x7 
+
+SLA is the id, get the browseUrl element:
+http://mserve.it-innovation.soton.ac.uk/browse/cyrDBNqB1rUXlQvuXCB027r8mcsv4cQxoIalUearlmE/
+
+# USE URI ELEMENT
+
+curl http://ting.eurixgroup.com/ting/slas/sla?cap=captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/itmwdmpqedzymelzx4zuvp2qordprfq2 
+
+get the browse element
+
+
+{
+ "itmwdmpqedzymelzx4zuvp2qordprfq2":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/itmwdmpqedzymelzx4zuvp2qordprfq2"},
+
+"xtljv4uzfmd3i5tt6lwsuulzqm3du427":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/xtljv4uzfmd3i5tt6lwsuulzqm3du427"},
+ 
+"4qi4ra554rp3drpkn54qkiwwigmcxvqc":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/4qi4ra554rp3drpkn54qkiwwigmcxvqc"},
+
+"b6wtizjsmnn4hg3fv5dyy4tppzuji5xj":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/b6wtizjsmnn4hg3fv5dyy4tppzuji5xj"},
+
+ "lhajt6udd7i5wueq7wczwxuxxgsrbzw7":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/lhajt6udd7i5wueq7wczwxuxxgsrbzw7"},
+
+"ctd6d2nhrega2guuo33ugfns4kr2z4f2":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/ctd6d2nhrega2guuo33ugfns4kr2z4f2"},
+
+"onrbz3kfwjdwisu7yxtucg47icaxo4zi":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/onrbz3kfwjdwisu7yxtucg47icaxo4zi"},
+
+"ypqsj2nj3i52f447adp5k4mirucj4dmv":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/ypqsj2nj3i52f447adp5k4mirucj4dmv"},
+
+"k5zgxxmocil2sv3z7aryc6bybe7hlfho":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/k5zgxxmocil2sv3z7aryc6bybe7hlfho"},
+
+"auytriq6uvhrpwve3cw7safofl5xfvz6":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/auytriq6uvhrpwve3cw7safofl5xfvz6"},
+
+"4sy333mfnufbypnojbyuz3oslnsbossw":{"uri":"captp://*zvvf4vpsqsve3gopzr7tughdp6camc2c@trapiche.it-innovation.soton.ac.uk:37356,127.0.1.1:37356/4sy333mfnufbypnojbyuz3oslnsbossw"}
+
+}

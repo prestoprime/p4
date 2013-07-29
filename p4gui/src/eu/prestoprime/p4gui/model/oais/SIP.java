@@ -30,7 +30,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Node;
 
 import eu.prestoprime.model.ModelUtils;
-import eu.prestoprime.model.ModelUtils.P4Namespace;
+import eu.prestoprime.model.ModelUtils.P4JAXBPackage;
 import eu.prestoprime.model.mets.Mets;
 import eu.prestoprime.p4gui.util.parse.Location;
 import eu.prestoprime.p4gui.util.parse.Resource;
@@ -56,7 +56,7 @@ public class SIP extends InformationPackage {
 		try {
 			// parse sip and get content as Node
 			Node node = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-			Marshaller marshaller = ModelUtils.getMarshaller(P4Namespace.DATA_MODEL.getValue());
+			Marshaller marshaller = ModelUtils.getMarshaller(P4JAXBPackage.DATA_MODEL);
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			marshaller.marshal(mets, node);
 

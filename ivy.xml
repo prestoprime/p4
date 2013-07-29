@@ -1,5 +1,5 @@
 <ivy-module version="1.0">
-	<info organisation="eu.prestoprime" module="p4core" />
+	<info organisation="eu.prestoprime" module="p4" />
 	<dependencies>
 		<!-- Commons -->
 		<dependency org="commons-logging" name="commons-logging" rev="1.1.1"/>
@@ -28,6 +28,9 @@
 		<!-- Database -->
 		<dependency org="exist" name="exist" rev="20110815" />
 		<dependency org="org.apache.derby" name="derby" rev="10.8.1.2" />
+
+		<!-- ArchTools -->
+		<dependency org="it.eurix" name="archtools" rev="2.3.2" />
 
 		<!-- HttpClient -->
 		<dependency org="org.apache.httpcomponents" name="httpcore" rev="4.2.2" />

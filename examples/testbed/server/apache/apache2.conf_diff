@@ -1,0 +1,22 @@
+Only differing section: 
+
+.....
+#
+# DefaultType is the default MIME type the server will use for a document
+# if it cannot otherwise determine one, such as from filename extensions.
+# If your server contains mostly text or HTML documents, "text/plain" is
+# a good value.  If most of your content is binary, such as applications
+# or images, you may want to use "application/octet-stream" instead to
+# keep browsers from trying to display binary files as though they are
+# text.
+#
+# It is also possible to omit any default MIME type and let the
+# client's browser guess an appropriate action instead. Typically the
+# browser will decide based on the file's extension then. In cases
+# where no good assumption can be made, letting the default MIME type
+# unset is suggested  instead of forcing the browser to accept
+# incorrect  metadata.
+#
+DefaultType text/html
+#might not be what we want for p4...
+....

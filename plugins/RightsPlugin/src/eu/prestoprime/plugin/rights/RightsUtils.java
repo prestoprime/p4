@@ -21,6 +21,10 @@
  */
 package eu.prestoprime.plugin.rights;
 
+import it.eurix.archtools.persistence.DatabaseException;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+
 import java.io.File;
 import java.util.List;
 
@@ -34,14 +38,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
-import eu.prestoprime.datamanagement.PersistenceDBException;
-import eu.prestoprime.datamanagement.PersistenceManager;
-import eu.prestoprime.datamanagement.PersistenceManager.P4Collection;
+import eu.prestoprime.datamanagement.P4PersistenceManager;
+import eu.prestoprime.datamanagement.P4PersistenceManager.P4Collection;
 import eu.prestoprime.model.ext.rights.RightsIndex;
 import eu.prestoprime.model.ext.rights.RightsInstance;
 import eu.prestoprime.plugin.p4.tools.XSLTProc;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
 
 public abstract class RightsUtils {
 
@@ -54,9 +55,9 @@ public abstract class RightsUtils {
 	public static RightsIndex getRightsIndex() {
 		RightsIndex index;
 		try {
-			Node rightsIndexNode = PersistenceManager.getInstance().readXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml");
+			Node rightsIndexNode = P4PersistenceManager.getInstance().readXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml");
 			index = (RightsIndex) RightsUtils.getRightsContext().createUnmarshaller().unmarshal(rightsIndexNode);
-		} catch (PersistenceDBException | JAXBException e) {
+		} catch (DatabaseException | JAXBException e) {
 			index = new RightsIndex();
 		}
 		return index;
@@ -65,8 +66,8 @@ public abstract class RightsUtils {
 	public static void deleteRightsIndex() throws TaskExecutionFailedException {
 
 		try {
-			PersistenceManager.getInstance().deleteXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml");
-		} catch (PersistenceDBException e) {
+			P4PersistenceManager.getInstance().deleteXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml");
+		} catch (DatabaseException e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to clear Rights Index");
 		}
@@ -81,14 +82,14 @@ public abstract class RightsUtils {
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			marshaller.marshal(index, node);
 
-			PersistenceManager.getInstance().storeXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml", node);
+			P4PersistenceManager.getInstance().storeXMLResource(P4Collection.RIGHTSMD_COLLECTION, "RightsIndex.xml", node);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to set Rights Index");
 		}
 	}
 
-	public static void indexRights(String sipID, File owlFile) throws JAXBException, ToolException, PersistenceDBException, ParserConfigurationException, TaskExecutionFailedException {
+	public static void indexRights(String sipID, File owlFile) throws JAXBException, ToolException, DatabaseException, ParserConfigurationException, TaskExecutionFailedException {
 
 		RightsIndex index = RightsUtils.getRightsIndex();
 

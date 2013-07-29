@@ -21,6 +21,10 @@
  */
 package eu.prestoprime.search;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,16 +37,13 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
+import eu.prestoprime.datamanagement.P4DataManager;
 import eu.prestoprime.model.ModelUtils;
 import eu.prestoprime.model.oaipmh.HeaderType;
 import eu.prestoprime.model.oaipmh.ListIdentifiersType;
 import eu.prestoprime.model.oaipmh.OAIPMH;
 import eu.prestoprime.model.oaipmh.RequestType;
 import eu.prestoprime.model.oaipmh.VerbType;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
 
 public class OAIPMHManager {
 
@@ -76,7 +77,7 @@ public class OAIPMHManager {
 
 			oaipmh.setRequest(requestType);
 
-			List<String> aipIdList = DataManager.getInstance().getAIPByOAIPMH(fromDate, untilDate, setSpec);
+			List<String> aipIdList = P4DataManager.getInstance().getAIPByOAIPMH(fromDate, untilDate, setSpec);
 
 			logger.debug("OAI-PMH Query results: " + aipIdList.size());
 
@@ -86,7 +87,7 @@ public class OAIPMHManager {
 
 			for (String aipId : aipIdList) {
 
-				DIP dip = DataManager.getInstance().getDIPByID(aipId);
+				DIP dip = P4DataManager.getInstance().getDIPByID(aipId);
 
 				HeaderType headerType = new HeaderType();
 				headerType.setDatestamp(dip.getCreateDate().getTime().toString());

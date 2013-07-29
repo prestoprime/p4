@@ -1,0 +1,44 @@
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://www.prestoprime.eu/ppavro/2010-09-13/rights_new_instance.owl" ontologyIRI="http://www.prestoprime.eu/ppavro/2010-09-13/rights_new_instance.owl">
+  <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+  <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+  <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+  <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+  <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+  <Import>http://prestoprime.eurixgroup.com/ppavro.owl</Import>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#V02P001"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#All"/>
+  </owl:Declaration>
+  <owl:Declaration xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:NamedIndividual IRI="#V02"/>
+  </owl:Declaration>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#Permission"/>
+    <owl:NamedIndividual IRI="#V02P001"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://www.prestoprime.eu/2010/ppavro.owl#ExploitIPRights"/>
+    <owl:NamedIndividual IRI="#All"/>
+  </owl:ClassAssertion>
+  <owl:ClassAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Class IRI="http://purl.oclc.org/NET/mvco.owl#IPEntity"/>
+    <owl:NamedIndividual IRI="#V02"/>
+  </owl:ClassAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#permitsAction"/>
+    <owl:NamedIndividual IRI="#V02P001"/>
+    <owl:NamedIndividual IRI="#All"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:ObjectPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:ObjectProperty IRI="http://purl.oclc.org/NET/mvco.owl#actedOver"/>
+    <owl:NamedIndividual IRI="#All"/>
+    <owl:NamedIndividual IRI="#V02"/>
+  </owl:ObjectPropertyAssertion>
+  <owl:DataPropertyAssertion xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:DataProperty IRI="urn:mpeg:mpeg21:2002:01-DII-NS#RelatedIdentifier"/>
+    <owl:NamedIndividual IRI="#V02"/>
+    <owl:Literal datetypeIRI="">p4:rai:test</owl:Literal>
+  </owl:DataPropertyAssertion>
+</Ontology>

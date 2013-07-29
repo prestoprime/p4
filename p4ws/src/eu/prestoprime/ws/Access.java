@@ -21,6 +21,12 @@
  */
 package eu.prestoprime.ws;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.DIP.DCField;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.persistence.DatabaseException;
+
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
@@ -44,14 +50,9 @@ import com.sun.jersey.api.client.ClientResponse.Status;
 import com.sun.jersey.api.core.HttpContext;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Property;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.datamanagement.PersistenceDBException;
-import eu.prestoprime.datamanagement.PersistenceManager.P4Collection;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.DIP.DCField;
-import eu.prestoprime.model.oais.IPException;
+import eu.prestoprime.conf.P4PropertyManager.P4Property;
+import eu.prestoprime.datamanagement.P4DataManager;
+import eu.prestoprime.datamanagement.P4PersistenceManager.P4Collection;
 
 @Path("/access")
 public class Access {
@@ -73,7 +74,7 @@ public class Access {
 
 		List<String> aipList;
 		try {
-			aipList = DataManager.getInstance().getAllAIP(null);
+			aipList = P4DataManager.getInstance().getAllAIP(null);
 
 			for (String aipId : aipList)
 				sb.append(aipId + "\n");
@@ -102,7 +103,7 @@ public class Access {
 
 		List<String> aipList;
 		try {
-			aipList = DataManager.getInstance().getAIPByMD(datatype, Boolean.parseBoolean(available));
+			aipList = P4DataManager.getInstance().getAIPByMD(datatype, Boolean.parseBoolean(available));
 
 			for (String aipID : aipList)
 				sb.append(aipID + "\n");
@@ -124,7 +125,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			String aipID = DataManager.getInstance().getAIPByDCID(dcID);
+			String aipID = P4DataManager.getInstance().getAIPByDCID(dcID);
 
 			rb = Response.status(Status.OK).entity(aipID != null ? aipID : "available");
 		} catch (DataException e) {
@@ -145,7 +146,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 
 			rb = Response.status(Status.OK).entity(dip.toString());
 		} catch (Exception e) {
@@ -167,7 +168,7 @@ public class Access {
 		StringBuffer sb = new StringBuffer();
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 
 			sb.append(dip.hasDatatype(datatype));
 
@@ -191,7 +192,7 @@ public class Access {
 		StringBuffer sb = new StringBuffer();
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipID);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 			for (String result : dip.getMDResource(datatype)) {
 				sb.append(result + "\n");
@@ -219,7 +220,7 @@ public class Access {
 		String[] lqFormats = browsingFormats.split(",");
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			StringBuffer sb = new StringBuffer();
 			for (int i = 0; i < lqFormats.length; i++) {
 				for (String videoHRef : dip.getAVMaterial(lqFormats[i], "URL")) {
@@ -248,7 +249,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			URL thumb = dip.getThumbnail();
 
 			rb = Response.status(Status.OK).entity(thumb.toString());
@@ -269,7 +270,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			StringBuffer sb = new StringBuffer();
 
 			Map<String, List<String>> dcFields = dip.getDCFields();
@@ -302,7 +303,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			StringBuffer sb = new StringBuffer();
 
 			for (String format : dip.getDCField(DCField.format))
@@ -332,7 +333,7 @@ public class Access {
 		String[] mqFormats = masterFormats.split(",");
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			StringBuffer sb = new StringBuffer();
 			for (int i = 0; i < mqFormats.length; i++) {
 				for (String videoURN : dip.getAVMaterial(mqFormats[i], "URN")) {
@@ -364,7 +365,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 
 			String downloadVideo = dip.getAVMaterial("video/webm", "URL").get(0);
 			URL downloadIcon = dip.getThumbnail();
@@ -407,7 +408,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			List<URL> frames = dip.getFrames();
 
 			StringBuffer sb = new StringBuffer();
@@ -434,13 +435,13 @@ public class Access {
 
 		Node resource;
 		try {
-			resource = DataManager.getInstance().getResource(P4Collection.getP4Collection(collection), resId);
+			resource = P4DataManager.getInstance().getResource(P4Collection.getP4Collection(collection), resId);
 			DOMSource source = new DOMSource(resource);
 
 			rb = Response.status(Status.OK).entity(source);
 		} catch (DataException e) {
 			rb = Response.status(Status.INTERNAL_SERVER_ERROR);
-		} catch (PersistenceDBException e) {
+		} catch (DatabaseException e) {
 			e.printStackTrace();
 			rb = Response.status(Status.INTERNAL_SERVER_ERROR);
 		}
@@ -458,7 +459,7 @@ public class Access {
 		ResponseBuilder rb;
 
 		try {
-			DIP dip = DataManager.getInstance().getDIPByID(dipId);
+			DIP dip = P4DataManager.getInstance().getDIPByID(dipId);
 			URL url = dip.getGraph();
 			rb = Response.status(Status.OK).entity(url.toString());
 		} catch (IPException e) {

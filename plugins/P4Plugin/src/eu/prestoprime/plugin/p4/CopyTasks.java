@@ -21,6 +21,17 @@
  */
 package eu.prestoprime.plugin.p4;
 
+import it.eurix.archtools.data.DataException;
+import it.eurix.archtools.data.model.DIP;
+import it.eurix.archtools.data.model.IPException;
+import it.eurix.archtools.data.model.SIP;
+import it.eurix.archtools.tool.ToolException;
+import it.eurix.archtools.tool.ToolOutput;
+import it.eurix.archtools.tool.impl.MessageDigestExtractor;
+import it.eurix.archtools.workflow.exceptions.TaskExecutionFailedException;
+import it.eurix.archtools.workflow.plugin.WfPlugin;
+import it.eurix.archtools.workflow.plugin.WfPlugin.WfService;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -38,17 +49,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import eu.prestoprime.conf.ConfigurationManager;
-import eu.prestoprime.conf.ConfigurationManager.P4Property;
-import eu.prestoprime.datamanagement.DataException;
-import eu.prestoprime.datamanagement.DataManager;
-import eu.prestoprime.model.oais.DIP;
-import eu.prestoprime.model.oais.IPException;
-import eu.prestoprime.model.oais.SIP;
-import eu.prestoprime.tools.MessageDigestExtractor;
-import eu.prestoprime.tools.ToolException;
-import eu.prestoprime.workflow.exceptions.TaskExecutionFailedException;
-import eu.prestoprime.workflow.plugin.WfPlugin;
-import eu.prestoprime.workflow.plugin.WfPlugin.WfService;
+import eu.prestoprime.conf.P4PropertyManager.P4Property;
+import eu.prestoprime.datamanagement.P4DataManager;
 
 @WfPlugin(name = "P4Plugin")
 public class CopyTasks {
@@ -87,7 +89,7 @@ public class CopyTasks {
 		SIP sip = null;
 		try {
 			// get sip
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			String inputVideo = null;
 
@@ -113,8 +115,8 @@ public class CopyTasks {
 
 					// MD5
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(outputVideo);
-					String md5sum = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo);
+					String md5sum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					// update SIP
 					sip.addFile(format, "FILE", outputVideo, md5sum, new File(outputVideo).length());
@@ -138,7 +140,7 @@ public class CopyTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to compute MD5 for WebM video file...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -151,7 +153,7 @@ public class CopyTasks {
 		SIP sip = null;
 		try {
 			// get sip
-			sip = DataManager.getInstance().getSIPByID(sipID);
+			sip = P4DataManager.getInstance().getSIPByID(sipID);
 
 			String inputVideo = null;
 
@@ -180,8 +182,8 @@ public class CopyTasks {
 
 					// MD5
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(outputVideo);
-					String md5sum = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(outputVideo);
+					String md5sum = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 
 					// update SIP
 					sip.addFile(format, "FILE-BCK", outputVideo, md5sum, new File(outputVideo).length());
@@ -205,7 +207,7 @@ public class CopyTasks {
 			e.printStackTrace();
 			throw new TaskExecutionFailedException("Unable to compute MD5 for WebM video file...");
 		} finally {
-			DataManager.getInstance().releaseIP(sip);
+			P4DataManager.getInstance().releaseIP(sip);
 		}
 	}
 
@@ -220,7 +222,7 @@ public class CopyTasks {
 
 			DIP dip = null;
 			try {
-				dip = DataManager.getInstance().getDIPByID(dipID);
+				dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				String[] MQFormats = sParams.get("MQformats").split(",");
 				for (String MQFormat : MQFormats) {
@@ -261,7 +263,7 @@ public class CopyTasks {
 			String outputFolder = destVolume + File.separator + destFolder;
 
 			try {
-				DIP dip = DataManager.getInstance().getDIPByID(dipID);
+				DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				// get MQ file
 				String videoFile = null;
@@ -330,7 +332,7 @@ public class CopyTasks {
 			String outputFolder = destVolume + File.separator + destFolder;
 
 			try {
-				DIP dip = DataManager.getInstance().getDIPByID(dipID);
+				DIP dip = P4DataManager.getInstance().getDIPByID(dipID);
 
 				JSONObject json = new JSONObject();
 
@@ -342,8 +344,8 @@ public class CopyTasks {
 				if (MD5 != null) {
 					File targetFile = new File(outputFolder, targetFileName);
 					MessageDigestExtractor mde = new MessageDigestExtractor();
-					mde.extract(targetFile.getAbsolutePath());
-					String currentMD5 = mde.getAttributeByName("MD5");
+					ToolOutput<MessageDigestExtractor.AttributeType> output = mde.extract(targetFile.getAbsolutePath());
+					String currentMD5 = output.getAttribute(MessageDigestExtractor.AttributeType.MD5);
 					if (!currentMD5.equals(MD5))
 						throw new TaskExecutionFailedException("MD5 doesn't correspond...");
 					else

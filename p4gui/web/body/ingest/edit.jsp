@@ -8,9 +8,9 @@
 <%@page import="eu.prestoprime.model.mets.MdSecType"%>
 <%@page import="eu.prestoprime.model.mets.AmdSecType"%>
 <%@page import="eu.prestoprime.p4gui.connection.CommonConnection"%>
-<%@page import="eu.prestoprime.model.workflow.WfType"%>
-<%@page import="eu.prestoprime.model.workflow.WfDescriptor.Workflows.Workflow"%>
-<%@page import="eu.prestoprime.model.workflow.WfDescriptor"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfType"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfDescriptor.Workflows.Workflow"%>
+<%@page import="it.eurix.archtools.workflow.jaxb.WfDescriptor"%>
 <%@page import="eu.prestoprime.p4gui.connection.WorkflowConnection"%>
 <%@page import="eu.prestoprime.p4gui.P4GUI"%>
 <%@page import="java.util.ArrayList"%>
@@ -233,6 +233,15 @@ TableColouringManager tcm = new TableColouringManager();
 										if (filePath.split(".")[1] == "mp4") {
 											$("#mimetype_input").val("video/mp4");
 											$("#mimetype_input2").val("video/mp4");
+										} else if (filePath.split(".")[1] == "mov") {
+											$("#mimetype_input").val("video/quicktime");
+											$("#mimetype_input2").val("video/quicktime");
+										} else if (filePath.split(".")[1] == "mjpeg") {
+											$("#mimetype_input").val("video/x-motion-jpeg");
+											$("#mimetype_input2").val("video/x-motion-jpeg");
+										} else if (filePath.split(".")[1] == "avi") {
+											$("#mimetype_input").val("video/avi");
+											$("#mimetype_input2").val("video/avi");
 										} else {
 											$("#mimetype_input").val("application/mxf");
 											$("#mimetype_input2").val("application/mxf");
